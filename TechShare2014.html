@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Accessible Web Components</title>
+
+		<meta name="description" content="Techshare 2014 - Accessible Web Components">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="css/paypal.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/histyles/tomorrow-night-blue.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal" role="application" aria-label="Press left or right arrow to navigate the slides">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Accessible Web Components</h1>
+					<br>
+					<p>
+						<small>Nawaz & Srini, PayPal / <a href="http://twitter.com/paypalinclusive">@PayPalInclusive</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>About Speakers</h2>
+					<p>
+							Srinivasu – An accessibility evangelist, technologist, believes in inclusion
+					</p>
+					<p>
+						Nawaz – An accessibility evangelist, geek, loves social innovation
+					</p>
+				</section>
+
+				<section>
+					<h2>PayPal Accessibility Team</h2>
+					<ul>
+						<li class="fragment roll-in"> Team with thought leaders in the industry </li>
+						<li class="fragment roll-in"> Committed to help our product teams </li> 
+						<li class="fragment roll-in"> Come up with solutions not only for the company but also for the community </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>PayPal Accessibility Initiatives </h2>
+					<p>
+						We needed it, so we innovated it. <br>
+						<img src="imgs/Techshare2014/Innovation.jpg"  height="300" alt="Innovative comb for balded hair">
+						<p>Necessity is the Mother of Invention</p>
+					</p>
+				</section>
+
+				<section>
+					<h2>The state of today's web</h2>
+						<h3>Everyone wants</h3>
+					<ul>				
+						<li> To see web as an application </li>
+						<li> Richness and responsiveness</li>
+						<li> On multiple devices (mobile, tablets etc.,) </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Problem: InAccessible Libraries</h2>
+					<p>
+						With too many things in focus like  speed, adaptive and responsive, Accessibility takes a backseat before it is released to the public
+					</p>
+					<p>
+						Inaccessible components are repeatedly incorporated into every new project which leaves behind many inaccessible websites
+					</p>
+				</section>
+
+
+				<section>
+					<h2>Innovate-Adapt-Evolve</h2>
+					<h3>A walk-through of our Innovation Journey:</h3>
+					<p>
+						<ul>
+							<li  class="fragment roll-in">Bootstrap Plug-in</li>
+							<li  class="fragment roll-in">SkipTo Plug-in</li>
+							<li  class="fragment roll-in">amCharts Plug-in</li>
+						</ul>					
+					</p>
+				</section>
+
+				
+				<section>
+					<h2>Skip Navigation Links</h2>
+					<ul>
+						<li  class="fragment roll-in">Are a way to ByBass Blocks of content (WCAG 2.4)</li>
+						<li  class="fragment roll-in">Without using this link</li>
+							<ul>
+								<li  class="fragment roll-in">Keyboard user needs to tab through approximately 40 links to reach the main story</li>
+								<li  class="fragment roll-in">Screen reader user have to listen to 200 words</li>
+								<li  class="fragment roll-in">Screen magnifier user must search around for the location of the main body</li>
+							</ul>	
+						<li  class="fragment roll-in"> Has been for a long time and Accessible websites use it </li>
+					</ul>	
+				</section>
+				<section>
+					<h2>SkipTo Plugin</h2>
+						<a class="image" href="http://paypal.github.io/SkipTo/" target="_blank">
+							<img width="320" height="299" src="imgs/Techshare2014/SkipToSS.png" alt="Screen Shot of SkipTo in expanded state">
+						</a>
+
+					<ul>
+						<li  class="fragment roll-in">Replacement for your old classic &ldquo;Skipnav&rdquo; link</li>
+						<li  class="fragment roll-in">Scans the Whole page for Headings, Landmark roles</li>
+						<li  class="fragment roll-in">Displays as a nice Menu Button</li>
+						<li  class="fragment roll-in">Screen Readers announce it as &ldquo;SkipTo menu Collapsed&rdquo; </li>
+					</ul>	
+				</section>
+
+				<section>
+					<h2>SkipTo Plugin - How to operate</h2>
+					<ul>
+						<li> Spacebar or Enter Key to activate </li>
+						<li> Down/up arrows to navigate </li>
+						<li>Esc to close the Menu </li>
+						<li>Access key &ldquo;0&rdquo; to go back to SkipTo  </li>
+					</ul>	
+				</section>	
+					<section>
+					<h2>SkipTo Plugin - How to implement</h2>
+					<p> Just add the JavaScript plugin to your  HTML file</p>
+					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+<script type="text/javascript" src="http://paypal.github.io/SkipTo/downloads/js/SkipTo.min.js"></script>
+					</code></pre>	
+				</section>					
+				
+				<section>					
+					<h2> SkipTo Plugin - How to Configure </h2>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">					
+<script>
+var skipToConfig =
+{
+    "settings": {
+    "skipTo": {
+    "headings": "h1 ,h2, h3",
+    "landmarks": "[role=navigation],[role=main],[role=search]",
+    "accesskey": "0",
+    "wrap": "true",
+    "visibility": "onfocus"
+    }
+    }
+};
+
+</script>
+				</code></pre>
+				<p>Also available as <a href="http://wordpress.org/plugins/skip-to/">Wordpress plugin</a> from wordpress repository and as <a href="https://drupal.org/project/SkipTo">Drupal plugin</a> from Drupal repository</p>				
+				</section>		
+
+
+				<section>
+					<h2>Bootstrap Library</h2>
+					<p>Famous because of Sleekness, Ease of use and Responsiveness </p>
+					<p>
+						<img src="imgs/Techshare2014/githubPopularity.png" alt="Twitter Bootstrap has 63,000 stars and 5000 watches compared to jQuery which has 28,000 stars and YUI 2400 stars">
+					</p>
+				</section>
+
+				<section>
+					<h2>Bootstrap Plugin</h2>
+					<h3 class="fragment roll-in">Pros</h3>
+					<ul>
+						<li class="fragment roll-in"> Makes many of the components of Bootstrap library accessible for keyboard and screen reader users </li>
+						<li class="fragment roll-in"> Experiment with Bootstrap without having to modify the original code </li>
+						<li class="fragment roll-in"> Independent of Bootstrap's release timeliness </li>
+						<li class="fragment roll-in"> Avoid other people having to hack Bootstrap code if they just want to get accessibility features </li>
+					</ul>
+					<h3 class="fragment roll-in">Cons</h3>
+					<ul>
+						<li class="fragment roll-in">Another JavaScript file and CSS files need to be loaded on the page (but wait! you can Lazy Load) </li>
+					</ul>
+
+				</section>
+				<section>
+					<h2>Bootstrap Plugin (TabPanel) - What it does?</h2>
+					<pre><code data-trim contenteditable>					
+    var $tablist = $('.nav-tabs')
+        , $lis = $tablist.children('li')
+        , $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]')
+
+    $tablist.attr('role', 'tablist')
+    $lis.attr('role', 'presentation')
+    $tabs.attr('role', 'tab')
+
+    $tabs.each(function( index ) {
+      var tabpanel = $($(this).attr('href'))
+        , tab = $(this)
+        , tabid = tab.attr('id') || 'ui-tab'+ Math.floor((Math.random()*100)+1)
+      
+        tab.attr('id', tabid)
+
+      if(tab.parent().hasClass('active')){
+        tab.attr( { 'tabIndex' : '0', 'aria-expanded' : 'true', 'aria-selected' : 'true', 'aria-controls': tab.attr('href').substr(1) } )
+        tabpanel.attr({ 'role' : 'tabpanel', 'tabIndex' : '0', 'aria-hidden' : 'false', 'aria-labelledby':tabid })
+      }else{
+        tab.attr( { 'tabIndex' : '-1', 'aria-expanded' : 'false', 'aria-selected' : 'false', 'aria-controls': tab.attr('href').substr(1) } )
+        tabpanel.attr( { 'role' : 'tabpanel', 'tabIndex' : '-1', 'aria-hidden' : 'true', 'aria-labelledby':tabid } )
+      }
+    })
+  
+    $.fn.tab.Constructor.prototype.keydown = function (e) {
+      var $this = $(this)
+      , $items
+      , $ul = $this.closest('ul[role=tablist] ')
+      , index
+      , k = e.which || e.keyCode
+
+      $this = $(this)
+      if (!/(37|38|39|40)/.test(k)) return
+
+      $items = $ul.find('[role=tab]:visible')
+      index = $items.index($items.filter(':focus'))
+
+      if (k == 38 || k == 37) index-- // up & left
+      if (k == 39 || k == 40) index++ // down & right
+
+
+      if(index < 0) index = $items.length -1
+      if(index == $items.length) index = 0
+
+      var nextTab = $items.eq(index)
+      if(nextTab.attr('role') ==='tab'){
+
+        nextTab.tab('show') //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
+        .focus()
+      }
+      // nextTab.focus()
+
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
+    $(document).on('keydown.tab.data-api','[data-toggle="tab"], [data-toggle="pill"]' , $.fn.tab.Constructor.prototype.keydown)
+
+   var tabactivate = $.fn.tab.Constructor.prototype.activate;
+   $.fn.tab.Constructor.prototype.activate = function (element, container, callback) {
+      var $active = container.find('> .active')
+      $active.find('[data-toggle=tab]').attr({ 'tabIndex' : '-1','aria-selected' : false,'aria-expanded' : false })
+      $active.filter('.tab-pane').attr({ 'aria-hidden' : true,'tabIndex' : '-1' })
+
+      tabactivate.apply(this, arguments)
+
+      element.addClass('active')
+      element.find('[data-toggle=tab]').attr({ 'tabIndex' : '0','aria-selected' : true,'aria-expanded' : true })
+      element.filter('.tab-pane').attr({ 'aria-hidden' : false,'tabIndex' : '0' })
+   }
+					</code></pre>
+				</section>
+				<section>
+					<h2>Bootstrap Plugin - Alert</h2>
+					<ul>
+						<li>Adds role of Alert to Alert, Warning, and Success Bootstrap messages</li>
+						<li>Increases the color contrast as the foreground to background color contrast ratio for the message was too low</li>
+						<li>Adds instructions in message dialog so that the developer using the alert knows to manage keyboard focus on alert dismissal</li>
+					</ul>	
+				</section>
+
+				<section>
+					<h2>Bootstrap Plugin - Tooltip/PopOver</h2>
+					<ul>
+						<li>Add role of Tooltip to tooltip div</li>
+						<li>Generates a random id, assign it to the tooltip div, and reference it from the Tooltip element with the ARIA attribute &ldquo;aria-describedby&rdquo; </li>
+						<li>Removes aria-describedby when the tooltip is hidden</li>
+					</ul>	
+				</section>
+				
+				<section>
+					<h2>Bootstrap Plug-in - Modal Dialog</h2>
+					<ul>
+						<li>Adds role of Document to content div inside dialog so that NVDA can force document mode and read contents inside Dialog.</li>
+						<li>When the Modal is closed, returns the focus to the element which opened the dialog </li>
+						<li>Changes the focus <a href="outlinenone.com">outline </a> of Close button to visible</li>
+					</ul>	
+				</section>
+				<section>
+					<h2>Dropdown</h2>
+					<ul>
+						<li>Adds aria-haspopup and and aria-expanded attributes to dropdown toggle link</li>
+						<li>Dynamically changes aria-expanded when the dropdown closes or opens</li>
+						<li>Focuses to first item on activating dropdown</li>
+						<li>Adds ability to open dropdown with spacebar</li>
+						<li>Close dropdown when tabbing out from dropdown</li>
+						<li>Changes the focus <a href="outlinenone.com">outline </a> of dropdown to visible</li>
+					</ul>	
+				</section>
+				<section>
+					<h2>Collapse</h2>
+					<ul>
+						<li>Adds tab role, aria-selected, aria-expanded, aria-controls, and tabIndex for collapse tab</li>
+						<li>Adds ARIA roles of tabPanel, tabIndex, aria-hidden, and aria-labelledBy for collapsible panel</li>
+						<li>Adds role of tabList and aria-multiselectable for collapse container div</li>
+						<li>Dynamically flips tabIndex, aria-selected, and aria-expanded for tab when it is activated and add aria-hidden to hide the previously visible collapse tabpanel</li>
+						<li>Closes dropdown when tabbing out from dropdown</li>
+						<li> Adds keydown event listener for the collapse component to work with keyboard</li>
+					</ul>	
+				</section>		
+				<section>
+					<h2>Carousel</h2>
+					<ul>
+						<li>Prevents automatic cycling of the carousel.</li>
+						<li>Prevents wrapping to first item on Next button navigation or wrapping to last item on Previous button navigation</li>
+						<li>Adds role of listbox for carousel div</li>
+						<li>Adds ARIA role of option, aria-selected, and tabIndex for individual carousel items</li>
+						<li>Adds keydown event listener for the carousel to work with keyboard</li>
+				</section>	
+				<section>							
+					<h2>Carousel (Contd.)</h2>
+					<ul>					
+						<li>Dynamically changes tabIndex and aria-selected property of active and inactive tabs </li>
+						<li>Removes display:none and hide (offscreen) of the inactive carousel items so that screen readers can count the total number of carousel items. </li>
+					</ul>	
+					<br><br>
+					<p> visit <a href="http://shouldiuseacarousel.com/">http://shouldiuseacarousel.com/ </a></p>
+				</section>	
+					<section>
+					<h2>Bootstrap Plugin - How to implement</h2>
+					<ul>
+						<li>Download and include Bootstrap.js from <a href="http://getbootstrap.com/">getbootstrap.com</a>.</li>
+						<li>Download and include the <a href="https://github.com/paypal/bootstrap-accessibility-plugin/blob/master/plugins/js">bootstrap accessibility plugin js</a>.</li>
+						<li>Download and include the <a href="https://github.com/paypal/bootstrap-accessibility-plugin/blob/master/plugins/css">bootstrap accessibility plugin css to override css styles</a>.</li>
+						<li>Optional: Lazily load the JavaScript plugin after the page is loaded.</li>
+					</ul>
+					<p>GITHUB Repo : <a href="https://github.com/paypal/bootstrap-accessibility-plugin/">https://github.com/paypal/bootstrap-accessibility-plugin/ </a></p>
+					<p>Demo :<a href="http://paypal.github.io/bootstrap-accessibility-plugin/demo.html">http://paypal.github.io/bootstrap-accessibility-plugin/demo.html</a></p>					
+				</section>	
+			
+
+				<section>
+					<h2>Reasons for amCharts Accessibility Plugin</h2>
+					<ul>
+						<li> To Solve the problem of Lack of accessible charts for blind and keyboard users </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Usual ways to make Chart Accessible</h2>
+					<p>
+					<ul>
+						<li>Chart data duplicated in a table and hidden off-screen</li>
+						<li><a href="http://www.w3.org/TR/html-alt-techniques/#sec2.5">Alt text</a></li>
+						<li><a href="http://blog.ginader.de/dev/jquery/longdesc/examples/webaim/index.php">LongDesc Attribute </a></li>
+					</ul>	
+					</p>
+				</section>	
+				<section>
+					<h2>Problems with usual ways</h2>
+					<ul>
+						<li> Data is duplicated as in Hidden table</li>
+						<li> Too much text to describe the Chart </li>
+						<li> Only Basic textual information available to Screen reader users</li>
+						<li> Lot of  maintenance </li>
+					</ul>
+				</section>	
+				<section>
+					<h2>amCharts</h2>
+					<ul>
+						<li> Made of SVG</li>
+						<li> Interactive </li>
+						<li> Dynamic Data</li>
+					</ul>
+				</section>	
+
+				<section>
+					<h2>amCharts accessibility Plugin</h2>
+					<h3>For keyboard users</h3>
+					<ul>
+						<li> Can navigate with Left and Right arrow keys</li>
+						<li> Cursor tooltip is shown when the arrow keys are pressed </li>
+						<li> Tab key to navigate within chart, left and right sliders</li>
+						<li> Applies aria-label, aria-valuemin, aria-valuemax, aria-valuetext and aria-valuenow for left and right sliders</li>
+					</ul>
+				</section>	
+
+				<section>
+					<h2>amCharts accessibility Plugin</h2>
+					<h3> For Screen Readers </h3>
+					<ul>
+						<li> Applies role of Application to the chart</li>
+						<li> Creates a hidden status Div to announce the Tooltips displayed</li>
+						<li> Applies aria-label, aria-valuemin, aria-valuemax, aria-valuetext and aria-valuenow for left and right sliders</li>
+
+					</ul>
+				</section>	
+
+					<section>
+					<h2>amCharts accessibility Plugin - How to implement</h2>
+					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+<script src="http://www.amcharts.com/lib/amstock.js" type="text/javascript"></script>
+<script src="/js/plugins/amstock-accessibility.js" type="text/javascript"></script>
+					</code></pre>	
+					<p> <a href=" http://paypal.github.io/amcharts-accessibility-plugin/transactions_plugin.html">Play with Demo </a> </p>
+				</section>	
+				
+				
+				
+				<section>
+					<h1>Contact</h1>
+					<h3><a href="http://www.paypal.com/inclusive">PayPal Accessibility </a></h3>
+					<h3><a href="https://twitter.com/PayPalinclusive">Follow us on Twitter / @PayPalInclusive </a></h3>
+				</section>
+
+			</div> <!-- slider div ends -->
+
+			<footer id="site-footer">
+				<div style="float:left;margin-left:50px">Copyright © 1999-2014 PayPal. All rights reserved</div>
+			  <div style="float:right;margin-right:150px"><img src="imgs/template/logo_180x26_PPa11y.png" alt="PayPal Accessibility"></div>
+			</footer>	
+
+		</div>   <!-- reveal div ends -->
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
