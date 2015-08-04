@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Quality Training - SRE Team</title>
+
+		<meta name="description" content="Techshare 2014 - Accessible Web Components">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="css/paypal.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/histyles/tomorrow-night-blue.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			
+			function toggle(el){
+				var el = document.getElementById(el);
+				if(el.style.display=='none') el.style.display='block';
+				else if(el.style.display=='block') el.style.display='none';
+				return false;
+			}
+			function validate(msg,ip){
+				toggle(msg);
+				var ip = document.getElementById(ip);
+				//console.log(ip.tagName,ip)
+				ip.setAttribute('aria-describedBy', ip.getAttribute('id'));
+				ip.focus();
+				return false;
+			}	
+			
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal" role="application" aria-label="Press left or right arrow to navigate the slides">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<section>
+					<h1>Quality Training - SRE Team</h1>
+					<br>
+					<p>
+						<small>Nawaz, PayPal / <a href="http://twitter.com/mpnkhan">@mpnkhan</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2> What is Accessibility</h2>
+					<p> Making your product available for <b>Everyone</b> </p>
+				</section>
+				
+				<section>
+					<h2> Do you know?</h2>
+					<ul>
+						<li>Around 650 million people with disabilities across the world.</li>
+						<li> Around 70 million people with disabilities in India alone. </li>
+						<li> Increased number of elderly people who also rely on technology. </li>
+						<li> Large number of users rely on mobile devices </li>
+					</ul>	
+				</section>
+
+				<section>
+					<h2> WebAIM’s Hierarchy for Motivating Accessibility Change</h2>
+					<a href="http://webaim.org/blog/motivating-accessibility-change/">
+						<img src="imgs/Quality_SRETeam_Sep2014/hierarchy.png" alt="Web Aim Hierarchy">
+					</a>	
+				</section>
+
+				<section>
+					<h2> Objective of Accessibility Testing</h2>
+					<ul>
+						<li>Empower people with disabilities </li>
+						<li>Creating an inclusive society and NOT discriminate against people with disabilities. </li>
+					</ul>	
+				</section>
+
+				<section>
+					<h2> Main types of Disability</h2>
+					<ul>
+						<li>Visual</li>
+						<li> Hearing </li>
+						<li>Mobility</li>
+						<li>Cognitive</li>
+				<p>
+					<small>
+					<a href="http://www.who.int/mediacentre/factsheets/fs282/en/">
+						http://www.who.int/mediacentre/factsheets/fs282/en/
+					</a>
+					</small>
+				</p>
+				</section>	
+
+
+				<section>
+					<h2> Affects everyone</h2>
+					<ul>
+						<li>Content in Bright Sunlight</li>
+						<li>Mouse or Trackpad doesn't work</li>
+						<li>No headphones handy</li>
+						<li>Content is not in your native language.</li>
+					</ul>	
+				</section>
+
+				<section>
+					<h2>Affects everyone</h2>
+					<ul>
+						<li> Getting older </li>
+						<li>Seeing, Hearing, Holding mouse, keying-in all will not be same </li>
+						<li>Supporting accessibility now helps to serve us</li>
+					</ul>	
+				</section>
+
+				<section>
+					<h2> May affect as well</h2>
+					<ul>
+						<li>Accidents</li>
+						<li>Broken limbs</li>
+						<li>Eye injuries</li>
+						<li>Hearing injuries</li>
+					</ul>	
+				</section>
+				<section>
+					<h2> How People with Disabilities Use the Web</h2>
+					<p> 
+						Need to understand and put into their shoes 	
+						<a href="http://www.bbc.co.uk/accessibility/guides/">
+							<img src="imgs/Quality_SRETeam_Sep2014/HowPWDWeb.png" alt="BBC How to Guide">
+						</a>
+					</p>
+					<p>
+					<small>
+					<a href="http://www.w3.org/WAI/intro/people-use-web/">
+						http://www.w3.org/WAI/intro/people-use-web/
+					</a>
+					</small>
+					</p>
+				</section>	
+
+				<section>
+					<h2>Testing</h2>
+						<blockquote>Manual, Automated and User testing </blockquote>
+						<p>
+							&ldquo;
+							For testing with assistive technologies by people with disabilities, please contact Accessibility Team
+							&rdquo;
+
+						</p>
+				</section>								
+				<section>
+					<h2>Tools for testing:</h2>
+					<p>Wave:  
+						<a href="http://wave.webaim.org/toolbar/"><img src="imgs/Quality_SRETeam_Sep2014/wavetoolbar.gif" alt="screen shot wave toolbar"></a>
+					</p>
+					<p>PAET:  
+						<a href=" https://paet.corp.ebay.com">
+							<img src="imgs/Quality_SRETeam_Sep2014/PAET.png" alt="screen shot PAET">
+						</a>
+					</p>						
+				</section>
+					
+				<section>
+					<h2> Frequently Occuring Problems</h2>
+					<ul>
+						<li>Missing alt text for images</li>
+						<li>Inappropriate / no Heading structure</li>
+						<li>Missing labels for form fields</li>
+						<li>Missing focus indication</li>
+						<li>Lack of keyboard operability</li>
+						<li>Confusing links (i.e Click here)</li>
+						<li>Poor color contrast</li>
+						<li>Inaccessible widgets</li>
+						<li>Focus does not move to modal dialogs</li>
+						<li>Inaccessible CAPTCHA</li>
+						<li>Inaccessible media player</li>
+					</ul>	
+				</section>
+				<section>
+					<h2>Keyboard testing</h2>
+					<ul>
+						<li>Can you tell which item has focus?</li>
+						<li>Can you interact with all controls (links, menus, forms) with only the keyboard?</li>
+						<li>Can tab to each element of the page and cycle from the bottom of the page to the top without getting stuck anywhere. </li> 
+						<li>Also can do the same test using shift-tab through the whole page.</li>
+						<li>Am I able to complete the flow with just keyboard</li>
+						<li>Does the tab order match your expectation?</li>
+					</ul>
+					<small>Courtesy:
+					<a href="http://www.karlgroves.com/2013/09/05/the-6-simplest-web-accessibility-tests-anyone-can-do">
+						http://www.karlgroves.com/2013/09/05/the-6-simplest-web-accessibility-tests-anyone-can-do
+					</a>
+					</small>
+				</section>
+				<section>
+					<h2>Image Alt text</h2>
+					<ul>
+						<li>Click Text-only on Wave toolbar</li>
+						<li>Alternative text?</li>
+						<li>Is the alternative text appropriate? </li>
+						<li>Is the color contrast okay?</li>
+					</ul>
+				</section>	
+				<section>
+					<h2>Heading Order</h2>
+					<p>Click Structure/Order on Wave toolbar</p>
+				</section>
+
+				<section>
+					<h2>Labels</h2>
+					<ul>
+						<li>Is the label visible always?</li>
+						<li>click label text next to a text box, does the cursor appear in the field?</li>
+						<li>click label text next to a radio / checkbox, does it get toggled?</li>
+						<li>click label text next to a select menu, does it get focus?</li>
+
+					</ul>	
+				</section>
+
+				<section>
+					<h2>Label, Hint text, Error Message</h2>
+					<p id="hintTxt" style="font-size:26px;">Guess a number between 1 and 10?</p>
+					<p id="errormsg" style="font-size:26px;color:red;display:none">Sorry. Try a higher number</p>
+					<p>
+						Enter Answer <input type="text" id="answer1"> <input type="submit" onClick="toggle('errormsg')">
+					</p>
+					
+					<p>
+						<label for="answer2">Enter Answer</label>
+						<input type="text" id="answer2" aria-describedBy="hintTxt"> <input type="submit" onClick="validate('errormsg', 'answer2')">
+					</p>
+				</section>				
+
+				<section>
+					<h2>Hyperlinks</h2>
+					<ul>
+						<li>Is there any “click here,” “more,” “link to…”?</li>
+						<li>Same text but different links, like edit, change (no context)</li>
+						<li>Do links to downloads provide helpful info?</li>
+						<li>Are your links underlined (or otherwise obvious)?</li>
+						<li>Is there alt text for image links?</li>
+						<li>Are there any reduntant title or tooltip text?</li>
+					</ul>	
+				</section>	
+
+				<section>
+					<h2>Automated Testing : Accessibility report Plugin for Bluefin</h2>
+					<ul>
+						<li>Accessibility Report Maven Plugin is used to generate accessibility error reports for all the PayPal pages and is available as a consolidated error report at /target/surefire-reports/RuntimeReporter/AccessibilityErrorReport.html.
+						</li>
+						<li>This plugin leverages the PAET server for doing the evaluation.</li>
+					</ul>	
+					<a href="https://github.paypal.com/ddeli/accessibility-report-plugin">
+						https://github.paypal.com/ddeli/accessibility-report-plugin
+					</a>
+				</section>	
+				<section>
+					<h2> MAVEN Configurations</h2>
+					<ul>
+						<li>enablePlugin - true or false - To enable or disable the plugin. Default is true.</li>
+						<li>
+							priority P1,P2,P3,P4 - To generate report with errors with the specified priority. Multiple priorities can be specified as comma (,) separated values. Example: P1,P2 By default all the errors will be displayed
+						</li>
+						<li>accessibilityServer - The accessibility server which should be used to evaluate the pages for error.</li>
+						<li>testOutputFolder - The full path of the test output folder which holds the test </li>
+						<li>
+							execution report (Runtime Reporter data). This can be used if you want to override the default location of 	test output folder, which is target/surefire-reports.
+						</li>
+					</ul>		
+				</section>	
+
+				<section>
+					<h2> Conclusion</h2>
+					<ul>
+						<li> 
+							With too many things in focus like speed, adaptive and responsive, Accessibility takes a backseat before it is released to the public.
+						</li>
+						<li>
+							Inaccessible components are repeatedly incorporated into every new project which leaves behind many inaccessible websites.
+						</li>
+						<li>
+							It becomes every individual’s responsibility to contribute their efforts in empowering the people with disabilities and creating an inclusive society that does not discriminate against people with disabilities. 
+						</li>
+				</section>
+				<section>
+					<h1>Contact</h1>
+					<h3><a href="http://www.paypal.com/inclusive">PayPal Accessibility </a></h3>
+					<h3><a href="https://twitter.com/PayPalinclusive">Follow us on Twitter / @PayPalInclusive </a></h3>
+				</section>
+
+			</div> <!-- slider div ends -->
+
+			<footer id="site-footer">
+				<div style="float:left;margin-left:50px">Copyright © 1999-2014 PayPal. All rights reserved</div>
+			  <div style="float:right;margin-right:150px"><img src="imgs/template/logo_180x26_PPa11y.png" alt="PayPal Accessibility"></div>
+			</footer>	
+
+		</div>   <!-- reveal div ends -->
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

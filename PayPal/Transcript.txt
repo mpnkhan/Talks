@@ -1,0 +1,25 @@
+The problem with inAccessible libraries:
+inAccessibile libraries gives the freedom to copy/paste markup , include JavaScript and CSS and the component automatically will start working.
+Makes a page accessible page inaccessible
+Plenty of libaries, increased with advent of NodeJS
+speed, security etc., and Accessibility comes the last, before which it is released to public
+
+
+Skip Navigation links
+
+Is there any one in this room who doesn't know about click Navigation links, raise your hands
+then click
+Way to bypass blocks of content for Keyboard only users and Screen reader users
+
+SkipTo Plugin
+
+
+BootStrap library
+So famous. used by more than 1% of the web
+64,000 stars 
+Easy to use , copy paste code, but  is Not Accessible
+
+Plugin makes those components accessible
+Experiment without modifying orginal code
+independent
+Lazy load 

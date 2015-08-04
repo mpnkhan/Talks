@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Developer Workshop</title>
+
+		<meta name="description" content="Techshare 2014 - Accessible Web Components">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="css/paypal.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/histyles/tomorrow-night-blue.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			
+			function toggle(el){
+				var el = document.getElementById(el);
+				if(el.style.display=='none') el.style.display='block';
+				else if(el.style.display=='block') el.style.display='none';
+				return false;
+			}
+			function validate(msg,ip){
+				toggle(msg);
+				var ip = document.getElementById(ip);
+				//console.log(ip.tagName,ip)
+				ip.setAttribute('aria-describedBy', ip.getAttribute('id'));
+				ip.focus();
+				return false;
+			}	
+			
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal" role="application" aria-label="Press left or right arrow to navigate the slides">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<section>
+					<h1>Developer Workshop</h1>
+					<br>
+					<p>
+						<small>Nawaz & Srini, PayPal / <a href="http://twitter.com/paypalinclusive">@PayPalInclusive</a></small>
+					</p>
+				</section>
+				
+				<section>
+					<h2> Developer Myths</h2>
+					<ul>
+						<li>They code when they are asleep </li>
+						<li>They code when they are drunk </li>
+						<li>They do not know about standard code</li>
+					</ul>	
+				</section>
+
+				<section>
+					<h2> Truth</h2>
+					<img src='imgs/Awarnessdaysep2014/Coder_intention.jpg' style='width: 651px; height:443px'><br>
+					<ul>
+						<li>DEVELOPERS ARE AWESOME</li>
+						<li>Have Good Technical Knowledge (@ eBay / PayPal)</li>
+					</ul>	
+				</section>
+
+				<section>
+					<h2>Why is it code Inaccessible?</h2>
+					<ul>
+						<li>Requirement changes</li>
+						<li>Schedules are too tight</li>
+						<li>Accessibility is NOT taught in school</li>
+					</ul>	
+				</section>
+				<section>
+					<h2>Benefits of accessible code</h2>
+					<ul>
+						<li>Increases customer base (potential income)</li>
+						<li>Increases in usability (higher sales, reduces support costs)</li>
+						<li>Increases interoperability; cross device support</li>
+						<li>Corporate responsibility (and good PR!)</li>
+						<li>Eliminates need to provide alternative media formats (such as large print, braille)</li>
+						<li>Avoid lawsuits (cost money; bad publicity)</li>
+					</ul>	
+				</section>
+				<section>
+					<h2>Fast Track to Web Accessibility</h2>
+					<ul>
+						<li>Step 1. Evaluate</li>
+						<li>Step 2. Fix the easiest and most prevalent issues first</li>
+						<li>Step 3. Fix your components and common templates</li>
+						<li>Step 4. Contact Accessbility team for quick testing/ testing with Assistive technologies</li>
+					</ul>	
+				</section>
+				<section>
+					<h2>Alt Text</h2>
+					<ul>
+						<li>If decorative, use alt="" (but better to use CSS)</li>
+						<li>If content on page text, use alt=""</li>
+						<li>Be accurate and succinct</li>
+						<li>Avoid phrases like "image of…"</li>
+						<li>If an image is linked, the alt text should describe the purpose of link</li>
+						<li>Avoid text in images</li>
+						<li>Consider using CSS3 instead of an image</li>
+					</ul>
+					<p>
+					<small> <a href="http://dev.w3.org/html5/alt-techniques/#tree">Alt text decision tree</a></small>
+					</p>
+				</section>
+				<section>
+					<h2>Label, Hint text, Error Message</h2>
+					<p id="hintTxt" style="font-size:26px;">Guess a number between 1 and 10?</p>
+					<p id="errormsg" style="font-size:26px;color:red;display:none">Sorry. Try a higher number</p>
+					<p>
+						Enter Answer <input type="text" id="answer1"> <input type="submit" onClick="toggle('errormsg')">
+					</p>
+					
+					<p>
+						<label for="answer2">Enter Answer</label>
+						<input type="text" id="answer2" aria-describedBy="hintTxt"> <input type="submit" onClick="validate('errormsg', 'answer2')">
+					</p>
+				</section>				
+			
+				<section>
+					<h2>Links </h2>
+					<ul>
+						<li> Link text too short </li>
+						<li>keyboard focus indicator not visible (outlinenone.com)</li>
+						<li> Low contrast </li>
+						<li> Missed because it appears as normal text</li>
+					</ul>
+					<p>
+					<pre><code data-trim contenteditable style="font-size: 14px; margin-top: 10px;">
+					/* remember to define focus styles! */
+					:focus {
+						outline: 0;
+					}
+					</code></pre>
+					</p>
+				</section>
+
+				<section>
+					<h2>Primary Issues with widgets</h2>
+					<ul>
+						<li>Lack of semantic structure and relationships </li>
+						<li>Poor keyboard accessibility</li>
+						<li>Inaccessible content updates</li>
+						<li>Complex widgets and navigation elements</li>
+					</ul>	
+				</section>
+				<section>
+					<h2>Other Javascript Issues</h2>
+					<ul>
+						<li>Navigation. Inability or difficulty navigating using a keyboard or assistive technology.</li>
+						<li>Hidden content. Presentation of content or functionality that is not accessible to assistive technologies.</li>
+						<li>User control. Lack of user control over automated content changes.</li>
+						<li>Confusion/Disorientation. Altering or disabling the normal functionality of the browser 
+									(e.g., popup windows) or triggering events that the user may not be aware of (redirects/refreshes).	
+						</li>
+					</ul>	
+				</section>
+				
+				<section>
+					<h2>Aria </h2>
+						<h3>Predefined role, state and Properties</h3>
+					<ul>
+						<li>Eg. of role role="menu" , role="tab" role="tabPanel"</li>
+						<li>Eg of state aria-expanded="true" aria-pressed="true"</li>
+						<li>Eg. of property  aria-atomic, aria-controls</li>
+					</ul>
+					<p>
+						<pre><code data-trim contenteditable>
+		                 <a role="button">Call to Action button </a>
+						<span role="button" aria-expanded="true">
+						<div aria-atomic="true">Ajax Updates </div>
+						</code></pre>	
+					</p>							
+				</section>
+				
+				<section>
+					<h2>Using Aria </h2>
+					<ol>
+						<li> If you can use a native HTML element, DO SO</li>
+						<li> Do not change native semantics, unless you really have to</li>
+						<li> All interactive ARIA controls must be usable with the keyboard</li>
+					</ol>	
+					<p> <a href="http://www.w3.org/TR/aria-in-html/">http://www.w3.org/TR/aria-in-html/</a>
+				</section>
+
+				<section>
+					<h2>Device Independent Event Handler</h2>
+					<p>
+						Show it on mouseover <br>
+						<textarea rows="5" cols="100" onMouseover="this.value='This content will be shown on Mouseover'" onMouseout="this.value=''">
+						</textarea>
+						<pre><code data-trim contenteditable>
+							<li onMouseover="this.value='This content will be shown on Mouseover'" onMouseout="this.value=''">Menuitem </li>
+						</code></pre>							
+					</p>
+					<p>
+						Show it on focus (and may be on mouseover)<br>
+						<textarea rows="5" cols="100" onFocus="this.value='This content will be shown on Mouseover'" onBlur="this.value=''"></textarea>
+						<pre><code data-trim contenteditable>
+							<li onFocus="this.value='This content will be shown on Mouseover'" onBlur="this.value=''">Menuitem </li>
+						</code></pre>							
+
+					</p>
+				</section>
+
+				<section>
+					<h2>Now Aria+ JS to make Tab Accessible</h2>
+					<p> Markup</p>
+					<pre><code data-trim contenteditable>
+<!-- Nav tabs -->
+<ul class="tabs">
+  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+  <li><a href="#profile" data-toggle="tab">Profile</a></li>
+  <li><a href="#messages" data-toggle="tab">Messages</a></li>
+  <li><a href="#settings" data-toggle="tab">Settings</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home">...</div>
+  <div class="tab-pane" id="profile">...</div>
+  <div class="tab-pane" id="messages">...</div>
+  <div class="tab-pane" id="settings">...</div>
+</div>					
+				</code></pre>
+				</section>
+
+				<section>
+					<h2>Now Aria+ JS to make Tab Accessible</h2>
+					<pre><code data-trim contenteditable>					
+    var $tablist = $('.nav-tabs')
+        , $lis = $tablist.children('li')
+        , $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]')
+        
+    $tablist.attr('role', 'tablist')
+    $lis.attr('role', 'presentation')
+    $tabs.attr('role', 'tab')
+
+    $tabs.each(function( index ) {
+      var tabpanel = $($(this).attr('href'))
+        , tab = $(this)
+        , tabid = tab.attr('id') || 'ui-tab'+ Math.floor((Math.random()*100)+1)
+      
+        tab.attr('id', tabid)
+
+      if(tab.parent().hasClass('active')){
+        tab.attr( { 'tabIndex' : '0', 'aria-expanded' : 'true', 'aria-selected' : 'true', 'aria-controls': tab.attr('href').substr(1) } )
+        tabpanel.attr({ 'role' : 'tabpanel', 'tabIndex' : '0', 'aria-hidden' : 'false', 'aria-labelledby':tabid })
+      }else{
+        tab.attr( { 'tabIndex' : '-1', 'aria-expanded' : 'false', 'aria-selected' : 'false', 'aria-controls': tab.attr('href').substr(1) } )
+        tabpanel.attr( { 'role' : 'tabpanel', 'tabIndex' : '-1', 'aria-hidden' : 'true', 'aria-labelledby':tabid } )
+      }
+    })
+  
+    $.fn.tab.Constructor.prototype.keydown = function (e) {
+      var $this = $(this)
+      , $items
+      , $ul = $this.closest('ul[role=tablist] ')
+      , index
+      , k = e.which || e.keyCode
+
+      $this = $(this)
+      if (!/(37|38|39|40)/.test(k)) return
+
+      $items = $ul.find('[role=tab]:visible')
+      index = $items.index($items.filter(':focus'))
+
+      if (k == 38 || k == 37) index-- // up & left
+      if (k == 39 || k == 40) index++ // down & right
+
+
+      if(index < 0) index = $items.length -1
+      if(index == $items.length) index = 0
+
+      var nextTab = $items.eq(index)
+      if(nextTab.attr('role') ==='tab'){
+
+        nextTab.tab('show') //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
+        .focus()
+      }
+      // nextTab.focus()
+
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
+    $(document).on('keydown.tab.data-api','[data-toggle="tab"], [data-toggle="pill"]' , $.fn.tab.Constructor.prototype.keydown)
+
+   var tabactivate = $.fn.tab.Constructor.prototype.activate;
+   $.fn.tab.Constructor.prototype.activate = function (element, container, callback) {
+      var $active = container.find('> .active')
+      $active.find('[data-toggle=tab]').attr({ 'tabIndex' : '-1','aria-selected' : false,'aria-expanded' : false })
+      $active.filter('.tab-pane').attr({ 'aria-hidden' : true,'tabIndex' : '-1' })
+
+      tabactivate.apply(this, arguments)
+
+      element.addClass('active')
+      element.find('[data-toggle=tab]').attr({ 'tabIndex' : '0','aria-selected' : true,'aria-expanded' : true })
+      element.filter('.tab-pane').attr({ 'aria-hidden' : false,'tabIndex' : '0' })
+   }
+					</code></pre>
+				</section>
+
+
+				
+				<section>
+					<h1>Contact</h1>
+					<h3><a href="http://www.paypal.com/inclusive">PayPal Accessibility </a></h3>
+					<h3><a href="https://twitter.com/PayPalinclusive">Follow us on Twitter / @PayPalInclusive </a></h3>
+				</section>
+
+			</div> <!-- slider div ends -->
+
+			<footer id="site-footer">
+				<div style="float:left;margin-left:50px">Copyright © 1999-2014 PayPal. All rights reserved</div>
+			  <div style="float:right;margin-right:150px"><img src="imgs/template/logo_180x26_PPa11y.png" alt="PayPal Accessibility"></div>
+			</footer>	
+
+		</div>   <!-- reveal div ends -->
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
