@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Inclusive Design challenges with UI Widgets</title>
+
+		<meta name="description" content="Inclusive Design challenges with UI Widgets">
+		<meta name="author" content="mpnkhan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/meta/revealA11y.css">
+		<link rel="stylesheet" href="css/meta/theme/nightA11y.css" id="theme">
+		<link rel="stylesheet" href="css/meta/preso.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="css/histyles/xcode.css">
+
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Inclusive Design challenges with UI Widgets</h1>
+
+					<p>
+						By Prem Nawaz Khan (<a href="http://twitter.com/mpnkhan">@mpnkhan</a>)
+					</p>
+					<p>
+						Accessibility Evangelist at  PayPal (<a href="https://twitter.com/PayPalInclusive/paypal-access-team/members">@PayPalInclusive</a>)
+					</p>					
+				</section>
+
+				<section>
+					<h3>Things we Bother</h3>
+						<h4>Browser compatability<h4>
+						<img src="./imgs/MetaRefresh2013/crossBrowsers.jpg">
+				</section>
+				<section>
+					<h3>Things we Bother</h3>
+					<p>Do we code like this?
+					<pre>
+						<code contenteditable>
+							#wrapper {
+							 	min-height: 500px; /* IEwin does not support min-height */
+							  	height: 500px;
+							  	* height:496px;
+							  	_height: 500px;
+							}
+							 
+							html>body #wrapper {
+							  height: auto;
+							}	
+							</code>
+						</pre>
+					</p>
+
+						<pre class="fragment"> Or like this?
+						<code contenteditable>&lt;!--[if IE 8]&gt;&lt;link media="screen" rel="stylesheet" type="text/css" href="ie8.css"&gt;&lt;![endif]-->
+&lt;!--[if IE 7]&gt;&lt;link media="screen" rel="stylesheet" type="text/css" href="ie7.css"&gt;&lt;![endif]-->
+&lt;!--[if lte IE 6]&gt;&lt;link media="screen" rel="stylesheet" type="text/css" href="ie6.css"&gt;&lt;![endif]-->
+						</code>
+					</pre>					
+				</section>
+
+				<section>
+					<h3>Things we Bother</h3>
+					<h4>Search Engines</h4>
+						<img src="./imgs/MetaRefresh2013/search-engine-logos-main.gif">
+				</section>
+
+
+				<section>
+					<h3>Things we Bother</h3>
+					<h4> Responsive Web Design <h4>
+						<img src="./imgs/MetaRefresh2013/responsive-web-design.jpg">
+				</section>
+
+				<section>
+					<h3>Things we Bother</h3>
+					<pre>
+						<code contenteditable style="font-size: 18px;">
+								/* Large desktop */
+								@media (min-width: 1200px) { ... }
+								 
+								/* Portrait tablet to landscape and desktop */
+								@media (min-width: 768px) and (max-width: 979px) { ... }
+								 
+								/* Landscape phone to portrait tablet */
+								@media (max-width: 767px) { ... }
+								 
+								/* Landscape phones and down */
+								@media (max-width: 480px) { ... }
+						</code>
+					</pre>
+					<p>
+						References: <a href="http://mobile.smashingmagazine.com/2012/10/24/beyond-common-media-query-breakpoints/">Beyond Media Breakpoints</a>
+						<a href="http://www.netmagazine.com/tutorials/determining-breakpoints-responsive-design">Determing Breakpoints Responsive Design</a>
+					</p>	
+
+				</section>
+
+				<section>
+					<h3>Do we Ever Care?</h3>
+						<img src="./imgs/MetaRefresh2013/th.jpg" alt="Everyone Equal">
+						<img src="./imgs/MetaRefresh2013/1.jpg" alt="Assistance for Blind">
+						<img src="./imgs/MetaRefresh2013/wand.jpg" alt="Magic Wand Keyboard">
+				</section>
+
+				<section>
+					<h3>Why We Do Need to Care?</h3>
+
+						<ol>
+							<li>Equal opportunity</li>
+							<li>Old People</li>
+							<li>People not fluent in the language</li>
+							<li>Search engine optimization (SEO)</li>
+							<li>Buying power of persons with disabilities</li>
+							<li>Policy</li>
+						</ol>	
+						<p>
+							Reference: <a href="http://www.w3.org/WAI/bcase/">Business Case for your Organization</a>
+						</p>	
+				</section>
+
+				<section>
+					<h3>Why We Do Need to Care?</h3>
+				<blockquote cite="http://www.karlgroves.com/2012/01/27/chasing-the-accessibility-business-case-conclusion/">
+					As a Developer the Real Business case is 
+					&quot;Quality-of-work&quot; issue.
+					We are not paid extra for cross-browser compatibility, Security, SEO , Responsive Web Design, etc. Similarily we are not paid for Accessibility, either
+				</blockquote>
+				<p><a href="http://www.karlgroves.com/2012/01/27/chasing-the-accessibility-business-case-conclusion/">Chasing the Accessibility Business Case – Conclusion</a></p>
+				</section>
+				<section>
+						<a class="image"  href="http://www.w3.org/WAI/intro/people-use-web/browsing">
+							<img src="./imgs/MetaRefresh2013/swing.jpg" alt="Accessible Swing">
+						</a>	
+						<p>Every kid should have fun like this</p>
+				</section>
+
+
+				<section>
+					<h3>How People With Disabilities (PWD) use the web?</h3>
+					<h4>Assistive Technologies (AT) </h4>
+					<p>
+					    Keyboard only, by people with cognitive, physical, and visual disabilities <br>
+					    Touch screen only, by people with cognitive and physical disabilities <br>
+					    Voice recognition (speech input) and other hands-free interaction <br>   
+					    Screen readers, Magnifier, Refreshable braille display, Alternative keyboard and mouse, Eye tracking, Keyboard customization, Keyboard and mouse filters, On-screen keyboard, Spelling and grammar tools, Voice recognition, Word prediction 
+					</p>
+					    
+						<a href="http://www.bbc.co.uk/accessibility/guides/">How to guides</a><br>
+						<a href="http://www.w3.org/WAI/intro/people-use-web/browsing">How Person with Disability use Web</a>
+				</section>
+	
+				<section>
+					<h3>Most Impactful Accessibility Challenges :</h3>
+					<p>
+						<ol>
+							Problematic items identified are (in order, with most difficult/frustrating first):
+
+						    <li>The presence of inaccessible Flash content</li>
+						    <li>CAPTCHA - images presenting text used to verify that you are a human user</li>
+						    <li>Links or buttons that do not make sense</li>
+						    <li>Images with missing or improper descriptions (alt text)</li>
+						    <li>Screens or parts of screens that change unexpectedly</li>
+						    <li>Complex or difficult forms</li>
+						    <li>Lack of keyboard accessibility</li>
+						    <li>Missing or improper headings</li>
+						    <li>Too many links or navigation items</li>
+						    <li>Complex data tables</li>
+						    <li>Inaccessible or missing search functionality</li>
+						    <li>Lack of "skip to main content" or "skip navigation" links</li>
+						</ol>
+						<p>Ref: <a href="http://webaim.org/projects/screenreadersurvey4/">Web Aim Survey, April 2012</a>
+				</section>
+
+				<section>
+					<h3> Few things to know : </h3>
+					<ul>
+						<li>Hiding Content with CSS </li>
+						<li>tabIndex: </li>	
+						<li>Show focus </li>						
+						<li>Device Independent Event Handlers </li>
+						<li>Aria Attributes </li>
+						<li>Label </li>
+					</ul>	
+				</section>	
+				<section>
+					<h3>Hiding Content with CSS </h3>
+					<p>
+					<pre><code contenteditable style="font-size: 18px;">	
+
+						.hidden{
+							display: none;		/* Content ignored by SR */
+						}	
+						/* Old */
+						.offscreen {			/*jump effect, if focusable content within the positioned element */
+						    position: absolute;
+						    left: -999em;
+						}
+
+						/* New */
+						.offscreen { 
+							position: absolute !important; 
+							clip: rect(1px 1px 1px 1px); 	/* IE6, IE7 */
+							clip: rect(1px,1px,1px,1px); 
+						}
+
+					</code></pre>
+					</p>
+				</section>
+
+				<section>
+					<h3>tabIndex</h3>
+					<p>Tabindex is to define the order in which elements will receive focus when navigated by the user via the keyboard</p>
+						<ul>tabIndex can have the following values :
+							<li> "-1" => Can use  element.focus(). Element will not in tabFlow</li>
+							<li> "0"  => Element will be in tab flow + can use element.focus()	</li>
+							<li> "positive integer" => Places element above tabIndex 0</li>
+						</ul>	
+				</section>	
+				<section>
+					<h3>Event Handlers</h3>
+						<ul>
+							<li>Use  onFocus, onBlur, onSelect, onChange, and onClick (when onClick is used with link or form elements)</li>
+							<li>onMouseOver, onMouseOut, and onDblClick rely upon the use of a mouse	</li>
+							<li>onKeyDown, onKeyUp, etc. rely upon Keyboard</li>
+						</ul>	
+					<p><a href="http://webaim.org/techniques/javascript/eventhandlers">Read about Accessible Event Handlers</a></p>	
+				</section>			
+				<section>
+						<h3>Show focus (always)</h3>
+						<h4>Do NOT do this</h4>
+						<pre><code contenteditable style="font-size: 18px;">
+
+						a  {
+    						outline: 0 none;
+						}
+						</code></pre>
+						<p>
+							One of the reasons could be because of using old version of Eric Meyer's <a href="http://meyerweb.com/eric/tools/css/reset/reset200802.css">Reset.css</a>
+						</p>	
+
+						<h4>Instead, do this</h4>
+						<pre><code contenteditable style="font-size: 18px;">
+						button:focus {
+						    outline: dotted 1px #000;
+						}
+						</code></pre>
+						<p>
+							Reference: <a href="http://outlinenone.com/">http://outlinenone.com/</a>
+						</p>	
+				</section>			
+				
+				<section>
+					<h3>Accessible Rich Internet <u>Applications</u> (Aria)</h3>
+						<img src="./imgs/MetaRefresh2013/AriaTypes.png" alt="Aria attributes  are of type Role , State and Properties">
+				</section>	
+
+				<section>
+					<h3>Aria Roles</h3>
+						<img src="./imgs/MetaRefresh2013/Roles.jpg" alt="Aria role is divided into Structure role, Landmark Roles and Widget Roles">
+				</section>	
+				<section> 
+					<h4>States and Properties</h4>
+					<ul>
+						States and properties are categorized as follows
+						<li>Widget Attributes (Eg. aria-haspopup, aria-hidden) </li>
+						<li> Live Region Attributes (Eg. aria-live) </li>
+						<li>Drag-and-Drop Attributes (Eg. aria-dropeffect, aria-grabbed) </li>
+						<li>Relationship Attributes (Eg. aria-describedby, aria-controls) </li>	
+				</section>
+				<section>
+					<h3>Aria Overview</h3>
+					<ul>
+					<li> Passes Important Information to screen reader</li>
+					<li> Does NOT change the presentation or behavior of the Web page to sighted users</li>
+					<li> Does NOT makes the element focusable</li>
+					<li> Does NOT makes it Keyboard Accessible</li>
+				</section>	
+				<section>
+					<h3>Labelling</h3>
+						<ul>
+							<li> aria-labelledby = "elemID"</li>
+							<li> aria-label  = "label text"</li>
+							<li> Associated label (&lt;label for=“myControl”&gt;) or alt attribute </li>
+							<li> Text contents </li>
+							<li>Title attribute</li>
+							<li> aria-describedby  = "elemID" for additional info</li>
+						</ul>	
+				</section>	
+				<section>
+					<h3>Ajax Updates</h3>
+						<ul>
+							<li><span class="code">aria-live="off | polite | assertive"</span></li>
+							<li><span class="code">aria-atomic="true | false"</span> - read the entire region or only what has changed</li>
+							<li><span class="code">aria-relevant ="  additions | removals | text | all"</span> -</li>
+						</ul>				
+					<pre><code contenteditable>&lt;div aria-live="polite"  aria-relevant="additions"  aria-atomic="true"&gt; Ajax Updates&lt;/div&gt;
+					</code></pre>
+					<p> Implicit live roles: </p>
+						<pre><code contenteditable>
+						&lt;div role="alert" id="errMsgId"&gt; Important Error Message&lt;/div&gt; 
+						&lt;output role="status"&gt;&lt;/output&gt; 
+					</code></pre>			
+				</section>
+				<section>
+					<h3>Accessible Button? </h3>
+						<p> 
+									Eg. Element which looks like Button:
+									<span role="button" class="btn" onClick="alert('clicked')">Call to Action Button</span>
+						<pre><code contenteditable style="padding:0px;">	
+								&lt;span class="btn"&gt; Call to Action Button &lt;/span&gt;
+						</code></pre>
+						</p>
+						<p class="fragment">
+							Adding tabIndex of "0" and Role Button  <span role="button" tabIndex="0" class="btn" onClick="alert('clicked')">Call to Action Button</span>
+							<pre class="fragment"><code contenteditable style="padding:0px;">	
+								&lt;span role="button" tabIndex="0" class="btn"&gt; Call to Action Button &lt;/span&gt;
+							</code></pre>
+						</p>
+
+						<p class="fragment">Add Some Focus Styles 
+							<span role="button" tabIndex="0" class="btnA" onClick="alert('clicked')">Call to Action Button</span>
+						<pre class="fragment"><code contenteditable style="padding:0px;">	
+							span.btn:hover, span.btn:focus  {
+							  text-shadow: -1px -1px 2px #465f97;
+							  background: -moz-linear-gradient(#245192, #1e3b73 75%, #12295d);
+							  background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #245192),color-stop(.75, #1e3b73),color-stop(1, #12295d));
+							  border: 1px solid #0f2557;
+							}
+						</code></pre>
+						</p>
+				</section>
+				<section>
+					<h3>Accessible Button (contd) </h3>
+						<p> We would need to add some JS for handling KeyDown
+						<pre class="fragment"><code contenteditable style="padding:0px;">	
+						   keydown: function(e) { // Trigger the click event from the keyboard
+						        var code = e.which;
+						        if ((code === 13) || (code === 32)) {		 // 13 = Return, 32 = Space
+						            $(this).click();
+						        }
+						    },
+						</code></pre>    								
+						</p>
+						<p class="fragment">
+							But this is Better , Isn't it?
+						</p>
+						<pre class="fragment"><code contenteditable style="padding:0px;">&lt;a role="button" tabIndex="0" class="btn"&gt; Call to Action Button &lt;/a&gt;
+							&lt;button class="btnA"&gt;Call to Action Button&lt;/button&gt;
+							<button class="btnA" onClick="alert('clicked')">Call to Action Button</button>
+						</code></pre>
+						</p>
+		
+				</section>	
+				<section>
+					<h3>Accessible Tooltip</h3>
+						<pre><code contenteditable style="font-size: 14px;">&lt;span title="" onmouseover="showTip('desc');" onmouseout="hideTip('desc');"&gt;tooltip &lt;/span&gt;
+							&lt;div class="ui-tooltip" id="desc"&gt;Some Tooltip Text&lt;/div&gt;
+						</code></pre>				
+						<p class="fragment"> Add tabIndex 0 or use anchor
+						<pre class="fragment"><code contenteditable style="font-size: 14px;">	
+								&lt;span title="" tabIndex="0" onmouseover="showTip('desc');" 
+								onmouseout="hideTip('desc');"&gt;tooltip &lt;/span&gt;
+								&lt;div class="ui-tooltip" id="desc"&gt;Some Tooltip Text&lt;/div&gt;
+						</code></pre>	
+						</p>
+						<p class="fragment">	Add Keyboard support
+						<pre class="fragment"><code contenteditable style="font-size: 14px;">&lt;span title="" tabIndex="0"  aria-describedBy="desc" 
+							onmouseover="showTip('desc');" 
+							onmouseout="hideTip('desc');"       
+							onfocus="showTip('desc');" 
+							onblur="hideTip('desc');"&gt;tooltip &lt;/span&gt;
+							
+							&lt;div class="ui-tooltip" id="desc" role="tooltip&gt;Some Tooltip Text&lt;/div&gt;
+						</code></pre>
+						</p>	
+
+						<p class="fragment">	Aria-describedby and role="tooltip"
+						<pre class="fragment"><code contenteditable style="font-size: 14px;">&lt;span title="" tabIndex="0"  aria-describedBy="desc" 
+							onmouseover="showTip('desc');" 
+							onmouseout="hideTip('desc');"&gt;tooltip &lt;/span&gt;
+							&lt;div class="ui-tooltip" id="desc" role="tooltip&gt;Some Tooltip Text&lt;/div&gt;
+						</code></pre>
+						</p>							
+				</section>
+					
+				<section>
+					<h3>Accessible Drop Down</h3>
+					<p>
+						<pre><code contenteditable>&lt;a href="#"   id="drop1" class="dropdown-toggle" data-toggle="dropdown"&gt;Dropdown&lt;/a&gt;
+							&lt;ul  class="dropdown-menu" id="menu1"&gt;
+						    &lt;li&gt;&lt;a href="#"&gt;New File&lt;/a&gt;&lt;/li&gt;
+						    &lt;li&gt;&lt;a href="#"&gt;Open...&lt;/a&gt;&lt;/li&gt;
+						    &lt;li&gt;&lt;a href="#"&gt;New Window&lt;/a&gt;&lt;/li&gt;
+							&lt;/ul&gt;
+						</code></pre>
+				</p> 
+				<p class="fragment">	Adding tabIndex, Menu, Menu Item and Presentation roles</p>
+			<pre class="fragment"><code contenteditable>
+&lt;a href="#"  role="button" aria-haspopup="true"  aria-expanded="false" id="drop1" class="dropdown-toggle" data-toggle="dropdown"&gt;Dropdown&lt;/a&gt;
+&lt;ul aria-labelledby="drop1" role="menu" class="dropdown-menu" id="menu1"&gt;
+	&lt;li role="presentation"&gt;&lt;a href="#" role="menuitem" tabindex="-1"&gt;New File&lt;/a&gt;&lt;/li&gt;
+	&lt;li role="presentation"&gt;&lt;a href="#" role="menuitem" tabindex="-1"&gt;Open...&lt;/a&gt;&lt;/li&gt;
+	&lt;li role="presentation"&gt;&lt;a href="#" role="menuitem" tabindex="-1"&gt;New Window&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+				</code></pre>
+			</p>
+				</section>
+				
+				<section>
+				<h3>Accessible Drop Down (Contd.)</h3>
+				<p>
+					<ul>
+						<li> Set aria-expanded to true and  dynamically manage aria-expanded state</li>
+						<li> Set focus to first item on Menu.</li>
+					</ul>
+				</p>
+					<pre class="fragment"><code contenteditable>
+					if (!isActive) {
+						$parent.toggleClass('open')
+						 setTimeout(function(){
+						  $('[role=menu] li a', $parent)[0].focus()
+						 },100)
+						$parent.find(toggle).attr('aria-expanded', true)
+					}else $parent.find(toggle).attr('aria-expanded', false)				
+					</code></pre>
+
+	            	<p class="fragment"> Listen to KeyDown event and navigate with up/down arrow cycle thru Menu items</p>
+					<pre class="fragment"><code contenteditable>
+$(document).on('keydown.dropdown.data-api', toggle + ', [role=menu]' 
+		, Dropdown.prototype.keydown)
+ , keydown: function (e) {
+      index = $items.index($items.filter(':focus'))
+      if (e.keyCode == 38) index--        // up
+      if (e.keyCode == 40) index++       // down
+      if(index < 0) index = $items.length -1;
+      if(index == $items.length) index = 0;
+      $items
+        .eq(index)
+        .focus()
+    }
+					</code></pre>
+				</section>
+				
+				<section>
+				<h3>Accessible Drop Down (Contd.)</h3>
+				<p>	Close on Esc Key and on Focus Out </p>
+					<pre><code contenteditable>
+				, keydown: function (e) {					
+					  if (!isActive || (isActive && e.keyCode == 27))
+					     return $parent.find(toggle).click().focus()	
+				}	
+				.on('focusout.dropdown.data-api',  '.dropdown-menu', function(e){
+				  var $this = $(this)
+				  setTimeout(function() {
+				   if(!$(document.activeElement).is($this.find("a"))){
+				      clearMenus()
+				   }
+				  }, 150)
+				 })				
+					</code></pre>
+				</section>	
+				<section>
+				<h3>Accessible Dialog</h3>
+					<p>Dialog boxes, in Most cases is an accessibility disaster</p>
+					<ol>
+						<li> Aria Roles of Dialog</li>
+						<li> aria-labelledBy to label the Dialog</li>
+						<li>Set focus to the dialog</li>
+						<li>Trap focus within the dialog</li>
+						<li>Close on Esc Key</li>
+						<li>Return the focus to the opener element, safely.</li>
+					</ol>
+					<p>
+					<a href="http://mpnkhan.github.com/BootStrapExamples/a11yfixes/bs.html">Dialog Example</a> <br>
+					<a href="http://www.nczonline.net/blog/2013/02/12/making-an-accessible-dialog-box/">Making an accessible dialog box</a>
+					</p>
+				</section>	
+				<section>
+					<h3>Summary</h3>
+						<ul>
+							<li>Accessibility is a "quality-of-work" issue</li>
+							<li>It is Easy to make the widgets Accessible</li>
+							<li>Make your page Accessible first and them make your widgets Accessible</li>
+							<li>If you must use some thirdparty library, fork it, clone it and make it Accessible or make it Accessible in your clone</li>
+						</ul>
+				</section>		
+
+				<section>
+					<h3>Anything Else ?</h3>
+						<ul>
+							<li>Questions?</li>
+							<li><a href="http://mpnkhan.github.com/BootStrapExamples/">Few A11Y examples using Twitter BootStrap</a></li>
+							<li>Twitter (<a href="https://twitter.com/mpnkhan">@mpnkhan</a>)</li>
+						</ul>
+
+						<p>
+							<ul> References:
+								<li><a href="https://developer.mozilla.org/en-US/docs/Accessibility/Keyboard-navigable_JavaScript_widgets">Keyboard-navigable JavaScript widgets</a></li>
+								<li><a href="http://www.w3.org/TR/wai-aria-practices/#aria_ex">Design Patterns</a></li>
+								<li><a href="http://www.w3.org/TR/aria-in-html/">Aria in HTML</a></li>	
+							</ul>		
+						</p>		
+				</section>	
+
+			</div>	<!--end slides -->
+
+		</div>		<!-- end reveal -->
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
