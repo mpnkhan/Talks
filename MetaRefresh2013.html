@@ -4,27 +4,29 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Inclusive Design challenges with UI Widgets</title>
+		<title>reveal.js - The HTML Presentation Framework</title>
 
-		<meta name="description" content="Inclusive Design challenges with UI Widgets">
-		<meta name="author" content="mpnkhan">
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/meta/revealA11y.css">
-		<link rel="stylesheet" href="css/meta/theme/nightA11y.css" id="theme">
-		<link rel="stylesheet" href="css/meta/preso.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="css/histyles/xcode.css">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="css/highlight/tomorrow-night-blue.css">
 
-
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<!-- Printing and PDF exports -->
 		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
 		<!--[if lt IE 9]>
@@ -35,8 +37,6 @@
 	<body>
 
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
 				<section>
@@ -57,22 +57,22 @@
 				</section>
 				<section>
 					<h3>Things we Bother</h3>
-					<p>Do we code like this?
-					<pre>
-						<code contenteditable>
-							#wrapper {
-							 	min-height: 500px; /* IEwin does not support min-height */
-							  	height: 500px;
-							  	* height:496px;
-							  	_height: 500px;
-							}
-							 
-							html>body #wrapper {
-							  height: auto;
-							}	
-							</code>
-						</pre>
-					</p>
+					<p>Do we code like this? </p>
+
+<pre>
+<code contenteditable>
+#wrapper {
+	min-height: 500px; /* IEwin does not support min-height */
+	height: 500px;
+	* height:496px;
+	_height: 500px;
+}
+ 
+html>body #wrapper {
+  height: auto;
+}	
+</code>
+</pre>
 
 						<pre class="fragment"> Or like this?
 						<code contenteditable>&lt;!--[if IE 8]&gt;&lt;link media="screen" rel="stylesheet" type="text/css" href="ie8.css"&gt;&lt;![endif]-->
@@ -99,17 +99,17 @@
 					<h3>Things we Bother</h3>
 					<pre>
 						<code contenteditable style="font-size: 18px;">
-								/* Large desktop */
-								@media (min-width: 1200px) { ... }
-								 
-								/* Portrait tablet to landscape and desktop */
-								@media (min-width: 768px) and (max-width: 979px) { ... }
-								 
-								/* Landscape phone to portrait tablet */
-								@media (max-width: 767px) { ... }
-								 
-								/* Landscape phones and down */
-								@media (max-width: 480px) { ... }
+/* Large desktop */
+@media (min-width: 1200px) { ... }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { ... }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { ... }
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { ... }
 						</code>
 					</pre>
 					<p>
@@ -210,23 +210,21 @@
 					<h3>Hiding Content with CSS </h3>
 					<p>
 					<pre><code contenteditable style="font-size: 18px;">	
+.hidden{
+	display: none;		/* Content ignored by SR */
+}	
+/* Old */
+.offscreen {			/*jump effect, if focusable content within the positioned element */
+	position: absolute;
+	left: -999em;
+}
 
-						.hidden{
-							display: none;		/* Content ignored by SR */
-						}	
-						/* Old */
-						.offscreen {			/*jump effect, if focusable content within the positioned element */
-						    position: absolute;
-						    left: -999em;
-						}
-
-						/* New */
-						.offscreen { 
-							position: absolute !important; 
-							clip: rect(1px 1px 1px 1px); 	/* IE6, IE7 */
-							clip: rect(1px,1px,1px,1px); 
-						}
-
+/* New */
+.offscreen { 
+	position: absolute !important; 
+	clip: rect(1px 1px 1px 1px); 	/* IE6, IE7 */
+	clip: rect(1px,1px,1px,1px); 
+}
 					</code></pre>
 					</p>
 				</section>
@@ -527,15 +525,14 @@ $(document).on('keydown.dropdown.data-api', toggle + ', [role=menu]'
 				</section>	
 
 			</div>	<!--end slides -->
-
-		</div>		<!-- end reveal -->
+		</div>	<!-- reveal div ends -->
 
 		<script src="reveal.js/lib/js/head.min.js"></script>
 		<script src="reveal.js/js/reveal.js"></script>
 
 		<script>
 
-			// Full list of configuration options available here:
+			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
@@ -543,22 +540,21 @@ $(document).on('keydown.dropdown.data-api', toggle + ', [role=menu]'
 				history: true,
 				center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional libraries used to extend on reveal.js
+				// Optional reveal.js plugins
 				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true }
 				]
 			});
 
 		</script>
+		<script src="reveal.js/plugin.js"></script>
 
 	</body>
 </html>
