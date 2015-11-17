@@ -287,26 +287,117 @@ var SkipToConfig =
 						<li> Poor color contrast</li>
 						<li> Blank link text </li>
 					</ul>	
-				</section>					
+				</section>
 				<section>
-					<h1>AATT - How it Works?</h1>
+					<h1>AATT - Why?</h1>
 					<ul>
-						<li> NodeJS + Phantom JS (headless WebKit browser) +Selenium Webdriver </li>
-						<li> Serves as an API which accepts html "source" and returns back errors </li>
-						<li> Integrates easily with your existing testing framework, we did it with Java testing framework as well as with NemoJS written on NodeJS
-						</li>
-						<li> Since served locally within corp network,  code is secure </li>
+						<li> Plenty of tools for free tool testing</li>
+						<li> Mostly in form of Browser toolbars - Test page by page </li>
+						<li> API outside of company and would not suit our requirements</li>
 					</ul>
-				</section>		
+				</section>
 				<section>
-					<h1>AATT - How it Works?</h1>
+					<h1>AATT - What?</h1>
+					<ul>
+						<li> A tool within Corporate network to test page by page  </li>
+						<li> Serves an API which accepts html "source" and returns back errors </li>
+						<li> Integrates easily with our existing testing framework, we did it with Java, NodeJS testing suite
+						</li>
+						<li> Made of NodeJS + Phantom JS (headless WebKit browser) + Selenium Webdriver</li>
+					</ul>
+				</section>
+				<section>
+					<h2>AATT  - Overview</h2>
+						<img  height="399" src="../imgs/IntuitOct2015/AATT.png" alt="Low Level Diagram of Accessibility Testing Tool">
+				</section>					
+				
+				<section>
+					<h1>AATT - Options</h1>
 					<ul>
 						<li> "source" to send the HTML source of the page. Can be a whole page or partial page source </li>
 						<li> "priority" to fetch results based on issue priorities like P1, P2, P3 or P4. </li>
-						<li> "ouput" to get the jsonified string or string with table data</li>
+						<li> "engine" htmlcs, chrome, axe  ( Can add more) </li>
 					</ul>
 				</section>
+				<section>					
+					<h2> AAT- SNIFF URL </h2>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">				
+	app.post('/sniffURL', function(req, res) {
+ 		var childArgs
+ 		, userName = ''
+ 		, d = new Date()
+        , customDateString = d.getHours() +'_'  + d.getMinutes() + '_' + d.getSeconds() +'_'+ d.getMonth() + '_' + d.getDate() + '_' + d.getFullYear()
+        , dirName = "screenshots/" + customDateString
+        , scrshot = req.body.scrshot
+        , msgErr = req.body.msgErr
+        , msgWarn = req.body.msgWarn
+        , msgNotice = req.body.msgNotice
+    	, eLevel=[]
 
+    	if(typeof msgErr !== 'undefined' && msgErr=='true') eLevel.push(1);
+    	if(typeof msgWarn !== 'undefined' && msgWarn=='true') eLevel.push(2);
+    	if(typeof msgNotice !== 'undefined' && msgNotice=='true') eLevel.push(3);
+
+    	//Default to Error
+		if(typeof msgErr === 'undefined' &&  typeof msgWarn === 'undefined' && typeof msgNotice === 'undefined') eLevel.push(1);
+
+		fs.mkdirSync(dirName);		//Create SCREEN SHOT DIRECTORY
+		if (typeof req.session.userName !== 'undefined') {
+			userName = req.session.userName;
+			log('Testing logged in session: -> ', userName)
+		}
+		childArgs = ['--config=config/config.json', path.join(__dirname, 'src/PAET.js')
+						, req.body.textURL
+						, 'WCAG2AA'
+						, userName
+						, dirName
+						, scrshot
+						, eLevel
+					];
+		childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
+			res.json({ userName: userName, data: stdout });
+			log(stdout);
+		});
+	});
+</code></pre></section>
+				<section>					
+					<h2> AAT- API </h2>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">				
+	app.post('/evaluate', function(req, res) {
+		var tempFilename = 'tmp/'+ new Date().getTime() + '.html';
+
+		var priority = req.body.priority;	// Piority Eg P1,P2,P3,P4  	default:all
+		var output = req.body.output;		// Eg. json, string  		default: string
+		var engine	= req.body.engine;		//Eg htmlcs, chrome 		default:htmlcs
+
+		if(typeof priority === 'undefined' || priority ==='') priority = 'P1,P2,P3,P4';
+		if(typeof output === 'undefined' || output ==='') output = 'string';
+		var childArgs = ['--config=config/config.json', path.join(__dirname, 'src/HTMLCS_Run.js'), tempFilename, 'WCAG2AA', priority, output];
+
+		switch(engine){
+			case "chrome":
+				var childArgs = ['--config=config/config.json', path.join(__dirname, 'src/chrome.js'), tempFilename, output];
+				break;
+			case "axe":
+				var childArgs = ['--config=config/config.json', path.join(__dirname, 'src/axe.js'), tempFilename, output];
+				break;
+		}		
+		fs.writeFile(tempFilename, req.body.source, function (err,data) {
+		  if (err) {
+		    return error(err);
+			res.end();
+		  }
+		 	childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
+			 	stdout = stdout.replace('done','');
+		    	res.writeHead(200, { 'Content-Type': 'text/plain', "Access-Control-Allow-Origin":"*" });
+		    	res.write(stdout);
+		    	res.end();
+		    	log(stdout);
+				fs.unlink(tempFilename);			  
+			});
+		});
+	});	 	
+</code></pre></section>
 				<section>
 					<h1>AATT - Demo</h1>
 				</section>		

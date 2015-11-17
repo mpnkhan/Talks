@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>PayPal's open source approach to accessibility</title>
+
+		<meta name="description" content="Techshare 2014 - Accessible Web Components">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="css/paypal.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/histyles/tomorrow-night-blue.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal" role="application" aria-label="Press left or right arrow to navigate the slides">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Top 10 Accessibility mistakes and Why?</h1>
+					<br>
+					<p>
+						<small>  Nawaz <a href="http://twitter.com/paypalinclusive">@PayPalInclusive</a>
+						</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>When should testing take place?</h2>
+					<ul>
+						<li>
+							Now : Mostly tested before release by QA and accessibility team finds problems post production.
+						</li>
+						<li>
+							Issues found may not be fixed as it may have high design or code changes, also needs Product Management decision. 
+						</li>
+					<li>
+						Designer should test before giving mockup and Developer should test before code commit. 
+					</li>	
+					<li> Then comes QA with tools and technologies. </li>					
+					</ul>
+				</section>
+
+				<section>
+					<h2>Focus on Frequently seen errors</h2>
+					<ol>
+						<li> Many of the errors occur again and again... </li>
+						<li> Either teams are not educated or they don't care.</li>
+					</ol>	
+				</section>
+				
+				<section>
+					<h2>Top 10: Undestand Why those error occus</h2>
+					<p> Here I'm just trying to explain as a developer on what could be the possible reason for error from my experience as programmer and frequently worked with designers. 
+					</p>
+				</section>
+
+				<section>
+					<h2>1. Img element missing an alt attribute</h2>
+					<ol> 
+						<li>
+				Why? : Wedevelopers put placeholders on a page. Images are updated by content publisher. CMS system may lag alt attribute or alt is not mandatory. Also content publisher never learnt how useful is the alt attribute. Some may understand it to be useful for SEO, but it would be the job of SEO to promote alt text.							
+					</li>
+					<li>How to find: Wave toolbar, Firefox Webdeveloper tool</li>
+					<li>
+						Solution: Content authors should test their work before publishing. They should be educated on the Alt text decision tree. 
+					</li>
+				</ol>		
+				</section>
+
+				<section>
+					<h2>2.  Anchor element found with no link content and no name and/or ID attribute</h2>
+
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+	<a class="gb_b" aria-haspopup="true" tabindex="0"><div class="gb_3b gb_4b gb_xb"></div></a>
+</code></pre>			
+					<ol> 
+						<li>
+				Why? : Link are done makeup to work like buttons.  JavaScript does some fancy things. Developers don't understand how select element, button, submit button link etc work for a non mouse user.					
+					</li>
+					<li>How to find: Keyboard navigation, Touch Navigation or Wave toolbar</li>
+					<li>
+						Solution: Need to deeply understand user interactions. Elements should work like the way they look.
+					</li>
+				</ol>		
+				</section>
+				<section>
+					<h2>3.  Outline:none</h2>
+					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+								a { outline: none; }
+					</code></pre>
+					<ol> 
+						<li>
+				Why? : Cosmetic reasons says the developer or CSS resets. 				
+					</li>
+					<li>How to find: Keyboard navigation</li>
+					<li>
+						Solution: Re-define focus style
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">						
+a:focus {
+	outline: 1;
+}
+</code></pre>
+					</li>
+				</ol>		
+				</section>
+				<section>
+					<h2>4. Poor color contrast</h2>
+					<ol> 
+						<li>
+				Why? : Designers copy design from other sites and fail to pass it through contrast filter. Color palettes are validated
+					</li>
+					<li>How to find: Color Contrast Analyser (early stage), Chrome Accessibility Toolbar (late stage)</li>
+					<li>
+						Solution: Design palettes with  good luminousity and contrast for body text and links
+					</li>
+				</ol>
+					<small>Nice article on color contrast [<a href="https://viget.com/inspire/color-contrast">https://viget.com/inspire/color-contrast</a>]</small>
+				</section>
+
+				<section>
+					<h2>5. Form does not contain a submit button </h2>
+					<ol> 
+						<li>
+							Why? : Innovation for the sake of innovation. May look nice, but painful for many users.
+						</li>
+						<li> How to find: Keyboard navigation</li>
+						<li>
+							Solution: Submit button should exist.
+						</li>
+				</ol>
+				</section>
+
+				<section>
+					<h2>6. Lang Attribute Missing</h2>
+					<ol> 
+						<li>
+							Why? : Developer handcode HTML rather than using generators for sake of clear code. Miss it because there are many meta tags as well
+						</li>
+						<li> How to find: View source</li>
+						<li>
+							Solution: Go back to basics on meta tags and html attributes.
+						</li>
+				</ol>
+				</section>
+				<section>
+					<h2> 7. Textarea element does not have a name available to an accessibility API</h2>
+					<ol> 
+						<li>
+							Why? : Design don't have visible label for textarea (Most). Text next to input is understood as label
+						</li>
+						<li> How to find: Click on label, Wave</li>
+						<li>
+							Solution: Go back to basics on html.
+						</li>
+				</ol>
+				</section>
+				<section>
+					<h2> 8.Events bound to items that are not discoverable via keyboard</h2>
+					<ol> 
+						<li>
+							Why? : Developers try to mimic desktop application without proper understanding of how the application works with different inputs. Developers code for mouse and QA test with mouse clicks and hovers. 
+						</li>
+						<li> How to find: Keyboard navigation, Touch navigation</li>
+						<li>
+							Solution: Have celement and widget guidelines on how it should work.  Should work like the way they look. 
+						</li>
+				</ol>
+				</section>
+				</section>
+				<section>
+					<h2> 9. Data tables with no headers</h2>
+					<ol> 
+						<li>
+							Why? : Lack of markup knowledge and how the table caption, headers etc. work for PWD.
+						</li>
+						<li> How to find: Test with Screen readers </li>
+						<li>
+							Solution:  Clear element and Widget guidelines. Need to undestand the importane of caption, row headers etc. 
+						</li>
+				</ol>
+				</section>
+				<section>
+					<h2> 10. Error Recovery </h2>
+					<ol> 
+						<li>
+							Why? : Replaced JavaScript alerts with spans and Divs with styles. Developers don't know how those old alerts used to work for non mouse users						
+						</li>
+						<li> Problems: Difficult to find the error field, error field is not focussed. Message have low contrast.</li>
+						<li> How to find: Keyboard and Screen readers.</li>
+						<li>
+							Solution:   Awareness. 
+						</li>
+				</ol>
+				</section>
+
+				<section>
+					<h2>Other problems</h2>
+					<ol>
+						<li> Pile of Documentation for WCAG, Section 508. </li>
+						<li> More than one solution for Aria and Experts do not agree upon common solution </li>
+						<li> Giving more than one opinion confuses the developer </li>
+						<li> ARIA widgets required extra JavaScript, need to include it in estimation</li>
+						<li> InAccessible Deisgn or Code is not seen as Qualtiy of issue</li>
+					</ol>
+				</section>
+				<section>
+					<h1>Quick Check <a href="http://mpnkhan.github.io/quickcheck/index.html">Demo</a></h1>
+				</section>		
+				
+				<section>
+					<h1>Contact</h1>
+					<h3><a href="http://www.paypal.com/inclusive">PayPal Accessibility </a></h3>
+					<h3><a href="https://twitter.com/PayPalinclusive">Follow us on Twitter / @PayPalInclusive </a></h3>
+				</section>
+
+			</div> <!-- slider div ends -->
+
+			<footer id="site-footer">
+				<div style="float:left;margin-left:50px">Copyright © 1999-2015 PayPal. All rights reserved</div>
+			  <div style="float:right;margin-right:150px"><img src="imgs/template/logo_180x26_PPa11y.png" alt="PayPal Accessibility"></div>
+			</footer>	
+
+		</div>   <!-- reveal div ends -->
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
