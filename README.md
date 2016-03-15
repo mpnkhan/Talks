@@ -16,7 +16,7 @@ Some of the talks I gave
 #####Booth Photos
 * Global Accessibility Event, PayPal , May 21, 2015 [Photos](https://flic.kr/s/aHskbNPcNU)
 * Product Fair, Inclusive Hub booth at Indian Institute of Technology. January 3-5, 2015 [Photos](https://www.flickr.com/gp/mpnkhan/0n1062)
-* Chennai Product Fair, Inclusive Hub booth, November 2014. Team won second place for the booth [Photos](https://www.flickr.com/gp/mpnkhan/c5958W)
-* Global Accessibility Event in PayPal office for outsiders, 2013 [Photos](https://flic.kr/s/aHsk5vJxwu)
-* Data Innovation Summit,2014 , PayPal [Photos] (https://flic.kr/s/aHsk5vLY5U)
-* Customer Quality Day 2013, Inclusive Hub [Photos](https://flic.kr/s/aHsk5uZ2Xp)
+* Chennai Product Fair, Inclusive Hub booth, November 12, 2014. Team won second place for the booth [Photos](https://www.flickr.com/gp/mpnkhan/c5958W)
+* Data Innovation Summit, 2nd July, 2014 , PayPal [Photos] (https://flic.kr/s/aHsk5vLY5U)
+* Global Accessibility Event in PayPal office for outsiders, 10th of May 2013 [Photos](https://flic.kr/s/aHsk5vJxwu)
+* Customer Quality Day 14th February, 2013, Inclusive Hub [Photos](https://flic.kr/s/aHsk5uZ2Xp)
