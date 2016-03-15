@@ -4,7 +4,7 @@ Some of the talks I gave
 
 
 #####Talks
-* , Techshare,March 2016, New Delhi, [Slides](mpnkhan.github.io/Talks/PayPal/TechShare2016.pptx), [Photos](https://flic.kr/s/aHsksYDTDw)
+* Techshare,March 2016, New Delhi, [Slides](mpnkhan.github.io/Talks/PayPal/TechShare2016.pptx), [Photos](https://flic.kr/s/aHsksYDTDw)
 * Top 10 Accessibility mistakes and Why?, W3C Summit, Online [Slides](http://mpnkhan.github.io/Talks/PayPal/W3CIndiaNov2015.html#/)
 * ARIA for eBay developers " , eBay - PayPal Accessibility Summit, Bangalore [Slides](https://github.paypal.com/pages/pkhan/slides/AwarenessDay_eBay_Sep2014.html#/)
 * Accessibility for Designers and Developers, Times of India Newspaper office, Gurgaon [Photos](https://flic.kr/s/aHsk5vJiou)
