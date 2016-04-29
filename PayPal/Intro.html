@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to Accessibility</title>
+
+		<meta name="description" content="W3C India techtalk: Top 10 Accessibility mistakes and Why?">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="css/paypal.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/histyles/tomorrow-night-blue.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal" role="application" aria-label="Press left or right arrow to navigate the slides">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Introduction to Web Accessibility</h1>
+					<br>
+						<img src="imgs/common/Inclusive.png"  width="600" height="300" alt="Inclusive logo">
+
+					<p>
+						<small>  Nawaz <a href="http://twitter.com/paypalinclusive">@PayPalInclusive</a>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h2> Accessibility Team</h2>
+					<ol>
+						<li>Cathy O’Connor (cgunn),  Program Manager, Accessibility </li>
+						<li>Prem Nawaz Khan (pkhan) , Engineer, Accessibility </li>
+						<li>And all of you!</li>
+					</ol>	
+				</section>				
+				<section>
+					<h2>What is Web Accessibility?</h2>
+					<p>
+						Making the web  usable by <strong>EVERYONE</strong>, regardless of their ability or disability
+					</p>
+				</section>
+
+				<section>
+					<h2>Statistics</h2>
+					<p>
+						About 15 percent of the world's population — some 785 million people — has a significant physical or mental disability, including about 5 percent of children, according to a report prepared jointly by the World Health Organization and the World Bank.
+					</p>
+					<p><small><a href="https://en.wikipedia.org/wiki/World_report_on_disability" target="main">WHO Report</a></small></p>
+				</section>
+				<section>
+					<h2>Reasons for making PayPal Accessible</h2>
+					<h3>Policy and Social Benefit</h3>
+					<p>
+						<ol>
+							<li class="fragment">
+								Inclusion is a core value of PayPal. We respect and value uniqueness and diversity. PayPal is for EVERYONE, EVERYWHERE AT ALL TIMES.
+							</li>
+							<li class="fragment">
+								Providing equal opportunity for people with disabilities
+							</li>	
+							<li class="fragment">	
+								Benefits to people without disabilities, including people using mobile devices, older people
+							</li>	
+							<li class="fragment">	
+								Makes us good
+							</li>	
+						</ol>								
+					</p>
+				</section>
+				<section>
+					<h2>Reasons for making PayPal Accessible</h2>
+					<h3>Financial factor</h3>
+					<p>
+						<ol>
+							<li class="fragment">
+								Continued growth of our customer base
+							</li>
+							<li class="fragment">
+								Strengthening of their engagement with PayPal
+							</li>
+
+							<li class="fragment">
+								Avod Law suits
+							</li>
+						</ol>							
+					</p>
+				</section>
+				<section>
+					<h2>Reasons for making PayPal Accessible</h2>
+					<h3>Legal Factor</h3>
+					<p>
+						<ol>
+							<li class="fragment">
+								U.S. Americans with Disabilities Act (ADA) , Section 508
+							</li>
+							<li class="fragment">
+								U.K. The Disability Discrimination Act 1995
+							</li>
+							<li class="fragment">
+								U.K. The Disability Discrimination Act 1995
+							</li>
+							<li class="fragment">
+								Australia ( Disability Discrimination Act 1992)
+							</li>
+							<li class="fragment">
+								And many more .. <a href="https://www.w3.org/WAI/Policy/Overview.html" target="main">List of country policies</a>
+								<br><br>
+								<a href="http://www.karlgroves.com/2011/11/15/list-of-web-accessibility-related-litigation-and-settlements/" target="main">List of Litigations</a>
+							</li>
+						</ol>	
+
+					</p>
+				</section>
+
+				<section>
+					<h2> Accessibility Benefits everyone</h2>
+					<img src="imgs/common/Ramp_for_all.jpg" alt="Ramp at entrace of Chennai PayPal office">
+				</section>
+				<section>
+					<h2> Accessibility Benefits everyone</h2>
+					<img src="imgs/common/subtitles_benefit.png" width="800" height="500" alt="Clip of Japanese TV Serial Oshin with English Subtitle">
+				</section>
+
+				<section>
+					<h2> Designing for People with Disabilitues</h2>
+					<ol>
+						<li>Visual </li>
+						<li>Auditory</li>
+						<li>Motor</li>
+						<li>Cognitive</li>						
+					</ol>	
+				</section>
+
+				<section>
+					<h2>Visual</h2>
+						<ol>
+							<li>Blind</li>
+							<li>Low vision</li>
+							<li>Color Blindness</li>
+						</ol>	
+				</section>
+
+ 				<section>
+					<h2>Blind</h2>
+						<ol>
+							<li>They use screen reader</li>
+							<li>Need text description of images</li>
+							<li>Should be able to use the app with keyboard</li>
+							<li>Proper headings</li>
+						</ol>	
+				</section>
+
+ 				<section>
+					<h2>Low Vision</h2>
+						<img src="imgs/common/reading_glasses.jpg" alt="reading glasses">
+						<img src="imgs/common/magnifying_glass.jpg" alt="reading glasses">
+						<br>
+						<ol>
+							<li>They use screen reader or maginifiers</li>
+							<li>App can be zoomed easily</li>
+						</ol>	
+				</section>
+ 				<section>
+					<h2>Color blind</h2>
+						<ol>
+							<li>Can be red defiency (pratonipa), green defecinecy (Deuteranopia), or cannot see any color (Rod Monchromacy) </li>
+							<li> Reds and greens are often indistinguishable </li>
+							<li>Color should not be the only way to show information. </li>
+							<li>Provide suffecient contrast . WCAG 2.0 level AA requires a contrast ratio of 4.5:1 for normal text and 3:1 for large text (14 point and bold or larger, or 18 point or larger).  Tool: <a href="http://webaim.org/resources/contrastchecker/" target="main">Color contrast tool</a>
+							</li>
+						</ol>	
+				</section>
+
+				<section>
+					<h2>Designing for Old users</h2>
+					<img src="imgs/common/old_age_needs.jpg" alt="Old age people using computer">									
+				</section>
+				<section>
+					<h2>Old users -Challenges</h2>
+					<ol>
+					<li class="fragment">Everyone of us going to become old and may face all or some of these?</li>
+					<li class="fragment">Vision Decline - Decreasing ability to focus on near tasks,Contrast sensitivity,Pupil shrinkage</li>
+					<li class="fragment">Hearing loss</li>
+					<li class="fragment">Motor- Trembling in the hands , may operate with single fingers</li>
+					<li class="fragment">Cognitive - shows decline in memory</li>
+					</ol>
+
+				<p class="fragment"><small>Reference: <a href="https://www.w3.org/TR/wai-age-literature/">Web Accessibility for Older Users: A Literature Review</a></small>	
+				</section>
+
+
+				<section>
+					<h2>Some examples</h2>
+				</section>
+				<section>
+					<h2>Email with image of text</h2>
+					<img src="imgs/NewHire/Email_with_PictureofText.png" alt="Image without alternate text">
+				</section>				
+
+				<section>
+					<h2>Red defiency (pratonipa)</h2>
+					<img src="imgs/NewHire/pratanopia.png" alt="red defiency (pratonipa)">
+				</section>
+
+				<section>
+					<h2>Green defecinecy (Deuteranopia)</h2>
+					<img src="imgs/NewHire/Deuteranopia.png" alt="Green defecinecy (Deuteranopia)">									
+				</section>
+				<section>
+					<h2>How many fields have error?</h2>
+					<img src="imgs/NewHire/grayscale_PPerror.png" alt="Error page with Grey scale">									
+				</section>
+				<section>
+					<h2>How many fields have error?</h2>
+					<img src="imgs/NewHire/normal_PPerror.png" alt="Error page -Normal vision">									
+				</section>
+
+				<section>
+					<h2>In a word document use actual headings</h2>
+					<img src="imgs/NewHire/quickcheck_wordheadings.png" alt="Insert table of content to check for proper headings">									
+				</section>
+
+				<section>
+					<h2>Challenge with Form labels inside form element</h2>
+					<img src="imgs/NewHire/placeholder_label_before.png" alt="Form element inside form">									
+				</section>
+				<section>
+					<h2>Challenge with Form labels inside form element</h2>
+					<img src="imgs/NewHire/placeholder_label_after.png" alt="Form element inside form -after filling">									
+				</section>
+				<section>
+					<h2>Menu's that will open up for Mouse only users</h2>
+					<img src="imgs/NewHire/MenusThatWorkforMouseonlyusers.png" alt="Screen shot of MyHR">									
+				</section>
+
+				<section>
+					<h2>Link Challenges</h2>
+					<img src="imgs/NewHire/links_for_colorblind.png" alt="MyHR page how it will look like for old or color blind users">									
+				</section>
+
+				<section>
+					<h2>Link Challenges</h2>
+					<ol>
+						<li>Without underline is problematic for color blind, old , cognitive or literacy impaired users </li>
+						<li>Without focus outline problematic for low vision and screen reader users </li>
+					</ol>								
+				</section>
+
+				<section>
+					<p>Seperate  Session on Front End Accessibility, Mobile Accessibility (Android and iOS) </p>							
+				</section>	
+
+				<section>
+					<h2>Our Innovations</h2>
+					<ol>
+						<li>AATT - The testing Tool for continous integration and unit testing</li>
+						<li> Bootstrap Accessibility Plugin - Plugin for the famous Bootstrap plugin</li>
+						<li>Skipto plugin - Skip blocks of content for keyboard only and screen reader users</li>
+						<li>amCharts plugin  - Interactive Dynamic chart Merchants login</li>
+						<li>HTML5 Accessible Video Player </li>
+					</ol>
+					<p><small><a href="http://paypal.github.io/a11y/" target="main">http://paypal.github.io/a11y/</a></small><p>
+				</section>
+
+				<section>
+					<h2>Let's MAKE THE WORLD BETTER</h2>
+					<img src="imgs/common/beach_a11y.jpg" alt="Path way for wheelchair users in a beach">									
+				</section>
+				<section>
+					<h2>Let's MAKE THE WORLD BETTER</h2>
+					<img src="imgs/common/swing.jpg" alt="Accessible swiing for wheelchair users">									
+				</section>				
+				<section>
+					<h1>Questions, contact & Thank you.</h1>
+					<h3><a href="mailto:DL-PP-Accessibility-Core@paypal.com">DL-PP-Accessibility-Core@paypal.com </a></h3>
+					<h3><a href="https://twitter.com/PayPalinclusive">Follow us on Twitter / @PayPalInclusive </a></h3>
+				</section>
+
+			</div> <!-- slider div ends -->
+
+			<footer id="site-footer">
+				<div style="float:left;margin-left:50px"><div style="display:inline;margin-top:20px;"><img src="imgs/template/NewPPLogo.png" alt="PayPal Logo"></div> 
+				<div style="display:inline;margin-top:20px;">&copy; 2016 PayPal Inc. Confidential and proprietary.</div></div>
+			  <div style="float:right;margin-right:150px"><img src="imgs/template/logo_180x26_PPa11y.png" alt="PayPal Accessibility"></div>
+			</footer>	
+
+		</div>   <!-- reveal div ends -->
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
