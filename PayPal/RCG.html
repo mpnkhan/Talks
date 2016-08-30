@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to Accessibility</title>
+
+		<meta name="description" content="W3C India techtalk: Top 10 Accessibility mistakes and Why?">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="css/paypal.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/histyles/tomorrow-night-blue.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal" role="application" aria-label="Press left or right arrow to navigate the slides">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Introduction to Web Accessibility</h1>
+					<br>
+						<img src="imgs/common/Inclusive.png"  width="600" height="300" alt="Inclusive logo">
+
+					<p>
+						<small>  Nawaz <a href="http://twitter.com/paypalinclusive">@PayPalInclusive</a>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h2> Accessibility Team</h2>
+					<ol>
+						<li>Cathy O’Connor (cgunn),  Program Manager, Accessibility </li>
+						<li>Prem Nawaz Khan (pkhan) , Engineer, Accessibility </li>
+						<li>Shalini  , Engineer, Accessibility </li>
+						<li>And all of you!</li>
+					</ol>	
+				</section>				
+				<section>
+					<h2>What is Web Accessibility?</h2>
+					<p>
+						Making the web  usable by <strong>EVERYONE</strong>, regardless of their ability or disability
+					</p>
+				</section>
+				<section>
+					<h2>Reasons for making PayPal Accessible</h2>
+					<h3>Policy and Social Benefit</h3>
+					<p>
+						<ol>
+							<li class="fragment">
+								Inclusion . PayPal is for EVERYONE
+							</li>
+							<li class="fragment">
+								Providing equal opportunity for people with disabilities
+							</li>	
+							<li class="fragment">	
+								Benefits to people without disabilities, including people using mobile devices, older people
+							</li>	
+							<li class="fragment">	
+								Makes us good
+							</li>	
+						</ol>								
+					</p>
+				</section>
+				<section>
+					<h2>Reasons for making PayPal Accessible</h2>
+					<h3>Financial factor</h3>
+					<p>
+						<ol>
+							<li class="fragment">
+								Continued growth of our customer base
+							</li>
+							<li class="fragment">
+								Strengthening of their engagement with PayPal
+							</li>
+
+							<li class="fragment">
+								Avod Law suits
+							</li>
+						</ol>							
+					</p>
+				</section>
+				<section>
+					<h2>Reasons for making PayPal Accessible</h2>
+					<h3>Legal Factor</h3>
+					<p>
+						<ol>
+							<li class="fragment">
+								U.S. Americans with Disabilities Act (ADA) , Section 508, Air Carrier Access Act (DOT) 
+							</li>
+							<li class="fragment">
+								U.K. - The Disability Discrimination Act 1995
+							</li>
+							<li class="fragment">
+								Australia - Disability Discrimination Act 1992
+							</li>
+							<li class="fragment">
+								And many more .. <a href="https://www.w3.org/WAI/Policy/Overview.html" target="main">List of country policies</a>
+								<br><br>
+								<a href="http://www.karlgroves.com/2011/11/15/list-of-web-accessibility-related-litigation-and-settlements/" target="main">List of Litigations</a>
+							</li>
+						</ol>	
+
+					</p>
+				</section>
+
+				<section>
+					<h2> Designing for People with Disabilities</h2>
+					<ol>
+						<li>Visual </li>
+						<li>Hearing</li>
+						<li>Motor</li>
+						<li>Cognitive</li>						
+					</ol>	
+				</section>
+
+				<section>
+					<h2>How people with people with disabilities</h2>
+						<ol>
+							<li>Blind - Screen reader, Screen magnifier, HCM, Custom styles</li>
+							<li>Hearing - Captions, Description</li>
+							<li>Motor - Adaptive Keyboard, special mouse, switches, Head Mouse</li>
+						</ol>	
+				</section>
+				<section>
+					<h2>Designing for Old users</h2>
+					<img src="imgs/common/old_age_needs.jpg" style="width:500px;" alt="Old age people using computer">									
+				</section>
+				<section>
+					<h2>Old users -Challenges</h2>
+					<ul>
+						<li>Vision Decline - Decreasing ability to focus on near tasks,Contrast sensitivity,Pupil shrinkage</li>
+						<li>Hearing loss</li>
+						<li>Motor- Trembling in the hands , may operate with single fingers</li>
+						<li>Cognitive - shows decline in memory</li>
+					</ul>
+				<p><small>Reference: <a href="https://www.w3.org/TR/wai-age-literature/">Web Accessibility for Older Users: A Literature Review</a></small>	
+				</section>
+
+
+				<section>
+					<h2>Some examples</h2>
+				</section>
+
+				<section>
+					<h2>Red defiency (pratonipa)</h2>
+					<img src="imgs/NewHire/pratanopia.png" style="height:500px" alt="red defiency (pratonipa)">
+				</section>
+
+				<section>
+					<h2>Green defecinecy (Deuteranopia)</h2>
+					<img src="imgs/NewHire/Deuteranopia.png"  style="height:500px" alt="Green defecinecy (Deuteranopia)">									
+				</section>
+				<section>
+					<h2>How many fields have error?</h2>
+					<img src="imgs/NewHire/grayscale_PPerror.png" alt="Error page with Grey scale">									
+				</section>
+				<section>
+					<h2>How many fields have error?</h2>
+					<img src="imgs/NewHire/normal_PPerror.png" alt="Error page -Normal vision">									
+				</section>
+
+				<section>
+					<h2>Challenge with Form labels inside form element</h2>
+					<img src="imgs/NewHire/placeholder_label_before.png" style="height:400px" alt="Form element inside form">									
+				</section>
+				<section>
+					<h2>Challenge with Form labels inside form element</h2>
+					<img src="imgs/NewHire/placeholder_label_after.png" style="height:400px" alt="Form element inside form -after filling">									
+				</section>
+				<section>
+					<h2>Menu's that will open up for Mouse only users</h2>
+					<img src="imgs/NewHire/MenusThatWorkforMouseonlyusers.png" style="height:400px" alt="Screen shot of MyHR">									
+				</section>
+
+				<section>
+					<h2>Link Challenge - Which one is a link?</h2>
+					<img src="imgs/NewHire/links_for_colorblind.png" style="height:500px" alt="MyHR page how it will look like for old or color blind users">									
+				</section>
+
+				<section>
+					<h2>Link Challenges</h2>
+					<ol>
+						<li>Without underline is problematic for color blind, old , cognitive or literacy impaired users </li>
+						<li>Without focus outline problematic for low vision and screen reader users </li>
+					</ol>								
+				</section>
+
+				<section>
+					<h2>How to make your code usable for everyone </h2>
+					<ol>
+						<li class="fragment">Clean Code</li>
+						<li class="fragment">Test for Accessibility</li>
+						<li class="fragment">Be the Point of Contact for your team</li>
+						<li class="fragment">Learn and Teach</li>
+					</ol>
+				</section>
+				<section>
+					<h2>Top Barriers we frequently see at PayPal</h2>
+				</section>
+
+				<section>
+					<h2>1. Lack of Alternate Text for Images</h2>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">					
+	&lt;img src=&quot;photo.jpg&quot; alt=&quot;Photo of Tiger&quot; /&gt;
+Image links: &lt;a href=&quot;https://www.paypal.com&quot;&gt;&lt;img src=&quot;logo.png&quot; alt=&quot;PayPal!&quot;/&gt;&lt;/a&gt;
+Decorative/Beacon image: &lt;img src=&quot;Spacer.jpg&quot; alt=&quot;&quot; /&gt;
+</code>
+</pre>
+<p> Use CSS Sprites for decorative images </p>
+			<p> Reference: <a href="https://dev.w3.org/html5/alt-techniques/#tree">Alt Text Decision Tree</a></p>
+				</section>
+
+			<section>					
+				<h2> 2. Anchor element found with no link content and no name and/or ID attribute (Developer) </h2>
+				<p>Wrong:</p>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+<a href="#" onClick="navigate('foo')">12223</a>
+</code>
+</pre>				
+				<p>Correct Code:</p>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+<a href="foo.html" onClick="navigate('foo')">12223</a>			
+</code>
+</pre>				
+			<p>Rationale: People using Screen Reader scan all Links by screen reader shortcuts </p>
+			</section>
+
+			<section>					
+				<h2> 3. Outline:none (Developer) </h2>
+				<p>Wrong:</p>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+	<style type="text/css">
+a,button,input {
+	outline: 0;
+}
+</style>
+</code>
+</pre>				
+				<p>Correct Code:</p>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+:focus {
+outline: 1px dotted black;
+}	
+</code>
+</pre>				
+			<p>Rationale: As a keyboard only user, you should know where you are on the page</p>
+			</section>
+			<section>					
+				<h2> Lang Attribute Missing (Developer) </h2>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+&lt;html lang="en"&gt;
+</code></pre>
+			<p>Screen Reader needs to detect the language of the Page</p>
+			</section>
+
+			<section>					
+				<h2> Lack of Labels (Designer / Developer) </h2>
+				<p>Wrong: </p>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+Placeholder attribute :  <input placeholder="Create your password">
+</code></pre>
+				<p>Correct: </p>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+&lt;label for="password" class=""&gt;Create your password&lt;/label&gt;
+&lt;input id="password"&gt;
+
+As Title: <input title="Create your password">
+
+Aria-label: <input aria-label="Search Input">
+
+Aria-LabelledBy
+<span id="fnamelabel">First name:</span><input type="text" id="fname" aria-labelledby="fnamelabel">  
+
+Fieldset and Legend
+	<fieldset>
+	<legend>Choose a shipping method:</legend>
+		<input id="overnight" type="radio"…>
+		<label for="overnight">Overnight</label>
+	...
+</fieldset>
+
+</code></pre>
+			</section>
+
+			<section>					
+					<h2> Device Dependent Events (Developer)</h2>
+					<p>Wrong</p>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+&lt;a href="newuser.html" onMouseOver="showMenu()" onMouseOut="closeMenu()"&gt;
+</code></pre>
+					<p>Correct</p>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+&lt;a href="newuser.html" onMouseOver="showMenu()" onFocus="showMenu()" onMouseOut="closeMenu()" onBlur="closeMenu()"&gt;
+</code></pre>
+
+						<ul>
+							<li>Use  onFocus, onBlur, onSelect, onChange, and onClick (when onClick is used with link or form elements)</li>
+							<li>onMouseOver, onMouseOut, and onDblClick rely upon the use of a mouse	</li>
+							<li>onKeyDown, onKeyUp, etc. rely upon Keyboard</li>
+						</ul>	
+
+
+			</section>	
+			<section>
+					<h2> Error Recovery (Developer)</h2>
+					<p>aria-required, aria-describedBy, aria-invalid, role=alert </p>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+&lt;label for="password" class=""&gt;Create your password&lt;/label&gt;
+&lt;input id=&quot;password&quot;  aria-invalid="true" aria-describedBy="password-help-error" aria-required=&quot;true&quot; type=&quot;password&quot; &gt;
+</code></pre>
+			</section>
+
+			<section>					
+					<h2> Fake Elements</h2>
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+Bootstrap class for heading:	
+&lt;span class=&quot;h1&quot;&gt; Heading here&lt;/span&gt;
+&lt;p class="h1"&gt;Heading here&lt;/p&gt;
+Correct: &lt;h1&gt; &lt;h2&gt; .... &lt;h6&gt;
+				</code></pre>			
+				<p>Use Real Headings - Not Reel Headings </p>
+			</section>
+
+				<section>					
+					<h2> Fake Elements</h2>
+<span class="button" onClick="alert('Ouch! You hurt me')"> I look like button, but i can't act like it</span>					
+<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+<span class="button"> I look like button, but i can't act like it</span>
+				</code></pre>
+				<p>Reference:<a href="https://www.nczonline.net/blog/2013/01/29/you-cant-create-a-button/">You can't create a Button</a></p>
+
+				</section>	
+
+				<section>				
+					<h2>Summary:::Top 10 Barriers we frequently see at PayPal</h2>
+					<ol>
+						<li>Img element missing an alt attribute (Content Publisher/Developer)</li>
+						<li>Anchor element found with no link content and no name and/or ID attribute (Developer)</li>
+						<li>Outline:none (Developer) </li>
+						<li>Poor color contrast (Designer / Developer)</li>
+						<li>Form does not contain a submit button (Designer/Developer)</li>
+						<li>Lang Attribute Missing (Developer)</li>
+						<li>Lack of Labels (Designer / Developer)</li>
+						<li>Events bound to items that are not discoverable via keyboard (Developer)</li>
+						<li>Error Recovery (Developer)</li>
+						<li>Fake Elements (Developer) </li>
+					</ol>
+				</section>
+
+				<section>
+					<h2> Accessibility - Essential for Some, Useful for All</h2>
+					<img src="imgs/common/Ramp_for_all.jpg" style="width:650px;height:500px" alt="Ramp at entrace of Chennai PayPal office">
+				</section>
+				<section>
+					<h2> Accessibility Benefits everyone</h2>
+					<img src="imgs/common/subtitles_benefit.png" style="width:800px;height:500px"  alt="Clip of Japanese TV Serial Oshin with English Subtitle">
+				</section>
+				<section>
+					<h2> Accessibility Benefits everyone</h2>
+					<img src="imgs/common/sunlight.jpg" style="width:800px;height:500px" alt="Browsing Mobile in Sunlight">
+				</section>				
+				<section>
+					<h2> Accessibility Benefits everyone</h2>
+					<img src="imgs/common/TemporaryImpairement.jpg" style="height:500px" alt="A User with Injured Hand using computer with single hand">
+				</section>	
+				<section>
+					<p>Seperate  Session on Front End Accessibility, Mobile Accessibility (Android and iOS) </p>							
+				</section>	
+
+
+				<section>
+					<h2>Showcase -Experiencing how PWD uses technology</h2>
+					<ol>
+						<li>At Chennai – 1st Floor 1.3.36 (NAMPADHA) </li>
+						<li>At San Jose Building No. 10</li>
+					</ol>
+					<p>
+						<img src="imgs/NewHire/chennai_showcase1.jpg" style="width:300px; height:300px"  alt="Mark Rohrwasser with blindfold">
+						<img src="imgs/NewHire/chennai_showcase4.jpg" style="width:300px; height:300px"  alt="Developer experienceing color coded keyboard">
+					</p>
+					<p> Send us email to register</p>
+				</section>
+
+
+				<section>
+					<h2>References</h2>
+					<ol>
+						<li><a href="http://go/a11ydocs">Accessibility Documentation</a></li>
+						<li><a href="http://go/aatt">AATT tool (Tool for continous Integration Testing)</a></li>
+						<li><a href=" http://go/a11ystatus">Dashboard - Check how your project is doing</a></li>
+						<li><a href="http://paypal.github.io/a11y/">PayPal open source</a></li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Let's MAKE THE WORLD BETTER</h2>
+					<img src="imgs/common/beach_a11y.jpg" style="height:500px" alt="Path way for wheelchair users in a beach">									
+				</section>
+				<section>
+					<h2>Let's MAKE THE WORLD BETTER</h2>
+					<img src="imgs/common/swing.jpg" alt="Accessible swiing for wheelchair users">									
+				</section>				
+				<section>
+					<h1>Questions, contact & Thank you.</h1>
+					<h3><a href="mailto:DL-PP-Accessibility-Core@paypal.com">DL-PP-Accessibility-Core@paypal.com </a></h3>
+					<h3><a href="https://paypal.slack.com/archives/ask-accessibility">Accessibility Slack Channel</a></h3>
+					<h3><a href="https://twitter.com/PayPalinclusive">Follow us on Twitter / @PayPalInclusive </a></h3>
+				</section>
+
+			</div> <!-- slider div ends -->
+
+			<footer id="site-footer">
+				<div ><img src="imgs/template/ppfooter_ppt.jpg" alt="PayPal Logo"></div> 
+
+			</footer>	
+
+		</div>   <!-- reveal div ends -->
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
