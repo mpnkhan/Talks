@@ -1,18 +1,12 @@
 <!doctype html>
 <html lang="en">
-
 	<head>
 		<meta charset="utf-8">
-
 		<title>Introduction to Accessibility</title>
-
 		<meta name="description" content="W3C India techtalk: Top 10 Accessibility mistakes and Why?">
-
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
 		<link rel="stylesheet" href="reveal.js/css/reveal.css">
 		<link rel="stylesheet" href="css/paypal.css" id="theme">
 
@@ -30,7 +24,6 @@
 	</head>
 
 	<body>
-
 		<div class="reveal" role="application" aria-label="Press left or right arrow to navigate the slides">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
@@ -38,19 +31,17 @@
 				<section>
 					<h1>Introduction to Web Accessibility</h1>
 					<br>
-						<img src="imgs/common/Inclusive.png"  width="600" height="300" alt="Inclusive logo">
-
+					<img src="imgs/common/Inclusive.png"  width="600" height="300" alt="Inclusive logo">
 					<p>
-						<small>  Nawaz <a href="http://twitter.com/paypalinclusive">@PayPalInclusive</a>
-						</small>
+						<small>  Nawaz <a href="http://twitter.com/paypalinclusive">@PayPalInclusive</a></small>
 					</p>
 				</section>
 				<section>
 					<h2> Accessibility Team</h2>
 					<ol>
 						<li>Cathy O’Connor (cgunn),  Program Manager, Accessibility </li>
-						<li>Prem Nawaz Khan (pkhan) , Engineer, Accessibility </li>
-						<li>Shalini  , Engineer, Accessibility </li>
+						<li>Prem Nawaz Khan (pkhan), Engineer, Accessibility </li>
+						<li>Shalini, Engineer, Accessibility </li>
 						<li>And all of you!</li>
 					</ol>	
 				</section>				
@@ -91,9 +82,8 @@
 							<li class="fragment">
 								Strengthening of their engagement with PayPal
 							</li>
-
 							<li class="fragment">
-								Avod Law suits
+								Avoid Lawsuits
 							</li>
 						</ol>							
 					</p>
@@ -133,7 +123,7 @@
 				</section>
 
 				<section>
-					<h2>How people with people with disabilities</h2>
+					<h2>How people with disabilities use web and mobile experiences</h2>
 						<ol>
 							<li>Blind - Screen reader, Screen magnifier, HCM, Custom styles</li>
 							<li>Hearing - Captions, Description</li>
@@ -142,7 +132,7 @@
 				</section>
 				<section>
 					<h2>Designing for Old users</h2>
-					<img src="imgs/common/old_age_needs.jpg" style="width:500px;" alt="Old age people using computer">									
+					<img src="imgs/common/old_age_needs.jpg" style="width:500px;" alt="Elderly People using computer">			
 				</section>
 				<section>
 					<h2>Old users -Challenges</h2>
@@ -152,13 +142,11 @@
 						<li>Motor- Trembling in the hands , may operate with single fingers</li>
 						<li>Cognitive - shows decline in memory</li>
 					</ul>
-				<p><small>Reference: <a href="https://www.w3.org/TR/wai-age-literature/">Web Accessibility for Older Users: A Literature Review</a></small>	
+					<p><small>Reference: <a href="https://www.w3.org/TR/wai-age-literature/">Web Accessibility for Older Users: A Literature Review</a></small>	
 				</section>
-
 				<section>
 					<h2>Some examples</h2>
 				</section>
-
 				<section>
 					<h2>How many fields have error?</h2>
 					<img src="imgs/NewHire/grayscale_PPerror.png" alt="Error page with Grey scale">									
@@ -167,7 +155,6 @@
 					<h2>How many fields have error?</h2>
 					<img src="imgs/NewHire/normal_PPerror.png" alt="Error page -Normal vision">									
 				</section>
-
 				<section>
 					<h2>Challenge with Form labels inside form element</h2>
 					<img src="imgs/NewHire/placeholder_label_before.png" style="height:400px" alt="Form element inside form">									
@@ -178,14 +165,12 @@
 				</section>
 				<section>
 					<h2>Menu's that will open up for Mouse only users</h2>
-					<img src="imgs/NewHire/MenusThatWorkforMouseonlyusers.png" style="height:400px" alt="Screen shot of MyHR">									
+					<img src="imgs/NewHire/MenusThatWorkforMouseonlyusers.png" style="height:400px" alt="Screen shot of MyHR">		
 				</section>
-
 				<section>
 					<h2>Link Challenge - Which one is a link?</h2>
 					<img src="imgs/NewHire/links_for_colorblind.png" style="height:500px" alt="MyHR page how it will look like for old or color blind users">									
 				</section>
-
 				<section>
 					<h2>Link Challenges</h2>
 					<ol>
@@ -193,7 +178,6 @@
 						<li>Without focus outline problematic for low vision and screen reader users </li>
 					</ol>								
 				</section>
-
 				<section>
 					<h2>How to make your code usable for everyone </h2>
 					<ol>
@@ -306,9 +290,7 @@ Fieldset and Legend
 							<li>Use  onFocus, onBlur, onSelect, onChange, and onClick (when onClick is used with link or form elements)</li>
 							<li>onMouseOver, onMouseOut, and onDblClick rely upon the use of a mouse	</li>
 							<li>onKeyDown, onKeyUp, etc. rely upon Keyboard</li>
-						</ul>	
-
-
+						</ul>
 			</section>	
 			<section>
 					<h2> Error Recovery (Developer)</h2>
@@ -318,7 +300,6 @@ Fieldset and Legend
 &lt;input id=&quot;password&quot;  aria-invalid="true" aria-describedBy="password-help-error" aria-required=&quot;true&quot; type=&quot;password&quot; &gt;
 </code></pre>
 			</section>
-
 			<section>					
 					<h2> Fake Elements</h2>
 <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
@@ -330,17 +311,16 @@ Correct: &lt;h1&gt; &lt;h2&gt; .... &lt;h6&gt;
 				<p>Use Real Headings - Not Reel Headings </p>
 			</section>
 
-				<section>					
-					<h2> Fake Elements</h2>
-<span class="button" onClick="alert('Ouch! You hurt me')"> I look like button, but i can't act like it</span>					
+			<section>
+				<h2> Fake Elements</h2>
+				<span class="button" onClick="alert('Ouch! You hurt me')"> I look like button, but i can't act like it</span>
 <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 <span class="button"> I look like button, but i can't act like it</span>
-				</code></pre>
+</code></pre>
 				<p>Reference:<a href="https://www.nczonline.net/blog/2013/01/29/you-cant-create-a-button/">You can't create a Button</a></p>
-
 				</section>	
 
-				<section>				
+				<section>
 					<h2>Summary:::Top 10 Barriers we frequently see at PayPal</h2>
 					<ol>
 						<li>Img element missing an alt attribute (Content Publisher/Developer)</li>
@@ -373,9 +353,8 @@ Correct: &lt;h1&gt; &lt;h2&gt; .... &lt;h6&gt;
 					<img src="imgs/common/TemporaryImpairement.jpg" style="height:500px" alt="A User with Injured Hand using computer with single hand">
 				</section>	
 				<section>
-					<p>Seperate  Session on Front End Accessibility, Mobile Accessibility (Android and iOS) </p>							
+					<p>Separate  Session on Front End Accessibility, Mobile Accessibility (Android and iOS) </p>							
 				</section>	
-
 
 				<section>
 					<h2>Showcase -Experiencing how PWD uses technology</h2>
@@ -388,19 +367,16 @@ Correct: &lt;h1&gt; &lt;h2&gt; .... &lt;h6&gt;
 						<img src="imgs/NewHire/chennai_showcase4.jpg" style="width:300px; height:300px"  alt="Developer experienceing color coded keyboard">
 					</p>
 					<p> Send us email to register</p>
-				</section>
-
-
+				</section>				
 				<section>
 					<h2>References</h2>
 					<ol>
 						<li><a href="http://go/a11ydocs">Accessibility Documentation</a></li>
-						<li><a href="http://go/aatt">AATT tool (Tool for continous Integration Testing)</a></li>
+						<li><a href="http://go/aatt">AATT tool (Tool for continuous Integration Testing)</a></li>
 						<li><a href=" http://go/a11ystatus">Dashboard - Check how your project is doing</a></li>
 						<li><a href="http://paypal.github.io/a11y/">PayPal open source</a></li>
 					</ol>
 				</section>
-
 				<section>
 					<h2>Let's MAKE THE WORLD BETTER</h2>
 					<img src="imgs/common/beach_a11y.jpg" style="height:500px" alt="Path way for wheelchair users in a beach">									
@@ -424,9 +400,11 @@ Correct: &lt;h1&gt; &lt;h2&gt; .... &lt;h6&gt;
 			</footer>	
 
 		</div>   <!-- reveal div ends -->
+
+
+
 		<script src="reveal.js/lib/js/head.min.js"></script>
 		<script src="reveal.js/js/reveal.js"></script>
-
 		<script>
 
 			// Full list of configuration options available here:
@@ -455,7 +433,6 @@ Correct: &lt;h1&gt; &lt;h2&gt; .... &lt;h6&gt;
 					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
-
 		</script>
 
 	</body>
