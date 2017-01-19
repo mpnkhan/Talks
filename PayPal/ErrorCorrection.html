@@ -158,7 +158,7 @@ input[type="text"]:invalid {
 					<ol>
 						<li class='fragment'>Focus on first error textview</li>
 						<li class='fragment'>Do not make labels or error messages focusable</li>
-						<li class='fragment'>Instead for the error message, use setContentDescription and bind to the textview
+						<li class='fragment'>Use setContentDescription and bind to the textview
 					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
 	 checkBox.setContentDescription(label);
 	 checkBox.requestFocus();
@@ -199,14 +199,13 @@ UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, errorMe
 				<section>
 					<h2>iOS -Error Recovery</h2>
 					<ol>
-						<li class='fragment'>Focus on first error textview</li>
-						<li class='fragment'>Instead for the error message use setContentDescription and bind to the textview
+						<li class='fragment'>Focus on first error input</li>
+						<li class='fragment'>setText for error label
 					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
-      errorMessageLabel.accessibilityIdentifier = "FullScreenErrorView-Message-Label"
-      errorMessageLabel.setText(errorMessage)
+	cardNumberField.isAccessibilityElement = true
+	cardNumberField.accessibilityLabel" = "Please enter some card details";
 					</code></pre>							
 						</li>
-
 					</ol>
 				</section>	
 
