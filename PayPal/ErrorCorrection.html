@@ -144,17 +144,72 @@ input[type="text"]:invalid {
 						<li class='fragment'>Do not keyboard trap on the container</li>
 						<li class='fragment'>Do not use color alone to convey information</li>
 						<li class='fragment'>If possible use native toast messages</li>
-						<li class='fragment'>Otherwise use announceForAccessibility('message')</li>
+						<li class='fragment'>Otherwise use announceForAccessibility('message')
+					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+	 mView.announceForAccessibility(mText.getText());
+					</code></pre>
+
+						</li>
 					</ol>
 				</section>
 
 				<section>
-					<h2>Demo for Android -Error Recovery</h2>
+					<h2>Android -Error Recovery</h2>
+					<ol>
+						<li class='fragment'>Focus on first error textview</li>
+						<li class='fragment'>Do not make labels or error messages focusable</li>
+						<li class='fragment'>Instead for the error message, use setContentDescription and bind to the textview
+					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+	 checkBox.setContentDescription(label);
+	 checkBox.requestFocus();
+					</code></pre>							
+							
+						</li>
+						<li class='fragment'>Do not use hint for important tooltip or error message, because hint message vanish while we type </li>
+
+					</ol>
+				</section>	
+
+
+				<section>
+					<h2>Demo for Android -  Error Recovery</h2>
 					<video width="640" height="360" controls>
 						<!-- video files -->
 						<source src="demo/AddAddress_accessibleErrorInput.mp4" type="video/mp4" />
 					</video>
 				</section>
+
+				<section>
+					<h2>iOS -Error Recovery</h2>
+					<p>Same as Android </p>
+					<ol>
+						<li class='fragment'>Do not keyboard trap on the container</li>
+						<li class='fragment'>Do not use color alone to convey information</li>
+						<li class='fragment'>If possible use native  messages</li>
+						<li class='fragment'>Otherwise use UIAccessibilityAnnouncementNotification
+					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+ if label.text != errorMessage {
+UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, errorMessage)
+					</code></pre>
+
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>iOS -Error Recovery</h2>
+					<ol>
+						<li class='fragment'>Focus on first error textview</li>
+						<li class='fragment'>Instead for the error message use setContentDescription and bind to the textview
+					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+      errorMessageLabel.accessibilityIdentifier = "FullScreenErrorView-Message-Label"
+      errorMessageLabel.setText(errorMessage)
+					</code></pre>							
+						</li>
+
+					</ol>
+				</section>	
+
 
 
 
