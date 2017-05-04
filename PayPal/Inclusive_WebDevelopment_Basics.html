@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Inclusive Web Development</title>
+
+		<meta name="description" content="PayPal Internal: Inclusive Web Development">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="css/paypal.css" id="theme">
+
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/histyles/xcode.css">
+
+		<style type="text/css">
+			code {font-size: 16px; margin-top: 10px}
+		</style>
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal" role="application" aria-label="Press left or right arrow to navigate the slides">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Inclusive Web Development</h1>
+					<br>
+						<img src="imgs/common/Inclusive.png"  width="600" height="300" alt="Inclusive logo">
+
+					<p>
+						<small>  Nawaz <a href="http://twitter.com/mpnkhan">@mpnkhan</a>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h2>Inclusion is a core value of PayPal</h2>
+					<ol>
+					 <li> Have Empathy for PWD </li>
+					 <li> Remove barriers to access and provide people with more independence </li>
+					 <li> Make a difference by  putting your values to work </li>
+					</ol>
+				</section>
+				<section>
+					<h2> Designing and Developing for People with Disabilities</h2>
+					<ol>
+						<li>Visual - Screen reader, Magnifier, Custom stylesheet,HCM</li>
+						<li>Auditory - Caption, Description</li>
+						<li>Motor - Headmouse, Mouth stick , Switch, Trackball mouse,Adaptive keyboard, Voice recognition software</li>
+						<li>Cognitive - Screen Readers</li>
+					</ol>	
+				</section>
+				<section>
+					<h2>Contents</h2>
+					<p>Some Basics on </p>
+					<ol>
+						<li>HTML + Aria</li>
+						<li>CSS</li>
+						<li>JavaScript</li>
+						<li>Design Patterns</li>
+						<li>How to Test</li>						
+					</ol>
+				</section>
+				<section>
+					<h2>tabIndex attribute</h2>
+					<ul>						
+						<li> Any positive integer, changes the tabbing order of elements. </li>
+						<li> tabindex="0" allows elements to receive keyboard focus.</li>
+						<li> tabindex="-1" allows elements to receive programmatic focus	</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Hide content that needs to be hidden</h2>
+					<p>
+					<pre><code contenteditable>	
+.hidden{
+	display: none;		/* Content ignored by SR */
+}	
+/* Old */
+.offscreen {			/*jump effect, if focusable content within the positioned element */
+	position: absolute;
+	left: -999em;
+}
+
+/* New */
+.offscreen { 
+	position: absolute !important; 
+	clip: rect(1px 1px 1px 1px); 	/* IE6, IE7 */
+	clip: rect(1px,1px,1px,1px); 
+}
+					</code></pre>
+					</p>
+				</section>
+				<section>
+					<h2>Focus Management: Show focus outline</h2>
+					<pre><code contenteditable>	
+
+a:focus, a:hover, a:active {
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none; 
+	border-bottom: 1px #000 solid; 
+	padding-bottom: 2px;
+}
+					</code></pre>
+					</p>
+				</section>
+				<section>
+					<h2>Focus Management: Don't lose focus</h2>
+					<pre><code contenteditable>	
+el1= document.getElementById('accordionContent');
+el1.focus();
+.
+.
+.
+&lt;div tabIndex="-1" id="accordionContent" class="hide"&gt;
+					</code></pre>
+					</p>
+				</section>
+				<section>
+					<h2>ARIA</h2>
+					<ul>						
+						<li> Role</li>
+						<li> State</li>
+						<li> Properties	</li>
+					</ul>
+				</section>
+				<section>
+					<h2>ARIA - Role</h2>
+					<ul>						
+						<li> Difference between these?</li>
+						<li>
+							<pre><code data-trim contenteditable style="font-size: 16px;">
+<ul>
+	<li>One</li>
+	<li>Two</li>
+	<li>Three</li>
+</ul>	
+							</code></pre>
+						</li>
+						<li>
+							<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 10px;">
+<ul class="menu" tabIndex="0">
+	<li class="menuitem">One</li>
+	<li class="menuitem">Two</li>
+	<li class="menuitem">Three</li>
+</ul>	
+							</code></pre>
+						</li>
+						<li>
+						<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 10px;">
+<ul class="tabsList" tabIndex="0">
+    <li class="tab"><a href="#1">One</a></li>
+    <li class="tab"><a href="#2">Two</a></li>
+    <li class="tab"><a href="#3">Three</a></li>
+</ul>
+<div class="tabPanel">
+    <h2 id="1">Testing</h2>
+    ...
+</div>
+							</code></pre>
+						</li>						
+					</ul>
+				</section>
+<section>
+	<h2>Screen Reader (NVDA) Output </h2>
+	<img src="imgs/common/NVDA.png" style="width:55px;height:55px;border:0px" alt="NVAccess icon"> 
+	<p>
+<pre><code data-trim contenteditable>
+list with 3 items
+• One
+• Two
+• Three
+out of list
+</code></pre>
+</p>
+</section>				
+				<section>
+					<h2>ARIA - Role, State, (Applied)</h2>
+					<ul>						
+						<li>
+							<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 10px;">
+<ul class="menu" role="menu">
+	<li class="menuitem" role="menuitem">One</li>
+	<li class="menuitem" role="menuitem">Two</li>
+	<li class="menuitem" role="menuitem">Three</li>
+</ul>	
+							</code></pre>
+						</li>
+						<li>
+						<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 10px;">
+<ul class="tabsList" role="tablist">
+    <li class="tab" role="tab" aria-selected="true" tabindex="0"><a href="#1">One</a></li>
+    <li class="tab" role="tab" aria-selected="false" tabindex="-1"><a href="#2">Two</a></li>
+    <li class="tab" role="tab" aria-selected="false" tabindex="-1"><a href="#3">Three</a></li>
+</ul>
+<div class="tabPanel" role="tabpanel" aria-labelledby="two" style="display: none;">
+    <h2 id="1">Testing content</h2>
+    ...
+</div>
+							</code></pre>
+						</li>						
+					</ul>
+				</section>
+<section>
+	<h2>Screen Reader (NVDA) Output </h2>
+	<img src="imgs/common/NVDA.png" style="width:55px;height:55px;border:0px" alt="NVAccess icon"> 
+	<p>
+<pre><code data-trim contenteditable>
+menu
+menu item
+• One
+menu item
+• Two
+menu item
+• Three
+out of menu
+
+
+tab  selected
+tab
+• link One tab
+• link two tab
+
+</code></pre>
+</p>
+</section>
+
+				<section>
+					<h2>ARIA State and Properties</h2>
+					<p> Describe the widget and its state </p>
+					<ol>						
+						<li> Properties: Eg. aria-label, aria-labelledBy, aria-DescribedBy, aria-invalid</li>
+						<li> State: Eg. aria-expanded, aria-hidden, aria-selected</li>
+					</ol>
+				</section>							
+				<section>
+					<h2>ARIA Rules</h2>
+					<ol>						
+						<li> Do not fake it</li>
+						<li> Do not change native semantics, unless you really have to</li>
+						<li> Fake it 'til you make it </li>
+					</ol>
+				</section>
+				<section>
+					<h2>Do not fake it</h2>
+					<p>
+					<pre><code data-trim contenteditable>
+Bad: 	<img src="submit.jpg" onclick=...>   //NVDA Link submit graphic clickable
+OK: 	&lt;a onclick="..."&gt;<img src="submit.jpg"> //NVDA Link submit graphic clickable
+Better: &lt;a role="button" onclick="..."&gt;<img src="submit.jpg">		//NVDA  Button
+Best: 	&lt;button onclick="..."&gt;  //NVDA Button
+					</code></pre>
+					</p>
+				</section>	
+				<section>
+					<h2>Do not fake it</h2>
+					<img src="imgs/common/fakeelement.png" alt="screenshot of converstaion to convert anchor to button element">
+				</section>
+				<section>
+					<h2>Difference between Button and Link</h2>
+					<ul>
+						<li>Anchor links without href and doesn't navigate should be button</li>
+						<li>Anchor links navigate,  a button stays in page like opening modal, dropdown etc </li>
+						 <li>Tabindex and click events tacked onto an anchor tag are a markup anti-pattern</li>
+						 <li>Buttton is activated with spacebar , links are activated with enter. Eg. PayNow button on invoice page </li>
+					</ul>
+					<p>More read: <a href="https://marcysutton.com/links-vs-buttons-in-modern-web-applications/">https://marcysutton.com/links-vs-buttons-in-modern-web-applications/</a></p>
+				</section>
+
+				<section>
+					<h2>Fake elements</h2>
+					<pre><code data-trim contenteditable>						
+<span class="h1"> Heading here</span>
+
+<p class="h1">Heading here</p>
+
+<i class="font-button">Info</i>
+					</code></pre>						
+				</section>
+
+				<section>
+					<h2>Do not change native semantics, unless you really have to</h2>
+					<pre><code data-trim contenteditable>						
+Incorrect: <h2 role=tab>heading tab</h2>
+
+Correct: <div role=tab><h2>heading tab</h2></div>
+
+					</code></pre>						
+				</section>
+
+				<section>
+					<h2>Fake it 'til you make it</h2>
+					<h3>Note:</h3>
+					<ul>
+						<li> Aria passes element information to Accessibility API </li>	
+						<li> Does NOT makes the element focusable </li>
+						<li> Does NOT make it Keyboard Accessible </li>
+					</ul>
+				</section>
+				<section>
+					<h2>Fake it 'til you make it</h2>
+						<img src="imgs/NewHire/IncorrectAriaRoles_Invoicing.png" alt="InAccessible Invoicing settings menu">
+				</section>
+
+
+				<section>
+					<h3>Fake it 'til you make it - Button?? </h3>
+						<p> 
+									Eg. Element which looks like Button:
+									<span role="button" class="btn" onClick="alert('clicked')">Call to Action Button</span>
+						<pre><code contenteditable>	
+&lt;span class="btn"&gt; Call to Action Button &lt;/span&gt;
+						</code></pre>
+						</p>
+						<p class="fragment">
+							Adding tabIndex of "0" and Role Button  <span role="button" tabIndex="0" class="btn" onClick="alert('clicked')">Call to Action Button</span>
+							<pre class="fragment"><code contenteditable>	
+&lt;span role="button" tabIndex="0" class="btn"&gt; Call to Action Button &lt;/span&gt;
+							</code></pre>
+						</p>
+
+						<p class="fragment">Add Some Focus Styles 
+							<span role="button" tabIndex="0" class="btnA" onClick="alert('clicked')">Call to Action Button</span>
+						<pre class="fragment"><code contenteditable style="padding:0px;">	
+span.btn:hover, span.btn:focus  {
+  text-shadow: -1px -1px 2px #465f97;
+  background: -moz-linear-gradient(#245192, #1e3b73 75%, #12295d);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #245192),color-stop(.75, #1e3b73),color-stop(1, #12295d));
+  border: 1px solid #0f2557;
+}
+						</code></pre>
+						</p>
+				</section>
+				<section>
+					<h3>Accessible Button (contd) </h3>
+						<p> We would need to add some JS for handling KeyDown
+						<pre class="fragment"><code contenteditable style="padding:0px;">	
+keydown: function(e) { // Trigger the click event from the keyboard
+    var code = e.which;
+    if ((code === 13) || (code === 32)) {		 // 13 = Return, 32 = Space
+        $(this).click();
+    }
+},
+						</code></pre>    								
+						</p>
+						<p class="fragment">
+							But this is Better , Isn't it?
+						</p>
+						<pre class="fragment"><code contenteditable>
+&lt;a role="button" tabIndex="0" class="btn"&gt; Call to Action Button &lt;/a&gt;
+&lt;button class="btnA"&gt;Call to Action Button&lt;/button&gt;
+<button class="btnA" onClick="alert('clicked')">Call to Action Button</button>
+						</code></pre>
+						</p>		
+				</section>	
+
+				<section>
+					<h2>Form Labelling</h2>
+					<ul>
+						<li>Labels are necessary to derive the purpose of form input</li>
+						<li>Label point to the ID of the input field. NOT NAME</li>
+						<li>
+							<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+								<label for="firsname">First Name</label><input type="text" id="firsname" name="Name">
+							</code></pre>						
+						</li>
+					</ul>	
+				</section>
+				<section>
+					<h2>Form Labelling</h2>
+					<ul>						
+						<li>
+							Place Holders are not labels:
+							<img src="imgs/NewHire/label_placeholder_donateflow.png" alt="Input in Donate page uses placeholder as label">
+							<br><small>Ref: <a href="https://www.paypal.com/fundraiser/hub">https://www.paypal.com/fundraiser/hub</a></small>
+						</li>	
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li> Title attribute as label <pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;"><input title="Search Terms"> </code></pre></li>
+				<li> Aria-label<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;"><input aria-label="Search Terms"></code></pre></li>
+						<li> aria-labelledby<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;"><span id="fnamelabel">First name:</span><input type="text" id="fname" aria-labelledby="fnamelabel"> </code></pre></li>
+						<li>Hidden label (Best option):  <pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;"><label class="accessAid" for="s">Search Terms</label><input type="text" id="s"></code></pre></li>
+					</ul>	
+				</section>
+
+<!--As per 2011 census(http://www.languageinindia.com%2fjan2014%2fdisabilityinindia2011data.pdf/0 ) almost 27 million of total population in India have a disability. Almost 18 million have been reported in rural India.-->
+
+
+				<section>
+					<h2>Web - Error Recovery</h2>
+					<ol>
+						<li> Validated on Server side and page refreshes completly </li>						
+						<li> In Browser, when user leaves the field  or upon submit (JS or html pattern) </li>
+					</ol>
+				</section>
+				<section>
+					<h2>Web - Error Recovery - Classic</h2>
+					<p> Accessible by default </p>
+				<img src="imgs/Error_Recovery/FormSubmission_ClassicalAlert.png" height="400" alt="Showing Classical Javascript alert dialog">
+				</section>
+
+				<section>
+					<h2>Error Recovery- Divs and Span</h2>
+					<p> InAccessible by default </p>
+				<img src="imgs/Error_Recovery/msgContainer.png" height="400" alt="Messages replaced by Div and Spans">
+				</section>
+				<section>
+					<h2>Error Recovery- Divs and Span</h2>
+					<p> Tooltip and Visual cues </p>
+				<img src="imgs/Error_Recovery/Tooltip_VisualCue.png" height="400" alt="Tooltip and Visualcues that needs to be accessible">
+				</section>
+
+				<section>
+					<h2>For the message container to be accessible</h2>
+					<p>Provide role of alert for the container </p>
+							<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+						<div class="alert alert-danger" role="alert"> There is some problem with the form submission </div>
+							</code></pre>
+				</section>
+
+				<section>
+					<h2>For the tooltip to be accessible</h2>
+					<p>Use aria-describedBy for input and role tooltip for tooltip</p>
+							<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+							<input id="paypalAccountData.password" aria-describedBy='helptip' name="paypalAccountData.password" class="form-control" type="password" data-reactid=".1837j8utlhc.0:$fieldset-0.1.1:$fieldset-2.2.4.$curr.$fieldset-0.0.1:$field-0.0:$fieldset-0.1:$field-1.0.1.0.1">
+
+<span id='helptip' role='tooltip'>We need a password to create an account for you</span>
+							</code></pre>
+				</section>
+
+				<section>
+					<h2>Denote the  input as invalid</h2>
+					<ol>
+						<li>Mark all input with aria-invalid=true</li>
+						<li>Focus on first error input</li>
+					<p></p>
+							<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+								email.attr('aria-invalid' ,'true')
+							</code></pre>
+				</section>
+
+				
+				<section>
+					<h2>Additonal flavoring</h2>
+					<ol>
+					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
+<style>
+input[type="text"]:invalid {
+    color: red;
+}
+</style>	
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Summary</h2>
+					<ol>
+						<li>Aria role=alert for container</li>
+						<li>Aria role=tooltip for tooltip</li>
+						<li>aria-describedBy=idoftooltip and aria-invalid=true for input</li>
+						<li>Do not use color alone to denote error messages</li>
+					</ol>	
+				</section>			
+				<section>
+					<h3>Notify Users</h3>
+						<ul>
+							<li><span class="code">aria-live="off | polite | assertive"</span></li>
+							<li><span class="code">aria-atomic="true | false"</span> - read the entire region or only what has changed</li>
+							<li><span class="code">aria-relevant ="  additions | removals | text | all"</span> -</li>
+						</ul>				
+					<pre><code contenteditable>
+&lt;div aria-live="polite"  aria-relevant="additions"  aria-atomic="true"&gt; Ajax Updates&lt;/div&gt;
+					</code></pre>
+					<p> Implicit live roles: </p>
+						<pre><code contenteditable>
+&lt;div role="alert" id="errMsgId"&gt; Important Error Message&lt;/div&gt; 
+&lt;output role="status"&gt;&lt;/output&gt; 
+					</code></pre>			
+				</section>
+
+				<section>
+					<h2>References</h2>
+					<ol>
+						<li><a href="http://go/a11ydocs">Accessibility Documentation</a></li>
+						<li><a href=" http://go/a11ystatus">Dashboard</a></li>
+						<li><a href="http://paypal.github.io/a11y/">PayPal open source</a></li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Let's MAKE THE WORLD BETTER</h2>
+					<img src="imgs/common/beach_a11y.jpg" style="height:500px" alt="Path way for wheelchair users in a beach">									
+				</section>
+				<section>
+					<h2>Let's MAKE THE WORLD BETTER</h2>
+					<img src="imgs/common/swing.jpg" alt="Accessible swiing for wheelchair users">									
+				</section>				
+				<section>
+					<h1>Questions, contact & Thank you.</h1>
+					<h3><a href="mailto:DL-PP-Accessibility-Core@paypal.com">DL-PP-Accessibility-Core@paypal.com </a></h3>
+				</section>
+
+			</div> <!-- slider div ends -->
+
+			<footer id="site-footer">
+				<div ><img src="imgs/template/ppfooter_ppt.jpg" alt="PayPal Logo"></div> 
+
+			</footer>	
+
+		</div>   <!-- reveal div ends -->
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
