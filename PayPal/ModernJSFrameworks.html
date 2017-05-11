@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Inclusion in Modern JS Frameworks</title>
+
+		<meta name="description" content="PayPal Internal: Inclusive Web Development">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="css/paypal.css" id="theme">
+
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/histyles/xcode.css">
+
+		<style type="text/css">
+			code {font-size: 16px; margin-top: 10px}
+		</style>
+   <style>
+span.cta-button-orange {
+  background-color: #e7a200;
+  box-shadow: 0 4px 0 0 #d38b00;
+}
+
+span.cta-button-orange:hover {
+  background-color: #d38b00;
+  box-shadow: 0 4px 0 0 #bb7700;
+}
+/* CTA Buttons
+------------------------------------------------------------ */
+
+span.cta-button-orange,
+.cta-button-yellow {
+  border-radius: 2em;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 24px 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+    </style>		
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal" role="application" aria-label="Press left or right arrow to navigate the slides">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="font-size: 2em;">Inclusion in Modern JS frameworks</h1>
+					<br>
+						<img src="imgs/common/Inclusion.png"  style="max-height:500px;border:0px" alt="Inclusive logo">
+
+					<p>
+						<small>  Nawaz <a href="http://twitter.com/mpnkhan">@mpnkhan</a>
+						</small>
+					</p>
+				</section>
+				</section>
+					<section>
+					<h2 class="h1-style fancy">Web Accessibility</h2>
+						<blockquote cite="https://www.w3.org/WAI/intro/accessibility.php">
+						 &ldquo;People with disabilities can perceive, understand, navigate, and interact with the Web, and that they can contribute to the Web.&rdquo;
+						</blockquote>
+						<a href="https://www.w3.org/WAI/intro/accessibility.php">https://www.w3.org/WAI/intro/accessibility.php</a>
+				</section>
+
+				<section>
+					<h2>Statistics</h2>
+					<p>
+						More than 1 billion persons in the world have some form of disability. This corresponds to about 15% of the world's population. according to World report on disability (WRD)
+					</p>
+					<p><small><a href="https://en.wikipedia.org/wiki/World_report_on_disability" target="main">WRD Report</a></small></p>
+				</section>
+				<section>
+					<h2> Accessibility Benefits everyone</h2>
+					<img src="imgs/common/old_age_needs.jpg" style="max-width:500px;" alt="Old age people using computer">									
+				</section>
+				<section>
+					<h2> Accessibility Benefits everyone</h2>
+					<img src="imgs/common/Ramp_for_all.jpg" style="max-height:500px" alt="Ramp at entrace of Chennai PayPal office">
+				</section>
+				<section>
+					<h2> Accessibility Benefits everyone</h2>
+					<img src="imgs/common/subtitles_benefit.png" style="max-height:500px"  alt="Clip of Japanese TV Serial Oshin with English Subtitle">
+				</section>
+				<section>
+					<h2> Accessibility Benefits everyone</h2>
+					<img src="imgs/common/sunlight.jpg" style="max-height:500px" alt="Browsing Mobile in Sunlight">
+				</section>
+				<section>
+					<h2> Accessibility Benefits everyone</h2>
+					<img src="imgs/common/TemporaryImpairement.jpg" style="max-height:500px;border:0px" alt="A User with Injured Hand using computer with single hand">
+				</section>				
+				<section>
+					<h2> Understaning Interactions of PWD</h2>
+					<ul>
+						<li>Visual - Keyboard, Screen reader, Magnifier, Custom stylesheet, HCM</li>
+						<li>Auditory - Caption, Description</li>
+						<li>Motor - Headmouse, Mouth stick , Switch, Trackball mouse,Adaptive keyboard, Voice recognition software</li>
+						<li>Cognitive - Screen Readers</li>
+					</ul>	
+				</section>
+				<section>
+					<h2> Modern JS Frameworks</h2>
+					<img src="imgs/ModernJS/BuyCar.jpg" style="max-height:500px" alt="New Frameworks like buying new Car">
+				</section>
+				<section>
+					<h2> Good Parts </h2>
+					<ul>
+						<li> Quick to production </li>
+						<li> Files separated by Functionality rather than Technology , easy for Modularity </li>
+						<li> JavaScript common technology between backend and front end engineers, so we get many engineers as full stack developers</li>
+						<li>Ready made code available for most problems</li>
+					</ul>	
+				</section>
+
+				<section>
+					<h2> Not Good Parts </h2>
+					<ul>
+						<li> People understand less about the copy pasted code</li>
+						<li> Plenty of Non standard open source plugins , most of them not accessible </li>
+						<li> Screens or parts of screens that change unexpectedly</li>
+					</ul>	
+				</section>
+				<section>
+					<h2> InAccessible examples in Tutorials</h2>
+					<img src="imgs/ModernJS/AngularTutorial_InAccessibleForm1.png" style="max-height:500px" alt="Angular InAccessible components">
+				</section>
+
+				<section>
+					<h2> InAccessible examples in Tutorials</h2>
+					<img src="imgs/ModernJS/AngularTutorial_InAccessibleForm.png" style="max-height:500px" alt="Angular InAccessible components">
+				</section>
+				<section>
+					<h2> InAccessible components</h2>
+					<img src="imgs/ModernJS/Angular_PrimeNGComponenet.png" style="width:800px;height:500px" alt="Angular InAccessible components">
+				</section>
+				<section>
+					<h2> InAccessible components</h2>
+					<img src="imgs/ModernJS/facebook_table_divitis.png" style="width:800px;height:500px" alt="React InAccessible components">
+				</section>
+				<section>
+					<h2> We'll cover React and AngularJS </h2>
+					<ol>
+						<li> Form Labelling</li>
+						<li> Focus management </li>						
+						<li> Faking a button </li>
+						<li> Menu component</li>
+						<li> Announcing changes</li>
+						<li> Testing</li>
+					</ol>	
+				</section>	
+
+
+			<section>
+				<h2>React</h2>
+				<ul>
+					<li> Virtual DOM, updates only the diff </li>
+					<li> Less framework sugar unlike angular </li>
+					<li> One way data flow </li>
+					<li> JSX with ES6 and expressions inside code </li>
+					<li> React developer tool on FF and chrome </li>
+				</ul>	
+			</section>
+
+			<section>
+					<h2>React Labels</h2>
+					<p>Any Guess what’s wrong with this form? </p>
+					<pre><code contenteditable>
+class LoginForm extends Component {
+  render() {
+    return (
+      <div className="login-form">
+        <input type="text" placeholder="email"></input>
+        <input type="text" placeholder="password"></input>
+      </div>
+    )
+  }
+}
+Source:	https://blog.codeship.com/designing-user-interfaces-with-react/
+			</code></pre>
+		</section>
+			<section>
+				<h2>React Labels</h2>
+				<p>Correct way to do</p>
+				<pre><code contenteditable>
+class LoginForm extends Component {
+  render() {
+    return (
+      <div className="login-form">
+        <label for=“email” class="sr-only">Email</label> <input type="text" id=“email”  placeholder="email"></input>
+        <label for=“password” class="sr-only">Email</label><input type="text" id=“password” placeholder="password"></input>
+      </div>
+    )
+  }
+}			</code></pre>
+		</section>
+
+		<section>
+		<h2>Screen reader friendly content</h2>
+			<pre><code contenteditable>
+.sr-only {
+	position: absolute;
+	left: -999em;
+}						
+.sr-only { 
+	position: absolute !important; 
+	clip: rect(1px 1px 1px 1px); 	/* IE6, IE7 */
+	clip: rect(1px,1px,1px,1px); 
+}
+					</code></pre>
+				</section>
+
+		<section>
+			<h2>Focus Management</h2>
+			<ol>
+				<li> Do no set focus before a component is fully rendered </li>
+				<li> Use the right react lifecycle hooks for setting focus </li>
+			</ol>	
+		</section>				
+
+		<section>
+			<h2>Set focus on component mount - Using refs</h2>
+			<pre><code contenteditable>
+class Focusinput extends React.Component {
+  componentDidMount(){
+    this.nameInput.focus();
+  }
+  render() {
+    return(
+      <div>
+        <input aria-label="input1" defaultValue="Won't focus" 
+        />
+        <input aria-label="input2"
+          ref={(input) => { this.nameInput = input; }} 
+          defaultValue="will focus"
+        />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  &lt;Focusinput/&gt;,
+  document.getElementById('root')
+);
+			</code></pre>
+			<small><a href="http://mpnkhan.github.io/test/examples/react/input_focus_componentdidMount.html"> http://mpnkhan.github.io/test/examples/react/input_focus_componentdidMount.html </a></small>
+		</section>
+		<section>
+			<h2>Set focus via component state </h2>
+			<pre><code contenteditable>
+componentDidMount() {
+  this.timerID = setInterval(
+    () => this.ajaxUpdate(),
+    3000
+  );          
+}
+ajaxUpdate() {
+  const id = Math.floor((Math.random()*1000)+1);
+  this.setState({ id: id }, () => {
+    this.nameInput.focus();
+  });
+}
+
+render() {
+  return (
+    <form onSubmit={this.handleSubmit}>
+      <label htmlFor={this.state.id}> Name: {this.state.id} <br/></label>
+      <input id={this.state.id} ref={(input) => { this.nameInput = input; }} type="text" value={this.state.value} onChange={this.handleChange}/>
+
+    </form>
+  );
+}	
+			</code></pre>
+			<small><a href="http://mpnkhan.github.io/test/examples/react/input_focus_state.html"> http://mpnkhan.github.io/test/examples/react/input_focus_state.html</a></small> <br/>
+			<small><a href="http://mpnkhan.github.io/test/examples/react/axiofetch.html"> http://mpnkhan.github.io/test/examples/react/axiofetch.html</a>
+			</small>
+		</section>
+
+		<section>
+			<h2>Problems with Fake elements</h2>
+			Have you experienced bizarre behavior of a web site or application?
+			<ul>
+				<li> Click on a link or button and it doesn’t tell you what happened. </li>
+				<li> Unable to perform a critical task because of this problem? </li>
+				<li> App report content changes as they occur, such that you don't have to re-scan the page to hunt for updated content? </li>
+			</ul>
+		</section>
+		<section>
+			<h2>Fake Button</h2>
+<pre><code contenteditable>
+  class Fakebutton extends React.Component {
+        constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+       }
+       handleClick(e) {
+        console.log(this.props.inputRef)
+        alert('clicked');
+      }       
+
+      render() {
+        return(
+          <div>
+          <span  className="cta-button-orange" onClick={this.handleClick}> Buy Now!!! </span>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(
+      &lt;Fakebutton /&gt;,
+      document.getElementById('root')
+    );
+</code></pre>
+	<span  class="cta-button-orange" onClick="alert('clicked')"> Buy Now!!! </span>	
+		</section>
+		<section>
+			<h2>Fake Button</h2>
+<pre><code contenteditable>
+    class Fakebutton extends React.Component {
+        constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+       }
+       handleClick(e) {
+        alert('clicked');
+      }       
+       handleKeyDown(e) {
+        if(e.key=='Enter' || e.key==' ') alert('Enter/Space');
+      }
+      render() {
+        return(
+          <div>
+          <span  tabIndex="0" className="cta-button-orange" onClick={this.handleClick} onKeyDown={this.handleKeyDown}> Buy Now!!! </span>
+          </div>
+        );
+      }
+    }
+</code></pre>
+<small><a href="http://mpnkhan.github.io/test/examples/react/Fakebutton.html"> http://mpnkhan.github.io/test/examples/react/Fakebutton.html</a></small>
+		</section>
+
+		<section>
+			<h2>Accessible Drop down MenuComponent</h2>
+			<ul>
+				<li>
+					Render in React and keep JS seperate for events <br/>
+<small><a href="http://mpnkhan.github.io/test/examples/react/menu_working.html"> http://mpnkhan.github.io/test/examples/react/menu_working.html</a></small>
+
+				</li>
+				<li>
+					Render everything in React (events only) <br/>
+<small><a href="http://mpnkhan.github.io/test/examples/react/menu.html"> http://mpnkhan.github.io/test/examples/react/menu.html</a></small>
+
+				</li>
+
+			</ul>	
+		</section>
+
+
+		<section>
+			<h2>Accessible Drop down MenuComponent</h2>
+<pre><code contenteditable>
+    class Menu extends React.Component {
+      constructor(props) {
+        super(props);
+       this.handleKeyDown = this.handleKeyDown.bind(this);
+      }
+      
+    handleKeyDown = event => {
+      var menu = ReactDOM.findDOMNode(this);
+      var items = menu.getElementsByTagName('li');
+      var index = Array.prototype.indexOf.call(items, event.target);
+      if (!~index)                                      index = 0
+      
+      switch (event.key) {
+        case 'ArrowDown':
+          index++;
+          if (index == items.length) index = 0;
+          items.item(index).focus();
+          //console.log(items.item(index).children[0]);
+          break;
+        case 'ArrowUp':
+          index--;
+          if (index < 0) index = items.length - 1;
+          items.item(index).focus();
+          break;
+        case 'Enter':
+        case ' ':
+          items.item(index).children[0].click();
+          break;          
+        case 'Escape':
+          //console.log(this.props.toggle);
+          this.props.toggle.state = {isToggleOn: false};
+          const cont = menu.parentNode;
+          cont.className = 'dropdown';
+          const btn = cont.querySelector('[role=button]');
+          btn.setAttribute('aria-expanded','false');
+          btn.focus();
+      }	             
+    }      
+      
+      render() {
+        return(
+              <ul className="dropdown-menu" role="menu" aria-labelledby="drop1">
+              {this.props.items.map(item =>
+                <li tabIndex="-1"  key={item.id.toString()} role="presentation" onKeyDown={this.handleKeyDown}>
+                  <a key={item.id} role="menuitem"  tabIndex="-1" href={item.link}>{item.content}</a>
+                </li>
+              )}
+            </ul>
+        );
+      }
+    }
+    class Button extends React.Component{
+       constructor(props) {
+        super(props);
+        this.state = {isToggleOn: false};
+        this.handleClick = this.handleClick.bind(this);
+       }
+       handleClick(e) {
+          this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+          }    
+       ));         
+      }
+      componentDidUpdate() {
+          const element = ReactDOM.findDOMNode(this);
+          element.querySelector('li').focus();      
+        }      
+      render() {
+        return(
+           <nav  className={this.state.isToggleOn ? 'dropdown open' : 'dropdown'} key="2">
+            <a id="drop1" key="3" aria-haspopup="true" aria-expanded={this.state.isToggleOn} href="#" role="button" onClick={this.handleClick} className="dropdown-toggle btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">Dropdown <b className="caret"></b></a>
+            &lt;Menu toggle={this} items={this.props.items}/&gt;
+           </nav>  
+        );
+      }         
+    }
+
+	var sports =[
+			{'id':1, 'content':'Cricket','link':'http://sports.yahoo.com'}, 
+			{'id':2, 'content':'Tennis','link':'http://www.bbc.com/sport'},
+			{'id':3, 'content':'Badminton','link':'http://bwfbadminton.com/'}
+			]
+    ReactDOM.render(
+      &lt;Button key="1" items={sports}/&gt;,
+      document.getElementById('container')
+    );	
+</code></pre>
+	<small><a href="http://mpnkhan.github.io/test/examples/react/menu.html"> http://mpnkhan.github.io/test/examples/react/menu.html</a></small>
+		</section>
+
+				<section>
+					<h3>Announce Dynamic content</h3>
+						<ul>
+							<li><span class="code">aria-live="off | polite | assertive"</span></li>
+							<li><span class="code">aria-atomic="true | false"</span> - read the entire region or only what has changed</li>
+							<li><span class="code">aria-relevant ="  additions | removals | text | all"</span> -</li>
+						</ul>				
+					<pre><code contenteditable>
+&lt;div aria-live="polite"  aria-atomic="true" aria-relevant="additions"&gt; Ajax Updates&lt;/div&gt;
+					</code></pre>
+					<p> Implicit live roles: </p>
+						<pre><code contenteditable>
+&lt;div role="alert" id="errMsgId"&gt; Important Error Message&lt;/div&gt; 
+					</code></pre>			
+				</section>
+
+		<section>
+			<h2>Linting with eslint-plugin-jsx-a11y</h2>
+			<pre><code contenteditable>
+$ eslint src webpack.config.babel.js --ext .js,.jsx 
+
+/Users/pkhan/Desktop/Nawaz/Outside/learn/react/src/shared/component/button.jsx
+  11:3  error  The element button has an implicit role of button. Defining this explicitly is redundant and should be avoided  jsx-a11y/no-redundant-roles
+
+/Users/pkhan/Desktop/Nawaz/Outside/learn/react/src/shared/component/modal-example.jsx
+   6:48  error  aria-modal: This attribute is an invalid ARIA attribute                                                         jsx-a11y/aria-props
+  17:11  error  The element button has an implicit role of button. Defining this explicitly is redundant and should be avoided  jsx-a11y/no-redundant-roles
+
+/Users/pkhan/Desktop/Nawaz/Outside/learn/react/src/shared/component/nav.jsx
+  23:5  error  The element button has an implicit role of button. Defining this explicitly is redundant and should be avoided  jsx-a11y/no-redundant-roles
+
+/Users/pkhan/Desktop/Nawaz/Outside/learn/react/src/shared/component/page/home.jsx
+  26:13  error  The element button has an implicit role of button. Defining this explicitly is redundant and should be avoided  jsx-a11y/no-redundant-roles
+
+✖ 5 problems (5 errors, 0 warnings)
+
+error Command failed with exit code 1.
+			</code></pre>	
+		</section>
+		<section>
+			<h2>Linting</h2>
+			<p>In .eslintrc.json</p>
+			<pre><code contenteditable>
+				{
+				  "extends": [
+				    "plugin:jsx-a11y/recommended"
+				  ],
+				  "plugins": [
+				    "jsx-a11y"
+				  ],		
+				}  
+			</code></pre>
+			<p>In package.json</p>
+<pre><code contenteditable>			
+ "scripts": {
+    "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
+}
+</code></pre>
+	<small><a href="https://github.com/evcohen/eslint-plugin-jsx-a11y"> https://github.com/evcohen/eslint-plugin-jsx-a11y</a></small>
+		</section>
+
+		<section>
+			<h2>Linting with react-a11y</h2>
+			<pre><code contenteditable>
+$ npm install react-a11y				
+			</code></pre>
+			<p>In app.jsx file</p>
+			<pre><code contenteditable>
+import a11y from 'react-a11y'		//start
+.
+.
+.
+a11y(React)				//Last line
+export default App
+
+
+			</code></pre>
+		</section>
+
+		<section>
+			<h2>Linting with react-a11y</h2>
+			<p> Shows error in console </p>
+			<pre><code contenteditable>
+$ yarn start
+yarn start v0.22.0
+$ yarn dev:start 
+yarn dev:start v0.22.0
+$ nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server 
+Server running on port 8000 (development).
+Keep "yarn dev:wds" running in an other terminal.
+Nav You have an unlabeled element or control. Add `aria-label` or `aria-labelledby` attribute, or put some text in the element.
+Nav You have an unlabeled element or control. Add `aria-label` or `aria-labelledby` attribute, or put some text in the element.				
+			</code></pre>
+	<small><a href="https://github.com/reactjs/react-a11y"> https://github.com/reactjs/react-a11y</a></small>			
+			
+		</section>
+
+		<section>
+			<h2>Angular JS from google</h2>
+		</section>
+
+
+		<section>
+			<h2>Labelling</h2>
+			<p>Label Form elements in templates</p>
+			<pre><code contenteditable>
+ template: `
+ 	<div>
+         <label for="name">name: </label>
+        <input id="name" [(ngModel)]="selectedPost.name" placeholder="name"/>
+    </div>
+  `,
+			</code></pre>	
+		</section>
+		<section>
+			<h2>Labelling</h2>
+			<p>Dynamic elements should also be labelled</p>
+			<pre><code contenteditable>
+ template: `
+      <div *ngFor="let post of blogposts">
+        <label for="name{{post.id}}">name: </label>
+        <input id="name{{post.id}}" [(ngModel)]="selectedPost.name" placeholder="name"/>
+      </div>
+  `,
+			</code></pre>	
+		</section>		
+		<section>
+			<h2>Focusable and keyboard accessible</h2>
+			<pre><code contenteditable>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    (click)="onSelect(hero)"
+    (keydown)="onKeydown($event)"
+    tabIndex="0"
+    [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+  onKeydown(event: any): void{
+    if(event.key=='Enter'){
+      event.target.click();
+    }
+  }
+			</code></pre>
+			or
+			<pre><code contenteditable>
+  &lt;li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+  	#item    
+	(keydown.enter)="item.click()"&gt;
+ 			</code></pre>
+		</section>				
+		<section>
+			<h2>Angular Material Design</h2>
+			<p> Angular Material Design components are better
+				<a href="https://material.angular.io/components">https://material.angular.io/components</a>
+
+		</section>
+
+		<section>
+			<h2>Summary</h2>
+			<ol>
+				<li> Write meaningful HTML</li>
+				<li> Use ARIA attributes refer to W3C,MDN  for Aria usage </li>
+				<li> Manage focus </li>
+				<li> Make your app keyboard accessible </li>
+				<li> Alert user for content change </li>
+			</ol>	
+		</section>
+
+		<section>
+			<h2>Resources</h2>
+			<ul>
+				<li><a href="http://w3c.github.io/aria-in-html/"> Aria in HTML </a> </li>
+				<li><a href="http://w3c.github.io/aria-practices/"> WAI-ARIA Authoring Practices </a> </li>
+				<li><a href="Tips on Developing for Web Accessibility"> Tips on Developing for Web Accessibility </a> </li>								
+			</ul>	
+		</section>
+		<section class="present" data-index-h="35" style="top: -240px; display: block;">
+					<h1>Questions,  Thank you.</h1>
+				</section>
+			</div> <!-- slider div ends -->
+		</section>
+			
+			<footer id="site-footer">
+				<div ><img src="imgs/template/ppfooter_ppt.jpg" alt="PayPal Logo"></div> 
+
+			</footer>	
+
+		</div>   <!-- reveal div ends -->
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
