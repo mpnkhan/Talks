@@ -21,12 +21,17 @@
 		<link rel="stylesheet" href="reveal.js/lib/css/xcode.css">
 
 		<style type="text/css">
-		pre{
-			width: 100% !Important;
-		}
-		code {font-size: 16px; margin-top: 10px}
-
+			.reveal pre  {
+			    font-size: 1em;
+			    line-height: 1.2;
+			    overflow: hidden;
+			    text-align: left;
+			}
+			.reveal pre code{
+				max-height: 500px;
+			}
 		</style>
+
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -52,8 +57,10 @@
 
 				<section>
 					<h1>Developer Workshop</h1>
-					<h3>18th of May 2017</h3>
+					<img src="imgs/GAAD_India_logo.jpg" alt="Global Accessibility Awareness Day, India" style="height:100px; width:100px;border:0px;">
+					<h3>GAAD 2017, 18th of May 2017</h3>
 					<p>
+
 						<small>By Prem Nawaz Khan / <a href="http://twitter.com/mpnkhan">@mpnkhan</a></small>
 					</p>
 				</section>
@@ -118,9 +125,9 @@
 				<section>
 					<h2>Do not fake it</h2>
 					<p>
-					<pre><code data-trim contenteditable>
-Bad: 	<img src="submit.jpg" onclick=...>   //NVDA Link submit graphic clickable
-OK: 	&lt;a onclick="..."&gt;<img src="submit.jpg"> //NVDA Link submit graphic clickable
+					<pre><code class="hljs" data-trim contenteditable>
+Bad: &lt;img src="submit.jpg" onclick=...&gt;  //NVDA Link submit graphic clickable
+OK: &lt;a onclick="..."&gt;<img src="submit.jpg"> //NVDA Link submit graphic clickable
 Better: &lt;a role="button" onclick="..."&gt;<img src="submit.jpg">		//NVDA  Button
 Best: 	&lt;button onclick="..."&gt;  //NVDA Button
 					</code></pre>
@@ -214,10 +221,12 @@ keydown: function(e) { // Trigger the click event from the keyboard
 },
 						</code></pre>    								
 						</p>
-						<p class="fragment">
+</section>						
+<section>						
+						<p>
 							But this is Better , Isn't it?
 						</p>
-						<pre class="fragment"><code contenteditable>
+						<pre><code contenteditable>
 &lt;a role="button" tabIndex="0" class="btn"&gt; Call to Action Button &lt;/a&gt;
 &lt;button class="btnA"&gt;Call to Action Button&lt;/button&gt;
 <button class="btnA" onClick="alert('clicked')">Call to Action Button</button>
@@ -242,7 +251,7 @@ keydown: function(e) { // Trigger the click event from the keyboard
 					<img src="PayPal/imgs/common/floating_label.jpg" alt="Labels as placeholder">
 				</section>
 				<section>
-					<h2>Problems with Floating labels</h2>
+					<h3>Problems with Floating labels</h3>
 					<ul>						
 						<li> Difficult to remember the edited field</li>
 						<li> Can't use both label and placeholder </li>
@@ -361,6 +370,8 @@ input[type="text"]:invalid
 					<pre><code contenteditable>
 &lt;div aria-live="polite"  aria-relevant="additions"  aria-atomic="true"&gt; Ajax Updates&lt;/div&gt;
 					</code></pre>
+</section>					
+<section>					
 					<p> Implicit live roles: </p>
 						<pre><code contenteditable>
 &lt;div role="alert" id="errMsgId"&gt; Important Error Message&lt;/div&gt; 

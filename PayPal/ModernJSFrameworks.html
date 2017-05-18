@@ -19,45 +19,44 @@
 
 
 
-		<!-- For syntax highlighting -->
-		<style type="text/css"></style>
 		<style type="text/css">
-.reveal pre  {
-    font-size: 1em;
-    line-height: 1.2;
-    overflow: hidden;
-    text-align: left;
-}
-.reveal pre code{
-	max-height: 500px;
-}
+			.reveal pre  {
+			    font-size: 1em;
+			    line-height: 1.2;
+			    overflow: hidden;
+			    text-align: left;
+			}
+			.reveal pre code{
+				max-height: 500px;
+			}
 		</style>
-   <style>
-span.cta-button-orange {
-  background-color: #e7a200;
-  box-shadow: 0 4px 0 0 #d38b00;
-}
+		<style>
+			span.cta-button-orange {
+			  background-color: #e7a200;
+			  box-shadow: 0 4px 0 0 #d38b00;
+			}
 
-span.cta-button-orange:hover {
-  background-color: #d38b00;
-  box-shadow: 0 4px 0 0 #bb7700;
-}
-/* CTA Buttons
------------------------------------------------------------- */
+			span.cta-button-orange:hover {
+			  background-color: #d38b00;
+			  box-shadow: 0 4px 0 0 #bb7700;
+			}
+			/* CTA Buttons
+			------------------------------------------------------------ */
 
-span.cta-button-orange,
-.cta-button-yellow {
-  border-radius: 2em;
-  color: #fff;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  padding: 24px 32px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-    </style>		
+			span.cta-button-orange,
+			.cta-button-yellow {
+			  border-radius: 2em;
+			  color: #fff;
+			  display: inline-block;
+			  font-size: 14px;
+			  font-weight: 600;
+			  letter-spacing: 1px;
+			  padding: 24px 32px;
+			  text-decoration: none;
+			  text-transform: uppercase;
+			}
+    	</style>
+
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -230,7 +229,7 @@ class LoginForm extends Component {
 		</section>
 
 		<section>
-		<h2>Screen reader friendly content</h2>
+		<h3>Screen reader friendly content</h3>
 			<pre><code contenteditable>
 .sr-only {
 	position: absolute;
@@ -321,7 +320,7 @@ render() {
 			</ul>
 		</section>
 		<section>
-			<h2>Fake Button</h2>
+			<h3>Fake Button</h3>
 <pre><code contenteditable>
   class Fakebutton extends React.Component {
         constructor(props) {
@@ -350,7 +349,7 @@ render() {
 	<span  class="cta-button-orange" onClick="alert('clicked')"> Buy Now!!! </span>	
 		</section>
 		<section>
-			<h2>Fake Button</h2>
+			<h3>Fake Button</h3>
 <pre><code contenteditable>
     class Fakebutton extends React.Component {
         constructor(props) {
@@ -395,7 +394,7 @@ render() {
 
 
 		<section>
-			<h2>Accessible Drop down MenuComponent</h2>
+			<h3>Accessible Drop down MenuComponent</h3>
 <pre><code contenteditable>
     class Menu extends React.Component {
       constructor(props) {
@@ -504,7 +503,7 @@ render() {
 				</section>
 
 		<section>
-			<h2>Linting with eslint-plugin-jsx-a11y</h2>
+			<h3>Linting with eslint-plugin-jsx-a11y</h3>
 			<pre><code contenteditable>
 $ eslint src webpack.config.babel.js --ext .js,.jsx 
 
@@ -527,7 +526,7 @@ error Command failed with exit code 1.
 			</code></pre>	
 		</section>
 		<section>
-			<h2>Linting</h2>
+			<h3>Linting</h3>
 			<p>In .eslintrc.json</p>
 			<pre><code contenteditable>
 {
@@ -539,17 +538,20 @@ error Command failed with exit code 1.
   ],		
 }  
 			</code></pre>
+
+		</section>
+		<section>
 			<p>In package.json</p>
-<pre><code contenteditable>			
+			<pre><code contenteditable>			
  "scripts": {
     "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
 }
-</code></pre>
-	<small><a href="https://github.com/evcohen/eslint-plugin-jsx-a11y"> https://github.com/evcohen/eslint-plugin-jsx-a11y</a></small>
+			</code></pre>
+			<small><a href="https://github.com/evcohen/eslint-plugin-jsx-a11y"> https://github.com/evcohen/eslint-plugin-jsx-a11y</a></small>
 		</section>
 
 		<section>
-			<h2>Linting with react-a11y</h2>
+			<h3>Linting with react-a11y</h3>
 			<pre><code contenteditable>
 $ npm install react-a11y				
 			</code></pre>
@@ -567,7 +569,7 @@ export default App
 		</section>
 
 		<section>
-			<h2>Linting with react-a11y</h2>
+			<h3>Linting with react-a11y</h3>
 			<p> Shows error in console </p>
 			<pre><code contenteditable>
 $ yarn start
@@ -602,7 +604,7 @@ Nav You have an unlabeled element or control. Add `aria-label` or `aria-labelled
 			</code></pre>	
 		</section>
 		<section>
-			<h2>Labelling</h2>
+			<h3>Labelling</h3>
 			<p>Dynamic elements should also be labelled</p>
 			<pre><code contenteditable>
  template: `
@@ -667,7 +669,7 @@ adds Aria attributes
    		</code></pre>
 		</section>
 		<section>
-			<h2>NgAria only helps certain use cases</h2>
+			<h3>NgAria only helps certain use cases</h3>
 			<ul>
 				<li><a href="https://docs.angularjs.org/guide/accessibility#ngmodel">ngModel</a></li>
 				<li><a href="https://docs.angularjs.org/guide/accessibility#ngdisabled">ngDisabled</a></li>
