@@ -15,10 +15,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+		<link rel="stylesheet" href="reveal.js/lib/css/xcode.css">
 
 		<style type="text/css">
 		pre{
@@ -62,10 +62,10 @@
 					<img src="PayPal/imgs/common/Evangelist.jpg" alt="code, preach at PayPal" style="max-height:500px">
 				</section>
 				<section>
-					<h2> Stats </h2>
+					<h2> Statistics </h2>
 					<ul>
-						<li> Web accessibility means that people with disabilities can use the Web. </li>
-				<li>More than 1 billion persons in the world have some form of disability. This corresponds to about 15% of the world's population. </li>
+				<li>More than 1 billion persons (15%) in the world have some form of disability.</li>
+
 						<li>27 million of total population in India have a disability. Almost 18 million have been reported in rural India </li>
 					<p>
 						<small><a href="https://en.wikipedia.org/wiki/World_report_on_disability" target="main">WRD Report</a></small><br>
@@ -80,7 +80,7 @@
 				</section>
 
 				<section>
-					<h3>Some other kind of developers</h3>
+					<h3>Few other developers</h3>
 					<img src="PayPal/imgs/common/Work_Timeline.jpg" alt="Engineer push the panic button to complete" style="max-height:500px">
 				</section>
 
@@ -188,8 +188,9 @@ Correct: <div role=tab><h2>heading tab</h2></div>
 &lt;span role="button" tabIndex="0" class="btn"&gt; Call to Action Button &lt;/span&gt;
 							</code></pre>
 						</p>
-
-						<p class="fragment">Add Some Focus Styles 
+						</section>
+						<section>
+						<p>Add Some Focus Styles 
 							<span role="button" tabIndex="0" class="btnA" onClick="alert('clicked')">Call to Action Button</span>
 						<pre class="fragment"><code contenteditable style="padding:0px;">	
 span.btn:hover, span.btn:focus  {
@@ -238,18 +239,7 @@ keydown: function(e) { // Trigger the click event from the keyboard
 				</section>
 				<section>
 					<h2>Form Labelling</h2>
-					<ul>
-					<li>
-					<pre><code data-trim contenteditable>
-<div class="searchbox">
-&lt;input type="text" name="keywords" placeholder="Search by charity name or keyword" class="inputBox" id="inputBoxSearchBar"&gt;
-</div>
-				</code></pre>								
-					</li>						
-						<li>
-							Place Holders are not labels:
-						</li>	
-					</ul>
+					<img src="PayPal/imgs/common/floating_label.jpg" alt="Labels as placeholder">
 				</section>
 				<section>
 					<h2>Problems with Floating labels</h2>
@@ -293,18 +283,18 @@ keydown: function(e) { // Trigger the click event from the keyboard
 					</ol>
 				</section>
 				<section>
-					<h2>Web - Error Recovery - Classic</h2>
+					<h3>Web - Error Recovery - Classic</h3>
 					<p> Accessible by default </p>
 				<img src="PayPal/imgs/Error_Recovery/FormSubmission_ClassicalAlert.png" height="400" alt="Showing Classical Javascript alert dialog">
 				</section>
 
 				<section>
-					<h2>Error Recovery- Divs and Span</h2>
+					<h3>Error Recovery- Divs and Span</h3>
 					<p> InAccessible by default </p>
 				<img src="PayPal/imgs/Error_Recovery/msgContainer.png" height="400" alt="Messages replaced by Div and Spans">
 				</section>
 				<section>
-					<h2>Error Recovery- Divs and Span</h2>
+					<h3>Error Recovery- Divs and Span</h3>
 					<p> Tooltip and Visual cues </p>
 				<img src="PayPal/imgs/Error_Recovery/Tooltip_VisualCue.png" height="400" alt="Tooltip and Visualcues that needs to be accessible">
 				</section>
@@ -318,10 +308,10 @@ keydown: function(e) { // Trigger the click event from the keyboard
 				</section>
 
 				<section>
-					<h2>For the tooltip to be accessible</h2>
+					<h3>For the tooltip to be accessible</h3>
 					<p>Use aria-describedBy for input and role tooltip for tooltip</p>
 							<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
-							<input id="paypalAccountData.password" aria-describedBy='helptip' name="paypalAccountData.password" class="form-control" type="password" data-reactid=".1837j8utlhc.0:$fieldset-0.1.1:$fieldset-2.2.4.$curr.$fieldset-0.0.1:$field-0.0:$fieldset-0.1:$field-1.0.1.0.1">
+<input id="paypalAccountData.password" aria-describedBy='helptip' name="paypalAccountData.password" class="form-control" type="password" data-reactid=".1837j8utlhc.0:$fieldset-0.1.1:$fieldset-2.2.4.$curr.$fieldset-0.0.1:$field-0.0:$fieldset-0.1:$field-1.0.1.0.1">
 
 <span id='helptip' role='tooltip'>We need a password to create an account for you</span>
 							</code></pre>
@@ -344,7 +334,8 @@ keydown: function(e) { // Trigger the click event from the keyboard
 					<ol>
 					<pre><code data-trim contenteditable style="font-size: 16px; margin-top: 20px;">
 <style>
-input[type="text"]:invalid {
+input[type="text"]:invalid 
+{
     color: red;
 }
 </style>	
@@ -376,6 +367,7 @@ input[type="text"]:invalid {
 &lt;output role="status"&gt;&lt;/output&gt; 
 					</code></pre>			
 				</section>
+				
 				<section>
 					<h2>Key Take aways</h2>
 					<ol>

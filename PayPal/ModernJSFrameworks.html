@@ -14,14 +14,23 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/lib/css/histyles/xcode.css">		
 		<link rel="stylesheet" href="css/paypal.css" id="theme">
 
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="reveal.js/lib/css/histyles/xcode.css">
 
+		<!-- For syntax highlighting -->
+		<style type="text/css"></style>
 		<style type="text/css">
-			code {font-size: 16px; margin-top: 10px}
+.reveal pre  {
+    font-size: 1em;
+    line-height: 1.2;
+    overflow: hidden;
+    text-align: left;
+}
+.reveal pre code{
+	max-height: 500px;
+}
 		</style>
    <style>
 span.cta-button-orange {
@@ -87,30 +96,28 @@ span.cta-button-orange,
 				<section>
 					<h2>Statistics</h2>
 					<p>
-						More than 1 billion persons in the world have some form of disability. This corresponds to about 15% of the world's population. according to World report on disability (WRD)
+						More than 1 billion persons (15%) in the world have some form of disability.
 					</p>
 					<p><small><a href="https://en.wikipedia.org/wiki/World_report_on_disability" target="main">WRD Report</a></small></p>
 				</section>
 				<section>
-					<h2> Accessibility Benefits everyone</h2>
+					<h2> 'N' number of Senior Users</h2>
 					<img src="imgs/common/old_age_needs.jpg" style="max-width:500px;" alt="Old age people using computer">									
 				</section>
 				<section>
-					<h2> Accessibility Benefits everyone</h2>
-					<img src="imgs/common/Ramp_for_all.jpg" style="max-height:500px" alt="Ramp at entrace of Chennai PayPal office">
-				</section>
-				<section>
-					<h2> Accessibility Benefits everyone</h2>
-					<img src="imgs/common/subtitles_benefit.png" style="max-height:500px"  alt="Clip of Japanese TV Serial Oshin with English Subtitle">
-				</section>
-				<section>
-					<h2> Accessibility Benefits everyone</h2>
-					<img src="imgs/common/sunlight.jpg" style="max-height:500px" alt="Browsing Mobile in Sunlight">
-				</section>
-				<section>
-					<h2> Accessibility Benefits everyone</h2>
+					<h2>'N' number of Temporary Impairments</h2>
 					<img src="imgs/common/TemporaryImpairement.jpg" style="max-height:500px;border:0px" alt="A User with Injured Hand using computer with single hand">
 				</section>				
+				<section>
+					<h2> 'N' number of Situational Disabilities</h2>
+					<img src="imgs/common/sunlight.jpg" style="max-height:500px" alt="Browsing Mobile in Sunlight">
+				</section>
+
+				<section>
+					<h2> Design and develop for ‘future you’</h2>
+					<img src="imgs/common/injury.png" style="max-height:500px;border:0px" alt="Microsoft Inclusive Toolkit">
+				</section>	
+
 				<section>
 					<h2> Understanding Interactions of PWD</h2>
 					<ul>
@@ -124,6 +131,12 @@ span.cta-button-orange,
 					<h2> Modern JS Frameworks</h2>
 					<img src="imgs/ModernJS/BuyCar.jpg" style="max-height:500px" alt="New Frameworks like buying new Car">
 				</section>
+				<section>
+					<h2> Modern JS Frameworks</h2>
+					<img src="imgs/ModernJS/Angular4Meetup.png" style="max-height:520px" alt="New Frameworks like buying new Car">
+				</section>
+
+				
 				<section>
 					<h2> Good Parts </h2>
 					<ul>
@@ -184,7 +197,7 @@ span.cta-button-orange,
 			</section>
 
 			<section>
-					<h2>React Labels</h2>
+					<h3>React Labels</h3>
 					<p>Any Guess what’s wrong with this form? </p>
 					<pre><code contenteditable>
 class LoginForm extends Component {
@@ -201,7 +214,7 @@ Source:	https://blog.codeship.com/designing-user-interfaces-with-react/
 			</code></pre>
 		</section>
 			<section>
-				<h2>React Labels</h2>
+				<h3>React Labels</h3>
 				<p>Correct way to do</p>
 				<pre><code contenteditable>
 class LoginForm extends Component {
@@ -240,7 +253,7 @@ class LoginForm extends Component {
 		</section>				
 
 		<section>
-			<h2>Set focus on component mount - Using refs</h2>
+			<h3>Set focus on component mount - Using refs</h3>
 			<pre><code contenteditable>
 class Focusinput extends React.Component {
   componentDidMount(){
@@ -268,7 +281,7 @@ ReactDOM.render(
 			<small><a href="http://mpnkhan.github.io/test/examples/react/input_focus_componentdidMount.html"> http://mpnkhan.github.io/test/examples/react/input_focus_componentdidMount.html </a></small>
 		</section>
 		<section>
-			<h2>Set focus via component state </h2>
+			<h3>Set focus via component state </h3>
 			<pre><code contenteditable>
 componentDidMount() {
   this.timerID = setInterval(
@@ -517,14 +530,14 @@ error Command failed with exit code 1.
 			<h2>Linting</h2>
 			<p>In .eslintrc.json</p>
 			<pre><code contenteditable>
-				{
-				  "extends": [
-				    "plugin:jsx-a11y/recommended"
-				  ],
-				  "plugins": [
-				    "jsx-a11y"
-				  ],		
-				}  
+{
+  "extends": [
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": [
+    "jsx-a11y"
+  ],		
+}  
 			</code></pre>
 			<p>In package.json</p>
 <pre><code contenteditable>			
@@ -601,7 +614,7 @@ Nav You have an unlabeled element or control. Add `aria-label` or `aria-labelled
 			</code></pre>	
 		</section>		
 		<section>
-			<h2>Focusable and keyboard accessible</h2>
+			<h3>Focusable and keyboard accessible</h3>
 			<pre><code contenteditable>
 <ul class="heroes">
   <li *ngFor="let hero of heroes"
@@ -619,18 +632,64 @@ Nav You have an unlabeled element or control. Add `aria-label` or `aria-labelled
   }
 			</code></pre>
 			or
+		</section>			
+		<section>
+			<h3>Focusable and keyboard accessible</h3>
 			<pre><code contenteditable>
-  &lt;li *ngFor="let hero of heroes"
-    [class.selected]="hero === selectedHero"
-  	#item    
-	(keydown.enter)="item.click()"&gt;
+&lt;li *ngFor="let hero of heroes"
+[class.selected]="hero === selectedHero"
+	#item    
+(keydown.enter)="item.click()"&gt;
  			</code></pre>
-		</section>				
+		</section>
+
+		<section>
+			<h3>For Angular1 components use ngAria</h3>
+			<pre><code contenteditable>
+$yarn add angular-aria@X.Y.Z
+(function(angular) {
+  'use strict';
+angular.
+  module('ngAria_ngModelExample', ['ngAria']);
+ 			</code></pre>
+		</section>
+
+		<section>
+			<h3>For Angular1 components use ngAria</h3>
+			<pre><code contenteditable>
+  <custom-checkbox ng-disabled="disabled" role="checkbox" ng-model="checked" required  aria-label="Custom checkbox">
+    Custom checkbox
+  </custom-checkbox>
+adds Aria attributes
+  <custom-checkbox aria-disabled="true" role="checkbox"  ng-model="checked" required  aria-label="Custom checkbox" ng-disabled="disabled">
+    Custom checkbox
+  </custom-checkbox>
+   		</code></pre>
+		</section>
+		<section>
+			<h2>NgAria only helps certain use cases</h2>
+			<ul>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#ngmodel">ngModel</a></li>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#ngdisabled">ngDisabled</a></li>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#ngrequired">ngRequired</a></li>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#ngreadonly">ngReadonly</a></li>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#ngvaluechecked">ngChecked</a></li>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#ngvaluechecked">ngValue</a></li>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#ngshow">ngShow</a></li>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#nghide">ngHide</a></li>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#ngclick">ngClick</a></li>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#ngdblclick">ngDblClick</a></li>
+				<li><a href="https://docs.angularjs.org/guide/accessibility#ngmessages">ngMessages</a></li>
+			</ul>
+			<br/><br/>
+			<small><a href="https://docs.angularjs.org/guide/accessibility">Angular1 Accessibility docs</a></small>
+		</section>
+
 		<section>
 			<h2>Angular Material Design</h2>
 			<p> Angular Material Design components are better
 				<a href="https://material.angular.io/components">https://material.angular.io/components</a>
-
+			</p>	
 		</section>
 
 		<section>
@@ -658,7 +717,7 @@ Nav You have an unlabeled element or control. Add `aria-label` or `aria-labelled
 					<h1>Questions,  Thank you.</h1>
 		</section>
 
-		
+
 			</div> <!-- slider div ends -->
 		</section>
 			
