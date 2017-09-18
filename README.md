@@ -4,7 +4,7 @@ Some of the talks I gave
 
 
 ## Talks
-* GAAD 2017, Bangalore, [Slides](http://mpnkhan.github.io/Talks/PayPal/ModernJSFrameworks.html), [Photos](https://flic.kr/s/aHsksYDTDw)
+* GAAD 2017, Bangalore, [Slides](http://mpnkhan.github.io/Talks/PayPal/ModernJSFrameworks.html), [Photos](https://flic.kr/s/aHsm1e9vAV)
 * Techshare,March 2016, New Delhi, [Slides](http://mpnkhan.github.io/Talks/PayPal/TechShare2016.pptx), [Photos](https://flic.kr/s/aHsksYDTDw)
 * Intuit, October 2015, Bangalore, [Slides](http://mpnkhan.github.io/Talks/PayPal/IntuitOct2015.html)
 * Top 10 Accessibility mistakes and Why?, W3C Summit, Online [Slides](http://mpnkhan.github.io/Talks/PayPal/W3CIndiaNov2015.html#/)
