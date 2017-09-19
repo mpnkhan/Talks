@@ -24,6 +24,9 @@
 			.reveal pre code{
 				max-height: 500px;
 			}
+	
+		.text {float: right; width: 900px;}
+		
 		</style>
 
 		<!-- For syntax highlighting -->
@@ -66,22 +69,30 @@
 						</li>						
 						<li class="fragment">
 							August 2008 ... <br>
-								<span  class="fragment"> Target Corporation settled class action lawsuit for $6 million and also pays attorney fees of  $3,738,864.96
+								<span  class="fragment"> Target Corporation settled class action lawsuit for $6 million.
 								</span>
 						</li>						
 
 					</ul>
 				</section>
 				<section>
-					<h2> Case of eBay </h2>
-					<ul>
-						<li class="fragment"> Melissa Earll,  a person with deafness wanted  to Sell  classic comic books, baseball cards on eBay</li>
-						<li class="fragment"> eBay's verification system requires sellers to retrieve and submit a password from a telephone call. She can't hear the password and says eBay doesn't use voice-to-text or other technologies deaf people often rely upon</li>
-						<li class="fragment">
-							January 2013 ... <br>
-								<span  class="fragment"> Along with National Association for the Deaf sues eBay </span
-						</li>						
-					</ul>
+					<div class="cont">
+					    <h2> Case of eBay </h2>						
+					    <img src="imgs/common/mellisa.png"  alt="Blind customer purchasing from Target">
+					    <div class="text">
+							<ul>
+								<li class="fragment"> Melissa Earll,  a person with deafness wanted  to sell  classic comic books, baseball cards on eBay</li>
+								<li class="fragment"> eBay's verification system requires sellers to retrieve and submit a password from a telephone call. She can't hear the password and says eBay doesn't use voice-to-text or other technologies deaf people often rely upon</li>
+								<li class="fragment">
+									January 2013 ... <br>
+										<span  class="fragment"> Along with National Association for the Deaf sues eBay </span
+								</li>						
+							</ul>
+						</div>
+					</div>​
+
+					
+
 				</section>
 				<section>
 					<h3> Much More</h3>
@@ -115,7 +126,7 @@
 				</section>
 
 				<section>
-					<h2>Huge beneficiary of Accessible website - Old users</h2>
+					<h2>Huge beneficiary are Senior Citizens</h2>
 					<img src="imgs/common/old_age_needs.jpg" style="width:500px;" alt="Elderly People using computer">			
 				</section>
 				<section>
@@ -181,24 +192,6 @@
 					<img src="imgs/NewHire/links_for_colorblind.png" style="height:500px" alt="MyHR page how it will look like for old or color blind users">									
 				</section>
 				<section>
-					<h2>Link Challenges</h2>
-					<ol>
-						<li>Without underline is problematic for color blind, old , cognitive or literacy impaired users </li>
-						<li>Without focus outline problematic for low vision and screen reader users </li>
-					</ol>								
-				</section>
-				<section>
-					<h2>How to make your code usable for everyone </h2>
-					<ol>
-						<li class="fragment">Clean Code</li>
-						<li class="fragment">Test for Accessibility</li>
-						<li class="fragment">Be the Point of Contact for your team</li>
-						<li class="fragment">Learn and Teach</li>
-					</ol>
-				</section>
-
-
-				<section>
 					<h2>Top 10 Barriers we frequently see at PayPal</h2>
 					<ol>
 						<li>Screen reader says edit form field blank (Labels)</li>
@@ -209,8 +202,78 @@
 						<li>Errors are not friendly</li>						
 						<li>No visual focus indicator</li>
 						<li>Poor color contrast</li>
+						<li>Table does not read out content </li>
+						<li>InAccessible icons</li>
 					</ol>
+					<p><small>
+						<a href="https://engineering.paypalcorp.com/confluence/display/access/Web+Accessibility+Dashboard">Accessibility Dashboard</a>
+					</small>
 				</section>
+				<section>
+					<h3>How to test</h3>
+					<ul>
+						<li>Wave extension for chrome http://wave.webaim.org/extension/ </li>
+						<li> Keyboard only testing </li>
+						<li> Screen reader testing testing <br> Mac - Voiceover, Windows - NVDA </li>
+				</section>
+				<section>
+					<h2>Link Challenges</h2>
+					<ol>
+						<li>Without underline is problematic for color blind, old , cognitive or literacy impaired users </li>
+						<li>Without focus outline problematic for low vision and screen reader users </li>
+					</ol>								
+				</section>
+				<section>
+					<h2>Debug empty Link </h2>
+				<pre><code><a href="#" tabindex="0" 
+							ng-click="userPicker.userClicked(true)" 
+							></a>
+				</code>	</pre>
+				</section>
+				<section>
+					<h2>Difference between Button and Link</h2>
+					<ul>
+						<li>Anchor links without href and doesn't navigate should be button</li>
+						<li>Anchor links navigate,  a button stays in page like opening modal, dropdown etc </li>
+						 <li>Tabindex and click events tacked onto an anchor tag are a markup anti-pattern</li>
+						 <li>Buttton is activated with spacebar , links are activated with enter. 
+						 	Eg. PayNow button on invoice page 
+						</li>
+					</ul>
+					<p>More read: <a href="https://marcysutton.com/links-vs-buttons-in-modern-web-applications/">https://marcysutton.com/links-vs-buttons-in-modern-web-applications/</a></p>
+				</section>
+				<section>
+					<section>
+						<h3> Debug InAccessible forms</h3>
+						<ul>
+							<li> Click on the label, focus should go to input field, or checkbox radio button should be selected</li>
+							<li> If there is no visible label, screen should read the label info from aria-label, title, aria-labelledBy</li>
+							<li> Any additonal tooltip information should be spoken i.e. aria-describedby</li>
+							<li> 
+							Leave all inputs blank and attempt to submit the form. <br>
+Error messages must be spoken automatically, the screen reader should NOT go silent on a bad submit! <br>
+Focus should be sent to the list of error messages or the first invalid input with an inline error message that's programmatically associated. <br>
+Focus does not have to move but only if the error messages are spoken automatically, e.g. role=alert or aria-live=assertive.
+</li>
+					</section>
+				</section>
+				<section>
+					<h3>How to debug Modal dialog</h3>
+					<p>
+						Modal dialogs can not be tested with automated tools!
+					</p>
+				<ul>
+					<li> Using keyboard only</li>
+					<li> Set focus on the element that opens a modal. </li>
+					<li> Focus is set to dialog or the first focusable element inside the dialog. </li>
+					<li> Cycle through all the elements in the dialog and if it's a Modal then focus should be trapped inside the dialog until the user takes action to close it.
+					<li> Close the dialog using the close button and/or the ESC key. </li>
+					<li> When a modal is closed, focus MUST be sent back to where it came from. Should not start again from address bar </li>
+					<li>Every button in that dialog must have a good accessible name. X is NOT a good accessible name for the close button. Should have aria-label="Close". </li>
+				</ul>
+			</p>
+			</section>						
+
 				<section>
 					<h2> Accessibility - Essential for Some, Useful for All</h2>
 					<img src="imgs/common/Ramp_for_all.jpg" style="width:650px;height:500px" alt="Ramp at entrace of Chennai PayPal office">
@@ -226,11 +289,7 @@
 				<section>
 					<h2> Accessibility Benefits everyone</h2>
 					<img src="imgs/common/TemporaryImpairement.jpg" style="height:500px" alt="A User with Injured Hand using computer with single hand">
-				</section>	
-				<section>
-					<p>Separate  Session on Front End Accessibility, Mobile Accessibility (Android and iOS) </p>							
-				</section>	
-
+				</section>
 				<section>
 					<h2>Showcase -Experiencing how PWD uses technology</h2>
 					<ol>
@@ -242,13 +301,22 @@
 						<img src="imgs/NewHire/chennai_showcase4.jpg" style="width:300px; height:300px"  alt="Developer experienceing color coded keyboard">
 					</p>
 					<p> Send us email to register</p>
+				</section>
+				<section>
+					<h1>Demo</h1>
+					<p> 
+						<a href="https://www.paypal.com/US/welcome/signup">Sign up flow</a> <br><br>
+						<a href="https://github.paypal.com/pages/Customers-R/kepler/public/">Merchant team React components</a>
+
+					</p>	
+
 				</section>				
 				<section>
 					<h2>References</h2>
 					<ol>
 						<li><a href="http://go/a11ydocs">Accessibility Documentation</a></li>
-						<li><a href="http://go/aatt">AATT tool (Tool for continuous Integration Testing)</a></li>
-						<li><a href=" http://go/a11ystatus">Dashboard - Check how your project is doing</a></li>
+						<li><a href="http://go/a11ystatus">Dashboard - Check projects status</a></li>
+						<li><a href="https://engineering.paypalcorp.com/confluence/display/access/Web+Testing+Tools+-+Accessibility">Testing for Accessibility</a></li>
 						<li><a href="http://paypal.github.io/a11y/">PayPal open source</a></li>
 					</ol>
 				</section>
@@ -264,7 +332,6 @@
 					<h1>Questions, contact & Thank you.</h1>
 					<h3><a href="mailto:DL-PP-Accessibility-Core@paypal.com">DL-PP-Accessibility-Core@paypal.com </a></h3>
 					<h3><a href="https://paypal.slack.com/archives/ask-accessibility">Accessibility Slack Channel</a></h3>
-					<h3><a href="https://twitter.com/PayPalinclusive">Follow us on Twitter / @PayPalInclusive </a></h3>
 				</section>
 
 			</div> <!-- slider div ends -->
