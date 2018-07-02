@@ -5,6 +5,7 @@ Some of the talks I gave
 
 
 ## Talks
+* GAAD 2018, Chennai, [Slides](https://mpnkhan.github.io/Talks/AI_PWD.html), [Photos](https://flic.kr/s/aHsmdQxoi1)
 * GAAD 2017, Bangalore, [Slides](http://mpnkhan.github.io/Talks/PayPal/ModernJSFrameworks.html), [Photos](https://flic.kr/s/aHsm1e9vAV)
 * Techshare,March 2016, New Delhi, [Slides](http://mpnkhan.github.io/Talks/PayPal/TechShare2016.pptx), [Photos](https://flic.kr/s/aHsksYDTDw)
 * Intuit, October 2015, Bangalore, [Slides](http://mpnkhan.github.io/Talks/PayPal/IntuitOct2015.html)
