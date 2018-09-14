@@ -18,7 +18,7 @@ Some of the talks I gave
 
 
 ## Booth Photos
-* Diversity and Inclusion, PayPal, September 2018 [Photos] (https://flic.kr/s/aHsmiri8Sy)
+* Diversity and Inclusion, PayPal, September 2018 [Photos](https://flic.kr/s/aHsmiri8Sy)
 * Global Accessibility Event, PayPal , May 21, 2015 [Photos](https://flic.kr/s/aHskbNPcNU)
 * Product Fair, Inclusive Hub booth at Indian Institute of Technology. January 3-5, 2015 [Photos](https://www.flickr.com/gp/mpnkhan/0n1062)
 * Chennai Product Fair, Inclusive Hub booth, November 12, 2014. Team won second place for the booth [Photos](https://www.flickr.com/gp/mpnkhan/c5958W)
