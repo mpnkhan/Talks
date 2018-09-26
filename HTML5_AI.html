@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>How AI can empower disabled people</title>
+
+		<meta name="description" content="How HTML5 JavaScript API's and AI can empower disabled people">
+		<meta name="author" content="Prem Nawaz Khan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+		<style type="text/css">
+		ul{ font-size:80% !important }
+		img{border: 0 !important}
+
+#site-footer {
+   position:fixed;
+   left:250px;
+   bottom:30px;
+   height:70px;
+   text-align: center;
+   width:70%;
+   font-size: 15px;
+   background:#fff;
+}  
+
+button {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #538fbe;
+    font-size: 20px;
+    border: 1px solid #2d6898;
+    background-image: linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+ 
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(73,132,180)),
+        color-stop(1, rgb(97,155,203))
+    );
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+}
+		</style>
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+			<section>
+					<h2>How HTML5 JavaScript API's and AI can empower disabled people</h2>
+					<h3>Accessibility Meetup</h3>
+					<h4>Thursday, 27<sup>th</sup> of September 2018</h4>
+					<p>
+
+						<small>By Prem Nawaz Khan / <a href="http://twitter.com/mpnkhan">@mpnkhan</a></small>
+					</p>
+				</section>
+				<section>
+					<h2>About Me</h1>
+					<img src="PayPal/imgs/common/Evangelist.jpg" alt="code, preach at PayPal" style="max-height:500px">
+				</section>
+				<section>
+					<p> Statistics </p>
+					<ul>
+						<li>
+							Assistive products: Hearing aids, wheelchairs, communication aids, spectacles, prostheses, pill organizers and memory aids .
+						</li>
+						<li>	
+							Globally, more than 1 billion people need 1 or more assistive products.
+						</li>
+						<li>							
+						More than 2 billion people will need at least 1 assistive product by 2050, <br>
+						with many older people needing 2 or more.
+						</li>
+						<li>	
+							<b>Today, only 1 in 10 people, in need have access to assistive products.</b>
+						</li>
+					</ul>
+					<p>
+						<small>References:</small>
+						<small><a href="http://www.who.int/en/news-room/fact-sheets/detail/assistive-technology">World Health Organization Report</a> ,</small>
+						<small><a href="https://en.wikipedia.org/wiki/World_report_on_disability" target="main">WRD Report</a></small>
+					</p>
+				</section>
+
+				<section>	
+					<h3> How People with Disabilities Use Web</h3>
+					<p> Most cases, needs Special Input, Output to access information </p>
+				</section>
+
+				<section>
+					<h3> Designing for PWD</h3>
+						<ol>
+							<li>Visual Impaired - Screen reader, Screen magnifier, HCM, Custom styles</li>
+							<li>Hearing Impaired- Captions, Description</li>
+							<li>Motor related - Adaptive Keyboard, special mouse, switches, Head Mouse</li>
+						</ol>	
+				</section>
+
+
+				<section>
+					<h2>Designing for Old users</h2>
+					<img src="PayPal/imgs/common/old_age_needs.jpg" style="width:500px;" alt="Elderly People using computer">			
+				</section>
+
+				<section>
+					<h2>HTML 5 Java Script API's</h2>
+				</section>
+
+				<section>
+					<h3>Speech as Input</h3>
+					<pre><code class="html" data-trim contenteditable style="font-size: 16px;">
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();					
+					</code></pre>	
+				</section>
+
+				<section>
+					<h3>Speech as Input</h3>
+					<pre><code class="html" data-trim contenteditable style="font-size: 16px;">
+recognition.lang = 'en-US';
+recognition.interimResults = false;				
+					</code></pre>	
+				</section>
+
+				<section>
+					<h3>Speech as Input</h3>
+					<pre><code class="html" data-trim contenteditable style="font-size: 16px;">
+recognition.addEventListener('result', (e) => {
+  let last = e.results.length - 1;
+  let text = e.results[last][0].transcript;
+  console.log('This is the input text');
+});
+		
+					</code></pre>	
+				</section>
+
+				<section>
+					<h2>Speech Input Demo</h2>
+					<textarea id="speechdemo" style="width:400px;height: 300px"></textarea> <button id="startspeech">Start</button>
+						<button id="testclick">Test Click</button>
+						<button id="stopspeech">Stop</button>
+
+				</section>
+
+				<section>
+					<h2>Uses</h2>
+					<ul>
+						<li>Voice based Commands for UI</li>
+						<li>Real time Captioning</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Text to Speech</h3>
+					<pre><code class="html" data-trim contenteditable style="font-size: 16px;">
+function synthVoice(text) {
+  const synth = window.speechSynthesis;
+  const utterance = new SpeechSynthesisUtterance();
+  utterance.text = text;
+  synth.speak(utterance);
+}
+					</code></pre>	
+				</section>
+
+				<section>
+					<h2>Text to Speech Demo</h2>
+					<textarea id="ttsdemo" style="width:400px;height: 300px">
+						There are 4 error messages on this page
+						1. First name is incorrect
+						2. Last Name is incorect
+						3. You didn't enter value for credit card
+					</textarea> 
+					   <button id="starttts">Speak</button>
+				</section>
+
+				<section>
+					<h2>Demo</h2>
+					<a href="http://localhost:3001/" target="main">Real Talking Tom</a>
+				</section>
+
+				<section>
+					<h3>Object tracking using getUserMedia</h3>
+					<pre><code class="html" data-trim contenteditable style="font-size: 16px;">
+<video autoplay></video>
+<img src="">
+<canvas style="display:none;"></canvas>
+
+navigator.mediaDevices.getUserMedia({video: true})
+					</code></pre>	
+				</section>
+
+				<section>
+					<h3>Object tracking using getUserMedia</h3>
+					<pre><code class="html" data-trim contenteditable style="font-size: 16px;">
+on callback
+video.srcObject = stream
+
+canvas.getContext('2d').drawImage(video, 0, 0);
+img.src = canvas.toDataURL('image/webp');
+					</code></pre>
+				</section>
+
+				<!--section>
+					<h3>Object tracking using getUserMedia</h3>
+					<p>
+Blend mode difference <br>
+if you put a picture on top of the same picture and blend them together using the blend mode difference, you obtain… a black screen! <br>
+If there’s a slight difference between the 2 pictures, the colors start to appear, showing you the “difference” between the two pictures
+
+					</p>					
+				</section-->
+
+				<section>
+					<h2>Head Tracking for Low Vision</h2>
+					<img src="imgs/html5/lowvision.jpg" style="max-height:300px" alt="An user with low vision viewing computer">
+				</section>
+
+				<section>
+					<h2>Demo</h2>
+					<a href="http://localhost:3000/typography/" target="main">Adjustable Typography</a>
+				</section>
+
+				<section>
+					<h2>Gesture detection for Motor Disabled</h2>
+					<a href="http://localhost:3000/jsobjectdetect/examples/example_gesture_scroll.htm" target="main">Browsing Web with Hand Gestures</a>
+				</section>
+
+				<section>
+					<h2>Eye Tracking</h2>
+					<a href="http://localhost:3000/webgazer/www/gaze_scroll.htm" target="main">Browsing Web with Eye Gestures</a>
+				</section>				
+
+
+
+				<section>	
+					<h2> How Artifical Intelligence can empower people with disabilities </h2>
+				</section>
+				<section>	
+					<ul>
+						<li> Voice Recognition </li>
+						<li> Image recognition </li>
+						<li> Facial recognition </li>
+						<li> Lip-reading recognition </li>
+						<li> NLP for Learners with Autism or Language Disorders</li>
+						<li> Text to Sign Language Interpretation </li>
+					</ul>					
+				</section>	
+				<section>
+					<h2>Voice Recognition</h2>
+					<p> Smart phones &  Smart speakers - best examples of reviving AI </p> 
+					<p>Apple's Siri, Amazon echo, Google Assistant, Cortana for Windows</p>
+					<p> Pros & Cons </p>
+					<aside class="notes">The field of AI research was born at a workshop at Dartmouth College in 1956</aside>
+				</section>
+				
+				<section>
+					<h3>Lack of Alt text is a barrier for PWD</h3>
+					<pre><code class="html" data-trim contenteditable style="font-size: 18px;">
+&lt;img src="niceFlower.jpg"  alt="Lily in a Pond"&gt;
+					</code></pre>	
+				</section>
+<!-- 
+				<section>
+					<h3>Image recognition</h3>
+					<ul>
+						<li>Since 2012, Search engine had  deep learning solutions for content filtering and Image recognition </li>
+						<li>But adding it for People with Disabilities helps the blind in recognizing images </li>
+					</ul>
+					<a href="https://github.com/yahoo/open_nsfw">
+						<img src="PayPal/imgs/AI/Yahoo_ NSFW.png" alt="Not suitable for work (NSFW) image detection by Yahoo">
+					</a>	
+				</section> -->
+
+				<section>
+					<h3>For websites like PayPal, </h3>
+					<p> It is about educating Content editors to input alternate text in their Content Management System</p>(and/or)
+					<p> Educating Web Developers to put alt text for images</p>
+				</section>
+				<section>
+					<h4>User generated content</h4>
+					<ul> 
+						<li> Every day, people share more than 2 billion photos across Facebook, Instagram, Messenger, and WhatsApp </li>
+						<li> Facebook announced their automatic alt text in April 2016</li>
+					</ul>	
+						<img src="PayPal/imgs/AI/FB_AutoAlt.jpg" alt="automatic detection of Facebook">
+					</ul>	
+				</section>
+				<section>
+					<p>April 2017, Automatic Alt text extension for Chrome </p>
+						<a href="https://github.com/abhisuri97/auto-alt-text-lambda-api">
+							<img src="PayPal/imgs/AI/Chromext_autoalt.png" alt="automatic alt text chrome extension">
+						</a>	
+					<p> Based on Tensor flow and im2txt Model</p>
+				</section>
+				<section>
+					<p>April 2018, Around 25 API's made available by Microsoft for public use</p>
+
+						<img src="PayPal/imgs/AI/MS_CognitiveAPIs.png" alt="Microsoft API's">
+					</ul>	
+				</section>	
+				<section>
+					<h2>Image Alt text Demo</h2>
+					<a href="http://localhost:3000/alttext.html" target="main">Alt text Demo</a>
+					<!-- <a href="https://mpnkhan.github.io/newtech/alttext.html" target="main">Demo</a> -->
+
+				</section>
+				<section>
+					<h3>Facial recognition</h3>
+					<p>Using Facial recognition, we can</p>
+					<ul>
+						<li>Search, identify, and match faces in your private repository</li>
+						<li>Find Similar faces</li>
+						<li>Organize many unidentified faces together into groups, based on their visual similarity</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Facial recognition</h3>
+					<p>Recognizing Humans versus Bots</p>
+					<img src="https://c.s-microsoft.com/en-in/CMSImages/Windows_Hello_1920_Carousel_en-US.jpg?version=33606bc2-f95f-b494-27df-28c7249f876f" alt="facial replaces captcha" style="max-height:300px">
+					<p>CAPTCHA sucks?<br>
+					Examples like <a href="https://support.apple.com/en-in/HT208108">iPhone X Facial Unlock</a>, <a href="https://www.microsoft.com/en-in/windows/windows-hello">Windows Hello</a>
+					</p>
+				</section>				
+				<section>
+					<h2>Facial recognition Demo</h2>
+					<a href="http://localhost:3000/cognitiveapi/" target="main">Demo</a>
+					<!-- <a href="https://mpnkhan.github.io/newtech/detectface/" target="main">Demo</a> -->
+				</section>
+				<section>
+					<h3>Lip-reading recognition</h3>
+					<p>Automated captions using Lip Reading</p>	
+					<iframe width="854" height="480" src="https://www.youtube.com/embed/jWvvz0Xh0uU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<!-- 									 
+					  <video controls tabIndex="0">
+					    <source data-src="PayPal/imgs/AI/Lip_segmentation.mp4" type="video/mp4" />
+					  </video>	 
+-->					 
+				</section>
+				<section >
+					<p>Oxford University researchers partnered with Google on a new AI tool that reads lips, and the results were significant. <br>
+					<img src="PayPal/imgs/AI/this-is-how-deepmind-learned-to-read-lips.jpeg" alt="Google Deep Mind lip reading">
+					 Trained with a dataset of more than 100,000 natural sentences.
+					</p>
+					<small>
+						Source: <a href="https://www.techrepublic.com/article/google-deepmind-ai-destroys-human-expert-in-lip-reading-competition/">Tech Republic</a>
+					, <a href="https://arxiv.org/pdf/1611.05358v1.pdf">Research Paper on Lip reading sentences in the Wild</a>
+					</small>	 
+				</section>
+				<section>
+					<h3>NLP (Natural language processing) for Learners with Autism or Language Disorders</h3>
+					<p><a href="https://play.google.com/store/apps/details?id=com.equadex.helpicto&hl=en">Helpicto</a> is an android app which uses speech to text and Microsoft Cognitive API to convert speech a set of images which students with Language disorders related to autism, dysphasia, or Alzheimer’s disease</p>
+				</section>
+				<section>					
+					<p>Cognitive API uses AI to split the sentences and sends back the intents which is converted to a list of images<br>
+						The speech command is “Do you want to eat an apple?” Helpicto will then generate three images: the child himself, the action of eating, and a picture of an apple.
+					</p>	
+					<small>
+						More info: <a href="https://microsoft.github.io/techcasestudies/cognitive%20services/2017/08/04/equadexcognitives.html/">How Equadex used Cognitive Services to help people with language disorders</a>
+					</small>
+				</section>
+				<section>
+					<h3>Text to Sign Language Interpretation</h3>				
+					<p>Real Time American Sign Language Video Captioning using Deep Neural Networks
+					<img src="PayPal/imgs/AI/sign_language.png" alt="Project to convert text to Sign Language" style="max-height:300px">
+					</p>
+
+					<small>
+						More info: <a href="http://on-demand.gputechconf.com/gtc/2017/presentation/s7346-syed-ahmed-real-time-american-sign-language-video-caption.pdf">Slides</a> and
+						<a href="https://blogs.nvidia.com/blog/2017/05/11/ai-translates-sign-language/">NVIDIA Blog</a>
+					</small>
+				</section>				
+
+
+				<section class="present" data-index-h="35" style="top: -240px; display: block;">
+							<h1>Questions,  Thank you.</h1>
+				</section>
+
+
+			</div>		<!-- slider div ends -->
+
+<!-- 			<footer id="site-footer">
+				<div id="autocaption">autocaption</div> 
+			</footer> -->	
+
+		</div>			<!-- reveal div ends -->
+
+
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				slideNumber: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/search/search.js', async: true },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+			try {
+	        	var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+	        	var recognition = new SpeechRecognition();
+      			recognition.continuous = true;
+      			recognition.interimResults = false;
+				recognition.maxAlternatives = 1;
+	   		 }
+	   		 catch (e) {
+	   		 	console.error(e);
+     		 }
+
+     		 document.getElementById('startspeech').addEventListener('click',(e) => {
+				recognition.start();
+     		 });
+     		 document.getElementById('stopspeech').addEventListener('click',(e) => {
+				recognition.stop();
+     		 });
+
+			recognition.addEventListener('result', (e) => {
+				// console.log('Result has been detected.');
+				let last = e.results.length - 1;
+				let text = e.results[last][0].transcript;
+				// if(text.includes('click')) { setTimeout(function(){ alert('test Clicked'), 2000  }) };
+				if(text.includes('click')) alert('test Clicked') ;
+				// console.log('Text: ' + text);
+				document.getElementById('speechdemo').value=  text;
+				// console.log('Confidence: ' + e.results[0][0].confidence);
+			});
+
+			// function makeid() {
+			//   var text = "";
+			//   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+			//   for (var i = 0; i < 5; i++)
+			//     text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+			//   return text;
+			// }
+
+			function synthVoice(text) {
+			  const synth = window.speechSynthesis;
+			  const utterance = new SpeechSynthesisUtterance();
+			  utterance.text = text;
+			  synth.speak(utterance);
+			}			
+
+			document.getElementById('starttts').addEventListener('click',(e) => {
+				synthVoice(document.getElementById('ttsdemo').value)
+				// document.getElementById('ttsdemo').value = makeid();
+
+			}); 
+
+		</script>
+
+	</body>
+</html>
