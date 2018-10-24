@@ -5,7 +5,8 @@ Some of the talks I gave
 
 
 ## Talks
-* How Aritifical Intelligence can Empower Disabled People, GAAD 2018, Chennai, [Slides](https://mpnkhan.github.io/Talks/AI_PWD.html), [Photos](https://flic.kr/s/aHsmdQxoi1)
+* How HTML5  JavaScript API and Artificial Intelligence can help People with Disabilities, 2018, [Bangalore Design for Accessibility Meetup](https://www.meetup.com/Bangalore-Design-for-Accessibility-Meetup/events/254377606/), [Slides](https://mpnkhan.github.io/Talks/HTML5_AI.html#/),[Photos](https://flic.kr/s/aHskJYZ3tJ)
+* How Artificial Intelligence can Empower Disabled People, GAAD 2018, Chennai, [Slides](https://mpnkhan.github.io/Talks/AI_PWD.html), [Photos](https://flic.kr/s/aHsmdQxoi1)
 * Inclusion in Modern JS frameworks , GAAD 2017, Bangalore, [Slides](http://mpnkhan.github.io/Talks/PayPal/ModernJSFrameworks.html), [Photos](https://flic.kr/s/aHsm1e9vAV)
 * Techshare,March 2016, New Delhi, [Slides](http://mpnkhan.github.io/Talks/PayPal/TechShare2016.pptx), [Photos](https://flic.kr/s/aHsksYDTDw)
 * Intuit, October 2015, Bangalore, [Slides](http://mpnkhan.github.io/Talks/PayPal/IntuitOct2015.html)
