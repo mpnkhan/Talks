@@ -6,7 +6,8 @@ Some of the talks I gave
 
 ## Talks
 * An Introduction to Accessible Rich Internet Application (Aria) , 2021, People with Disabilities from Malaysia, [Slides](https://mpnkhan.github.io/workshops/presentation/Aria.html)
-
+* Accessibility Automation, challenges and some solutions, May 2020, Online
+ [Slides](https://github.com/mpnkhan/Talks/blob/gh-pages/Automation_Challenges.pptx) , [Video](https://youtu.be/zSW4hqJOFwk?list=PLBokoD-QgEJohruBtO0vI_TkWBSo1ebyV&t=6352)
 * How HTML5  JavaScript API and Artificial Intelligence can help People with Disabilities, 2018, [Bangalore Design for Accessibility Meetup](https://www.meetup.com/Bangalore-Design-for-Accessibility-Meetup/events/254377606/), [Slides](https://mpnkhan.github.io/Talks/HTML5_AI.html#/),[Photos](https://flic.kr/s/aHskJYZ3tJ)
 * How Artificial Intelligence can Empower Disabled People, GAAD 2018, Chennai, [Slides](https://mpnkhan.github.io/Talks/AI_PWD.html), [Photos](https://flic.kr/s/aHsmdQxoi1)
 * Inclusion in Modern JS frameworks , GAAD 2017, Bangalore, [Slides](http://mpnkhan.github.io/Talks/PayPal/ModernJSFrameworks.html), [Photos](https://flic.kr/s/aHsm1e9vAV)
@@ -17,7 +18,7 @@ Some of the talks I gave
 * Accessibility for Designers and Developers, Times of India Newspaper office, Gurgaon [Photos](https://flic.kr/s/aHsk5vJiou)
 * Accessible Web Components, Techshare,February 2014, New Delhi, [Slides](http://mpnkhan.github.io/Talks/TechShare2014.html), [Photos](https://flic.kr/s/aHsk2A4wRD)
 * Inclusive Design Challenges with UI Widgets, Meta Refresh, February 2013, Bangalore
- [Slides](http://mpnkhan.github.io/Talks/MetaRefresh2013.html#/) , [Video](https://youtu.be/kbeDG2JQpkU]
+ [Slides](http://mpnkhan.github.io/Talks/MetaRefresh2013.html#/) , [Video](https://youtu.be/kbeDG2JQpkU)
 
 
 ## Booth Photos
