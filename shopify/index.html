@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Addressing Accessibility Challenges in Remediating Shopify Websites</title>
+
+		<meta name="description" content="Addressing Accessibility Challenges in Remediating Shopify Websites">
+		<meta name="author" content="Prem Nawaz Khan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="../reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>ADDRESSING ACCESSIBILITY CHALLENGES IN REMEDIATING SHOPIFY WEBSITES</h2>
+					<img src="../imgs/GAAD_India_logo.jpg" alt="Global Accessibility Awareness Day, India" style="height:100px; width:100px;border:0px;">
+					<h3>Global Accessibility Awarness Day</h3>
+					<h4>Saturday, 11<sup>th</sup> of May 2024</h4>
+					<p>
+
+						<small>By Prem Nawaz Khan / <a href="http://twitter.com/mpnkhan">@mpnkhan</a></small>
+					</p>
+				</section>
+
+				<section style="top: 155.5px; display: block;" class="present">
+					<h3>WebAim - 2024 report on the accessibility of the top 1 Million home pages</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Platform</th>
+								<th># of home pages</th>
+								<th>Avg. # of errors</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Shopify</td>
+								<td>18,420</td>
+								<td>60.4</td>
+							</tr>
+							<tr>
+								<td>Woocommerce</td>
+								<td>24,495</td>
+								<td>74.9</td>
+							</tr>
+							<tr>
+								<td>Magento</td>
+								<td>8,451</td>
+								<td>86.6</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small>Ref: <a href="https://webaim.org/projects/million/#ecommerce">WebAim Report</a></small>
+					</p>					
+				</section>
+				<section>
+					<h3>Market Share of Top Ecommerce Websites</h3>
+					<p>
+						Among the top 1 million ecommerce sites globally, Shopify has the biggest piece of the pie at 29%, with 23% being regular Shopify stores and 6% being Shopify Plus stores [Style Factory - Shopify Statistics]. 
+					</p>
+					<p class="fragment">	
+						This emphasizes Shopify's dominance in larger, more established online stores.
+						
+					</p>
+				</section>
+
+				<section data-background="">
+					<h2>Top 10 Shopify Stores 2024</h2>
+					<p><img src="media/0_Top10Shopify.png"></p>
+				</section>
+				<section>
+					<h2>https://skims.com/</h2>
+					<p><img src="media/1_skims.gif"></p>
+					<p>InAccessible Mega menu</p>
+				</section>
+				<section>
+					<h2>https://www.sanrio.com/</h2>
+					<p><img src="media/2_sanrio.gif" height="400"></p>
+					<p>Painful Mega menu and Search</p>
+				</section>
+				<section data-background="media/3_bodybuilding.gif">
+				</section>					
+				<section>
+					<h2>https://shop.bodybuilding.com/</h2>
+					<ol>
+						<li>In Accessible Promo popup </li>
+						<li>Painful Mega menu</li>
+						<li>InAccessible Product filtering and sorting</li>
+						<li>Inaccessible cart</li>
+					</ol>
+				</section>
+
+				<section data-background="media/4_mccormick.gif">
+				</section>					
+				<section>
+					<h2>https://www.mccormick.com/</h2>
+					<ol>
+						<li>Not for Keyboard users because of Invisible Focus outline</li>
+						<li>Promo popup</li>
+						<li>InAccessible Modal Dialogs</li>
+					</ol>
+				</section>
+				<section>
+					<h3>Let us Remediate Focus outline for https://www.mccormick.com/</h3>
+				</section>
+
+				<section data-background="media/4_mccormick_outlineFix.gif">
+				</section>					
+
+			
+				<section data-auto-animate>
+					<h2 data-id="code-title">Remediation - Core Function</h2>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="|4,8-11|17|22-24">
+						<script type="text/template">
+						function waitForElementToShowInDOM(selector, timeout = 10000, interval = 100) {
+						  return new Promise((resolve, reject) => {
+						    const startTime = performance.now();
+						    const checkElement = () => {
+						      const element = document.querySelector(selector);
+						      if (element && element.style.display !== 'none' && element.offsetWidth > 0 && element.offsetHeight > 0) {
+						        resolve(element);
+						        return; // Stop checking after finding the element
+						      }
+						      if (performance.now() - startTime >= timeout) {
+						        reject(new Error(`Element with selector "${selector}" not found within ${timeout}ms`));
+						        return; // Stop checking after timeout
+						      }
+						      setTimeout(checkElement, interval);
+						    };
+
+						    checkElement();
+						  });
+						}
+					</script></code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h2 data-id="code-title">Remediation - Core Function</h2>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers>
+						<script type="text/template">
+							function insertStyles(css) {
+								const style = document.createElement('style');
+								style.innerHTML = css;
+								document.head.appendChild(style);
+								return style;
+							};					
+						</script></code></pre>
+				</section>
+
+				<section>
+					<h3>Now Let us Remediate Mega Menu for https://www.neweracap.com/</h3>
+				</section>
+
+				<section data-background-video="media/9_NewEraCap_BF.mp4">
+					<h3 style="color:red">Before Remediation</h3>
+				</section>
+
+				<section data-auto-animate>
+					<h3 data-id="code-title">Mega Menu Remediation-Insert CSS Styles</h3>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="|1-15|16-33|35">
+						<script type="text/template">
+waitForElementToShowInDOM('.desktop-main-navigation', 5000, 200) // Wait for 5 seconds with checks every 200ms
+ .then(mainNav => {
+ const styles= ` 
+     nav li.open .submenu {
+         display: block !important;
+         position: absolute !important;
+    }
+    li.open span::after{
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background-color: #AD3932;
+        position: absolute;
+        top: 50%;
+        right: -12px;
+        transform: translateY(-50%);
+    }
+    li.open .submenu.meganav::before{
+        content: "";
+        width: 100%;
+        position: absolute;
+        box-shadow: inset 0 16px 16px -16px rgba(0,0,0,0.1);
+        inset: 0;
+        height: 32px;
+    }
+    li.open .submenu.meganav .meganav-wrapper{
+        overflow-y: hidden !important;
+    }
+    li.open .submenu.meganav .headwear-styles-container .nav-icon-container img{
+        max-width: 120px !important;
+    }    
+`;
+    insertStyles(styles);
+        
+    })
+}).catch(error => {
+    console.error(error);
+});				
+						</script></code></pre>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="code-title">Mega Menu Remediation - Convert to Click Menu</h3>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="1-10|12-20">
+						<script type="text/template">
+
+						    mainNav.querySelectorAll('.has-meganav').forEach(listitemwithChild=>{
+						       const btn=listitemwithChild.querySelector(':scope span');
+								btn.setAttribute('role', 'button');
+								btn.setAttribute('tabindex', 0);
+								btn.setAttribute('aria-expanded', 'false');
+						        const closeMenu =()=>{
+						            listitemwithChild.classList.remove('open');
+						            btn.setAttribute('aria-expanded', 'false');
+						            btn.focus();
+						        }
+						        
+								btn.addEventListener('click', (e) => {
+									if (!listitemwithChild.classList.contains('open')) {
+										listitemwithChild.classList.add('open');
+										const firstItem= listitemwithChild.querySelector('.submenu a');
+						                if(firstItem) firstItem.focus();
+										btn.setAttribute('aria-expanded', 'true');
+									}else closeMenu();
+									e.preventDefault();
+									e.stopPropagation();
+								});
+
+				</script></code></pre>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="code-title">Mega Menu Remediation - Click on Space and Enter</h3>
+					<pre data-id="code-animation"><code class="hljs javascript" data-trim data-line-numbers="1-10|11-16">
+						<script type="text/template">
+							btn.addEventListener('keydown', (e) => {
+								if (e.keyCode === 13 || e.keyCode === 32) {
+									e.preventDefault();
+									btn.click();
+								}
+								if (e.keyCode === 27) {
+									e.preventDefault();
+					                closeMenu()                
+								}
+							});
+							listitemwithChild.querySelectorAll('.submenu a').forEach((subanchor) => {
+								subanchor.addEventListener('keydown', (e) => {
+									if (e.keyCode === 27) {
+										e.preventDefault();
+										closeMenu();
+									}
+								});
+							});
+				</script></code></pre>
+				</section>
+				<section data-background-video="media/9_NewEraCap_AF.mp4">
+					<h2 style="color:red">After Remediation</h2>
+				</section>
+				<section>
+					<h2>Thanks & Summary</h2>
+					<ol>
+						<li>Fix issue by issue</li>
+						<li>Remediate the whole site as an included JS</li>
+						<li>Still fixing at source is the best</li>
+					</ol>
+				</section>
+
+				<section style="text-align: left;">
+				<h2>Gist</h2>
+				<ol>
+					<li>
+					 <a href="https://gist.github.com/mpnkhan/76c5e9108e9f6b0b42bec6360a085166">Focus Outline Remediation</a>
+					</li>
+					<li>
+						<a href="https://gist.github.com/mpnkhan/8fb6034e24eee40e04047c1938699879">MegaMenu Remediation</a>
+					</li>
+				</ol>
+						
+
+					</p>
+				</section>
+
+			</div> <!--END slides-->
+
+		</div>  <!--END Reveal-->
+
+		<script src="../reveal.js/dist/reveal.js"></script>
+		<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+		<script src="../reveal.js/plugin/notes/notes.js"></script>
+		<script src="../reveal.js/plugin/search/search.js"></script>
+		<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+		</script>
+
+	</body>
+</html>

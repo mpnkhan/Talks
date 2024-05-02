@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Inclusive Sans';
+    src: url('./InclusiveSans-Regular.woff2') format('woff'),
+         url('./InclusiveSans-Regular.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
