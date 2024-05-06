@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <title>Title</title>
+    <meta charset='utf-8' />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+
+<style type="text/css">
+    	
+</style>
+</head>
+<body class="bg">
+	<div id="wrapper">
+
+				<section data-auto-animate>
+					<h2 data-id="code-title">Remediation - Core Function</h2>
+<pre data-id="code-animation">
+<code class="hljs javascript" data-trim data-line-numbers="|4,8-11|17|22-24">
+function waitForElementToShowInDOM(selector, timeout = 8000) {
+    return new Promise((resolve, reject) => {
+        const startTime = Date.now();
+        
+        const intervalId = setInterval(() => {
+            const element = document.querySelector(selector);
+            if (element) {
+                clearInterval(intervalId);
+                resolve(element);
+            } else if (Date.now() - startTime > timeout) {
+                clearInterval(intervalId);
+                reject(new Error(`Timeout exceeded waiting for element "${selector}" to appear in the DOM`));
+            }
+        }, 100);
+    });
+}
+</code></pre>
+				</section>
+
+	</div> <!--wrapper-->
+	<!-- <script src="../reveal.js/plugin/highlight/highlight.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+	<script>hljs.highlightAll();</script>
+	<script>
+
+	</script>
+	
+</body>
+</html>
