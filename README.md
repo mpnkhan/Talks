@@ -5,6 +5,7 @@ Some of the talks I gave
 
 
 ## Talks
+* Addressing Accessibility Challenges in Remediating Shopify Websites ,LV Prasad Eye Institute, Hyderabad, [Slides](https://mpnkhan.github.io/Talks/shopify/index.html)
 * An Introduction to Accessible Rich Internet Application (Aria) , 2021, People with Disabilities from Malaysia, [Slides](https://mpnkhan.github.io/workshops/presentation/Aria.html)
 * Accessibility Automation, challenges and some solutions, May 2020, Online
  [Slides](https://github.com/mpnkhan/Talks/blob/gh-pages/Automation_Challenges.pptx) , [Video](https://youtu.be/zSW4hqJOFwk?list=PLBokoD-QgEJohruBtO0vI_TkWBSo1ebyV&t=6352)
